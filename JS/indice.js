@@ -5,6 +5,7 @@ btnToggle.addEventListener('click', function() {
     document.getElementById('contenidoGeneral').classList.toggle('active');
 })
 
+/** Primer Slider **/
 new Glider(document.querySelector('.glider'), {
     slidesToScroll: 1,
     slidesToShow: 6,
@@ -13,5 +14,17 @@ new Glider(document.querySelector('.glider'), {
     arrows: {
       prev: '.glider-prev',
       next: '.glider-next'
+    }
+  });
+
+/** Segundo Slider **/
+new Glider(document.querySelector('.segundoGlider'), {
+    slidesToScroll: 1,
+    slidesToShow: 6,
+    draggable: true,
+    dots: '.dots2',
+    arrows: {
+      prev: '#btnPrev',
+      next: '#btnNext'
     }
   });

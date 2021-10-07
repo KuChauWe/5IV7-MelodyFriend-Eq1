@@ -58,18 +58,78 @@ body{
     color: rgb(250,250,250);
     font-size: 32px;
 }
+.textoBlanco#textoUsuario{
+    font-size: 25px;
+}
 .imagenes{
     display: flex;
-    max-width: 182px;
-    max-height: 255px;
+    min-width: 182px;
+    min-height: 255px;
     margin-inline: 36px;
+    background: rgb(24,24,24);
+    background: linear-gradient(180deg, rgba(24,24,24,1) 0%, rgba(21,21,21,1) 50%, rgba(24,24,24,1) 100%);
+    border-radius: 10px;
 }
 .glider-contain{
     max-width: 1440px;
 }
 /*POR AHORA NO ES RESPONSIVE*/
-#contenidoAlinear{
+#contenidoSuperiorAlinear{
     display: flex;
     justify-content: flex-start;
     position: relative;
+    margin-top: 40px;
+}
+.encabezado{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 46px;
+    padding-top: 40px;
+}
+.apartadoUsuario{
+    display: flex;
+    background: rgb(10,10,10);
+    width: 260px;
+    height: 56px;
+    border-radius: 100px;
+    border: 1px solid rgb(112,112,112);
+}
+#imagenPerfil{
+    margin: 3.5px;
+}
+#imagenPerfil img{
+    width: 47px;
+    justify-self: flex-start;
+    border-radius: 50%;
+    border: 2px solid rgb(136,204,6);
+}
+#nombreUsuario{
+    margin-left: 27px;
+    align-self: center;
+}
+.textoRecomendacion{
+    margin-top: 40px;
+}
+#contenidoInferiorAlinear{
+    margin-top: 40px;
+}
+.partesCasilla img{
+    width: 148px;
+    max-height: 148px;
+    margin-top: 17px;
+    padding-inline: 16px;
+}
+.partesCasilla a{
+    font-size: 17px;
+}
+.nombrePlaylist{    
+    color: rgb(250,250,250);
+}
+.propiedadAutor{
+    color: rgb(168,168,168);
+}
+.textoInferior{
+    margin-top: 23px;
+    margin-left: 24px;
 }
