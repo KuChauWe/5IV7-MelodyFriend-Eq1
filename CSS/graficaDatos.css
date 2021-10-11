@@ -1,0 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+canvas{
+    max-width: 200px;
+    max-height: 200px;
+}
