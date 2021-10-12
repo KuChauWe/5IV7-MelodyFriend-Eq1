@@ -5,10 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encuentra personas (´▽`ʃ♡ƪ)</title>
+    <link rel="stylesheet" href="CSS/encontrarPersonas.css">
     <link rel="shortcut icon" href="img/LogoMelodyFriend.png">
     <script src="https://kit.fontawesome.com/b4150a26b3.js" crossorigin="anonymous"></script> 
 </head>
 <body>
-    
+    <div class="contenedorPrincipal">
+        <div id="barraLateral">
+            <div class="toggle-btn">
+                <i class="fa fas fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="indice.html"><img src="IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
+                <li class="textoenListas" id="pagActual"><a href="encontrarPersonas.html">Encuentra personas</a></li>
+                <li class="textoenListas"><a href="encuentraMusica.html">Encuentra playlists</a></li>
+                <li class="textoenListas"><a href="verEstadisticas.html">Ver estadísticas</a></li>
+            </ul>
+        </div>
+        <div id="contenidoGeneral">
+            <div class="muestradeContenido">
+                <div class="encabezado">
+                            <!--When haces el Buscador-->
+                    <form id="fondo"> <!--Sooooooooofoooooooooooo pon lo que tengas que poner aquíaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+                        <div class="contenedorBuscador">
+                            <section class="entrada">
+                                <span class="icon"><i class="fa fas fa-search"></i></span>
+                                <input id="ingresarTexto" type="search" placeholder="Buscar una persona por su ID"/>
+                            </section>
+                        </div>
+                    </form>
+                            <!--But lo terminas-->
+                    <div class="superiorDerecha1">
+                        <input type="button" id="gustosComun" value="Personas con gustos en común"/>
+                    </div>
+                    <div class="superiorDerecha2">
+                        <input type="button" id="miGrupo" value="Mi Grupo"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/encuentraPersonas.js"></script>
 </body>
 </html>

@@ -56,80 +56,32 @@ body{
     background: linear-gradient(90deg rgb(31,31,31) 0%, rgb(26,26,26) 16%, rgb(18,18,18) 100%);
 }
 #contenidoGeneral{
-    margin-left: 390px;
+    margin-left: 320px;
     transition: all 200ms linear;
 }
 #contenidoGeneral.active{
     margin-left: 80px;
 }
-
-input{
-    background: none;
-    border: none;
-    color: rgb(14,14,14);
-    font-size: 17px;
-    padding-block: 19px;
+/*Gráficas*/
+canvas{
+    max-width: 250px;
+    max-height: 200px;
 }
-.fa-search{
-    color: rgb(136,204,6);
-    font-size: 27px;
-    margin: 13px;
-}
-#fondo{
+.graficasGen{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    margin-left: -100px;
 }
-.contenedorBuscador{
-    margin-top: 30px;
-    margin-left: 60px;
-    background: rgb(250,250,250);
-    width: 320px;
-    max-height: 59px;
-    border-radius: 100px;
-}
-#ingresarTexto{
-    width: 240px;
-}
-
-/*Slider, lo que aparece es ya limpio.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
-
-.imagenes{
+.graficaInd{
     display: flex;
-    min-width: 182px;
-    min-height: 255px;
-    margin-inline: 36px;
-    background: rgb(24,24,24);
-    background: linear-gradient(180deg, rgba(24,24,24,1) 0%, rgba(21,21,21,1) 50%, rgba(24,24,24,1) 100%);
-    border-radius: 10px;
+    justify-content: center;
 }
-.glider-contain{
-    max-width: 1440px;
-}
-/*POR AHORA NO ES RESPONSIVE*/
-#contenidoSuperiorAlinear{
-    display: flex;
-    justify-content: flex-start;
-    position: relative;
-    margin-top: 49px;
-}
-.partesCasilla img{
-    width: 148px;
-    max-height: 148px;
-    margin-top: 17px;
-    padding-inline: 16px;
-}
-.partesCasilla a{
-    font-size: 17px;
-}
-.nombrePlaylist{    
+.textoGrafica{
     color: rgb(250,250,250);
+    font-size: 32px;
 }
-.propiedadAutor{
-    color: rgb(168,168,168);
-}
-.textoInferior{
-    margin-top: 23px;
-    margin-left: 24px;
+.muestradeContenido{
+    padding-block: 20px;
 }
 a:-webkit-any-link{
     color: rgb(250,250,250);
