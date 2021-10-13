@@ -52,7 +52,6 @@ body{
     background-color: rgb(255,255,255);
 }
 .ds-der{
-    display: inline-block;
     width: 33%;
     height: 80%;
     /*acá marca problema pero es necesario*/
