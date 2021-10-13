@@ -99,6 +99,10 @@ body{
     border-radius: 100px;
     border: 1px solid rgb(112,112,112);
 }
+.apartadoUsuario:hover{
+    background: rgb(112,112,112);
+    transition: 500ms;
+}
 #imagenPerfil{
     margin: 3.5px;
 }
@@ -123,6 +127,7 @@ body{
     max-height: 148px;
     margin-top: 17px;
     padding-inline: 16px;
+    min-height: 120px;
 }
 .partesCasilla a{
     font-size: 17px;

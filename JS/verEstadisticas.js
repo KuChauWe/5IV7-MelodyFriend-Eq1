@@ -7,7 +7,7 @@ btnToggle.addEventListener('click', function() {
 
 var grafica = document.getElementById("cancionesBatiz");
     var myPieChart = new Chart(grafica, {
-        type: "bar",
+        type: "doughnut",
         data: {
             labels: ["Hugo", "Sofo", "Edu", "Gael", "Rodrigo"], /* when cambias el valor por el nombre de las canciones/playlists xdddd:v */
             datasets:[{
@@ -20,7 +20,7 @@ var grafica = document.getElementById("cancionesBatiz");
 
 var grafica = document.getElementById("playlistsBatiz");
     var myPieChart = new Chart(grafica, {
-        type: "line",
+        type: "doughnut",
         data: {
             labels: ["Hugo", "Sofo", "Edu", "Gael", "Rodrigo"],
             datasets:[{
@@ -33,7 +33,7 @@ var grafica = document.getElementById("playlistsBatiz");
 
 var grafica = document.getElementById("playlistsTC");
     var myPieChart = new Chart(grafica, {
-        type: "radar",
+        type: "doughnut",
         data: {
             labels: ["Hugo", "Sofo", "Edu", "Gael", "Rodrigo"],
             datasets:[{
@@ -59,7 +59,7 @@ var grafica = document.getElementById("playlistsProgra");
 
 var grafica = document.getElementById("playlistsMSA");
     var myPieChart = new Chart(grafica, {
-        type: "bubble",
+        type: "doughnut",
         data: {
             labels: ["Hugo", "Sofo", "Edu", "Gael", "Rodrigo"],
             datasets:[{
@@ -72,7 +72,7 @@ var grafica = document.getElementById("playlistsMSA");
 
 var grafica = document.getElementById("playlistsSD");
     var myPieChart = new Chart(grafica, {
-        type: "scatter",
+        type: "doughnut",
         data: {
             labels: ["Hugo", "Sofo", "Edu", "Gael", "Rodrigo"],
             datasets:[{
@@ -84,7 +84,7 @@ var grafica = document.getElementById("playlistsSD");
 });
 var grafica = document.getElementById("playlistsMeca");
     var myPieChart = new Chart(grafica, {
-        type: "pie",
+        type: "doughnut",
         data: {
             labels: ["Hugo", "Sofo", "Edu", "Gael", "Rodrigo"],
             datasets:[{
