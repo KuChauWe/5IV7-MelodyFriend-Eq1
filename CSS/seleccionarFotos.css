@@ -4,6 +4,7 @@
     outline: none;
     text-align: center;
     border-style: none;
+    color: rgb(255, 255, 255);
 }
 
 body{
@@ -15,7 +16,7 @@ body{
     justify-content: center;
 }
 .contenedorFondo{
-    margin-top: 250px;
+    margin-top: 70px;
     border-radius: 25px;
     padding-bottom: 77px;
     padding-left: 65px;
@@ -45,8 +46,23 @@ select, button{
 .derecha{
     margin-left: 112px;
 }
-a:-webkit-any-link{
-    color: rgb(14,14,14,);
-    text-decoration: none;
-    cursor: pointer;
+label img{
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+}
+input[type='radio']:checked:after {
+	width: 11px;
+	height: 11px;
+	border-radius: 15px;
+	top: -2px;
+	left: -1px;
+	position: relative;
+	background-color: rgb( 136,204,5);
+	content: '';
+	display: inline-block;
+	border: 2px solid rgb( 136,204,5);
+}
+button{
+    background: rgb(122, 179, 11);
 }
