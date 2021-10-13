@@ -99,10 +99,24 @@ body{
 section a{
     color: rgb(14,14,14);
 }
-li a{
+.textoenListas a{
     color: rgb(250,250,250);
 }
-
+.informacion a{
+    text-align: center;
+    color: rgb(33,84,0);
+    font-size: 12px;
+    text-decoration: underline;
+}
+.informacion p{
+    text-align: center;
+    color: rgb(33,84,0);
+    font-size: 12px;
+    margin-bottom: -10px;
+}
+#info{
+    padding-top: 350px;
+}
 
 /*Lo de abajo quita los horribles estilos que incluye el navegador para las etiquetas <a>*/
 a:-webkit-any-link{

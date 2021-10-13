@@ -88,3 +88,24 @@ a:-webkit-any-link{
     text-decoration: none;
     cursor: pointer;
 }
+section a{
+    color: rgb(14,14,14);
+}
+.textoenListas a{
+    color: rgb(250,250,250);
+}
+.informacion a{
+    text-align: center;
+    color: rgb(33,84,0);
+    font-size: 12px;
+    text-decoration: underline;
+}
+.informacion p{
+    text-align: center;
+    color: rgb(33,84,0);
+    font-size: 12px;
+    margin-bottom: -10px;
+}
+#info{
+    padding-top: 350px;
+}
