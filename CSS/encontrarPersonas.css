@@ -107,7 +107,6 @@ input#ingresarTexto{
     margin-top: 30px;
 }
 a:-webkit-any-link{
-    color: rgb(250,250,250);
     text-decoration: none;
     cursor: pointer;
 }
@@ -169,4 +168,10 @@ a:-webkit-any-link{
 }
 #fdesp{
     margin-bottom: 57px;
+}
+section a{
+    color: rgb(14,14,14);
+}
+li a{
+    color: rgb(250,250,250);
 }
