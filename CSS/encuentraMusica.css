@@ -166,7 +166,7 @@ section a {
   margin-bottom: -10px;
 }
 #info {
-  padding-top: 350px;
+  padding-top: 15vw;
 }
 /*Cambiar las barras de desplazamiento*/
 body::-webkit-scrollbar {
