@@ -193,3 +193,62 @@ body::-webkit-scrollbar-thumb {
   border: none;
 }
 /*Aquí termina*/
+/*Barra lateral:*/
+@media screen and (max-width: 411px) {
+  #barraLateral {
+    width: 346px;
+  }
+  #barraLateral.active {
+    left: -346px;
+  }
+  #barraLateral .toggle-btn {
+    left: 361px;
+  }
+  #contenidoGeneral {
+    margin-left: 490px;
+  }
+  #contenidoGeneral.active {
+    margin-left: 80px; /*sexo*/
+  }
+  .informacion p {
+    font-size: 16px;
+  }
+}
+/*Contenido general*/
+@media screen and (max-width: 411px) {
+  .textoBlanco {
+    font-size: 24px;
+  }
+  .textoBlanco#textoUsuario {
+    display: none;
+  }
+  .imagenes {
+    min-width: 153px;
+    min-height: 214px;
+    margin-inline: 6px;
+  }
+  .glider-contain {
+    max-width: 240px;
+  }
+  #contenidoSuperiorAlinear {
+    margin-left: -50px;
+  }
+  .apartadoUsuario {
+    width: 56px;
+    border-radius: 50%;
+    border: none;
+  }
+  #contenidoInferiorAlinear {
+    margin-left: -50px;
+  }
+  .partesCasilla img {
+    width: 145px;
+    max-height: 124px;
+  }
+  .partesCasilla a {
+    font-size: 15px;
+  }
+  .textoInferior {
+    margin-top: 12px;
+  }
+}
