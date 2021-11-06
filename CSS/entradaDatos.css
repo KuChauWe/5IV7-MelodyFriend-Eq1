@@ -53,11 +53,19 @@ select,
   font-size: 17px;
   margin-block: 11.5px;
 }
+a {
+  color: rgb(250, 250, 250);
+}
 #button {
   width: 60%;
 }
+input[type="submit"]:hover {
+  background: rgb(33, 84, 0);
+}
 input[type="submit"] {
   color: rgb(14, 14, 14);
+  background: rgb(136, 204, 6);
+  transition: 600ms;
 }
 #sexo {
   margin-top: 0;
