@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  outline: none;
+  text-align: center;
+  border-style: none;
+}
+
+body {
+  background: rgb(31, 31, 31);
+  background: linear-gradient(
+    90deg rgb(31, 31, 31) 0%,
+    rgb(26, 26, 26) 16%,
+    rgb(18, 18, 18) 100%
+  );
+}
+#contenedorPrincipal {
+  display: flex;
+  justify-content: center;
+}
+.contenedorFondo {
+  margin-top: 250px;
+  border-radius: 25px;
+  padding-bottom: 77px;
+  padding-left: 65px;
+  padding-top: 39px;
+  padding-right: 58px;
+  background: rgb(24, 24, 24);
+  background: linear-gradient(
+    180deg,
+    rgba(24, 24, 24, 1) 0%,
+    rgba(21, 21, 21, 1) 50%,
+    rgba(24, 24, 24, 1) 100%
+  );
+}
+#ladosFormulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ladosFormulario p {
+  color: rgb(250, 250, 250);
+  text-align: center;
+  font-size: 19px;
+}
+#ladosFormulario select {
+  width: 100%;
+}
+select,
+#button {
+  border-radius: 100px;
+  font-size: 17px;
+  margin-block: 11.5px;
+}
+#button {
+  width: 60%;
+}
+input[type="submit"] {
+  color: rgb(14, 14, 14);
+}
+#sexo {
+  margin-top: 0;
+}
+.derecha {
+  margin-left: 112px;
+}
+a:-webkit-any-link {
+  color: rgb(14, 14, 14);
+  text-decoration: none;
+  cursor: pointer;
+}
+/*Cambiar las barras de desplazamiento*/
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: none; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(14, 14, 14); /* color of the scroll thumb */
+  border-radius: 100px; /* roundness of the scroll thumb */
+  border: none;
+}
+/*Aquí termina*/
+input[type="number"] {
+  outline: none;
+}
+input [type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input [type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+/*
+Comienza el css del slider de numeros xdddddd:v
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+.range {
+  height: 24px;
+  width: 100%;
+  background: rgb(250, 250, 250);
+  border-radius: 100px;
+  padding: 0 65px 0 45px;
+  margin-top: 11.5px;
+}
+.sliderValue {
+  position: relative;
+  width: 200%;
+}
+.sliderValue span {
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  transform: translateX(-70%) scale(0);
+  font-weight: 500;
+  top: -40px;
+  line-height: 55px;
+  z-index: 2;
+  color: rgb(14, 14, 14);
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+}
+.sliderValue span.show {
+  transform: translateX(-70%) scale(1);
+}
+.sliderValue span:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: rgb(136, 204, 6);
+  border: 3px solid rgb(33, 84, 0);
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+.field .value {
+  position: absolute;
+  font-size: 16px;
+  color: rgb(14, 14, 14);
+  font-weight: 450;
+}
+.field .value.left {
+  left: -22px;
+}
+.field .value.right {
+  right: -43px;
+}
+.range input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: rgb(112, 112, 112);
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  z-index: 2222;
+}
+.range input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(136, 204, 6);
+  border: 2px solid rgb(33, 84, 0);
+  cursor: pointer;
+}
+.range input::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(136, 204, 6);
+  border: 2px solid rgb(33, 84, 0);
+  cursor: pointer;
+}
