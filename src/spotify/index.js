@@ -2,6 +2,9 @@ var SpotifyWebApi = require('spotify-web-api-node');
 var access_token;
 var refresh_token;
 var expires_in;
+const  clientId= '36a2678ae1f6460e87cb0d9615962790';
+const clientSecret='904a3c001af9434f8c63992cdb27098b';
+
 const scopes = [
     'ugc-image-upload',
     'user-read-playback-state',
@@ -24,10 +27,15 @@ const scopes = [
     'user-follow-modify'
   ];
   var spotifyApi = new SpotifyWebApi({
-    clientId: '705f7d21e32c4d809fa00b8ae36268da',
-    clientSecret: 'd8aed96335e04ff199bbd8bb3971575c',
+    clientId: clientId,
+    clientSecret: clientSecret,
     redirectUri: 'http://localhost:3000/Datos'
   });
- Login= spotifyApi.createAuthorizeURL(scopes)
- module.exports =Login;
   
+ Login= spotifyApi.createAuthorizeURL(scopes);
+
+
+
+ module.exports=Login
+ 
+
