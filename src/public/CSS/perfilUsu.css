@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(250, 250, 250);
+  outline: none;
+}
+
+body {
+  background: rgb(31, 31, 31);
+  background: linear-gradient(
+    90deg rgb(31, 31, 31) 0%,
+    rgb(26, 26, 26) 16%,
+    rgb(18, 18, 18) 100%
+  );
+  padding: 18px;
+}
+
+/*Contiene todo*/
+.main-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+/*Contiene el logo, foto de perfil, id y nombre de usuario*/
+.div-sup {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.ds-izq {
+  width: 33%;
+  height: 80%;
+  /*acá marca problema pero es necesario---Ya lo resolví, solo tenias que quitar el display: inline-block; en el display solo va lo de flex o block xd*/
+  float: left;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+}
+.ds-cen {
+  display: inline-block;
+  width: 33%;
+  height: 80%;
+}
+.img-perf {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+}
+.ds-der {
+  width: 33%;
+  height: 80%;
+  /*acá marca problema pero es necesario*/
+  float: right;
+}
+.id {
+  background-color: rgb(57, 57, 57);
+  padding: 10px;
+  border-radius: 5px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.ds-aba {
+  display: inline-block;
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  font-size: 35px;
+}
+.sombreado {
+  background-color: rgb(57, 57, 57);
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+}
+
+/*Contiene la descripción*/
+.div-desc {
+  display: inline-block;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(57, 57, 57);
+  text-align: center;
+  border-radius: 5px;
+}
+.label-desc {
+  font-size: 17px;
+  line-height: 93px;
+}
+.descripcion {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgb(57, 57, 57);
+  border: none;
+  font-size: 17px;
+  line-height: 93px;
+  border-radius: 5px;
+}
+
+/*Contiene los labels sexo, carrera técnica y semestre*/
+.div-labels {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  font-size: 17px;
+}
+select {
+  color: rgb(255, 255, 255);
+  background-color: rgb(57, 57, 57);
+  font-size: 17px;
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+}
+.dl-izq {
+  display: inline-block;
+  text-align: left;
+  width: 33%;
+  height: 20px;
+  font-size: 17px;
+}
+.dl-cen {
+  display: inline-block;
+  text-align: center;
+  width: 33%;
+  height: 20px;
+  font-size: 17px;
+}
+.dl-der {
+  display: inline-block;
+  text-align: right;
+  width: 33%;
+  height: 20px;
+  font-size: 17px;
+}
+
+/*Contiene la red-social*/
+.div-red {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.dr {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  height: 20px;
+  font-size: 17px;
+}
+.redsocial {
+  display: inline-block;
+  background-color: rgb(57, 57, 57);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin: auto;
+}
+.txtrs {
+  text-align: center;
+  background-color: rgb(57, 57, 57);
+  border: none;
+  font-size: 17px;
+  border-radius: 5px;
+  height: 40px;
+  margin-top: 7px;
+}
+
+/*Contiene el botón agregar*/
+.div-btn {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  position: absolute;
+  bottom: 6%;
+  right: 3.7%;
+}
+.db {
+  text-align: center;
+  float: right;
+}
+.botón {
+  background: rgb(136, 204, 6);
+  border-radius: 30px;
+  border: none;
+  font-size: 17px;
+  padding: 5px;
+  width: 100px;
+  cursor: pointer;
+}
+.botón:hover {
+  background: rgb(33, 84, 0);
+  transition: 500ms;
+}
+a:-webkit-any-link {
+  color: rgb(250, 250, 250);
+  text-decoration: none;
+  cursor: pointer;
+}
+/*Cambiar las barras de desplazamiento*/
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: none; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(14, 14, 14); /* color of the scroll thumb */
+  border-radius: 100px; /* roundness of the scroll thumb */
+  border: none;
+}
+/*Aquí termina*/

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas (┬┬﹏┬┬)</title>
+    <link rel="stylesheet" href="CSS/verEstadisticas.css">
+    <link rel="shortcut icon" href="img/LogoMelodyFriend.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="https://kit.fontawesome.com/b4150a26b3.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <div class="contenedorPrincipal">
+        <div id="barraLateral">
+            <div class="toggle-btn">
+                <i class="fa fas fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="index.html"><img src="IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
+                <li class="textoenListas"><a href="encontrarPersonas.html">Encuentra personas</a></li>
+                <li class="textoenListas"><a href="encuentraMusica.html">Encuentra playlists</a></li>
+                <li class="textoenListas" id="pagActual"><a href="verEstadisticas.html">Ver estadísticas</a></li>
+                <div id="info">
+                    <ul>
+                        <li class="informacion"><p>Contáctanos:</p></li>
+                        <li class="informacion"><a href="https://www.facebook.com/Fabiddat-104623465060255/"><p>Facebook</p></a></li>
+                        <li class="informacion"><a href="mailto:fabbidad@gmail.com"><p>fabbidad@gmail.com</p></a></li>
+                        <li class="informacion"><a href="terminosyCondiciones(Aceptados).html"><p>Términos y condiciones</p></a></li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div id="contenidoGeneral">
+            <div class="muestradeContenido">
+                <div class="graficasGen">
+                    <div class="textoGrafica">
+                        <p>Canciones Más escuchadas de Bátiz</p>
+                    <div class="graficaInd">
+                        <canvas id="cancionesBatiz"></canvas>
+                    </div>
+                </div>
+                </div>
+                <div class="graficasGen">
+                    <div class="textoGrafica">
+                        <p>Playlists más escuchadas de Bátiz</p>
+                    <div class="graficaInd">
+                        <canvas id="playlistsBatiz"></canvas>
+                    </div>
+                </div>
+                </div>
+                <div class="graficasGen">
+                    <div class="textoGrafica">
+                        <p>Playlists más escuchadas de el tronco común</p>
+                    <div class="graficaInd">
+                        <canvas id="playlistsTC"></canvas>
+                    </div>
+                </div>
+                </div>
+                <div class="graficasGen">
+                    <div class="textoGrafica">
+                        <p>Playlists más escuchadas de programación</p>
+                    <div class="graficaInd">
+                        <canvas id="playlistsProgra"></canvas>
+                    </div>
+                </div>
+                </div>
+                <div class="graficasGen">
+                    <div class="textoGrafica">
+                        <p>Playlists más escuchadas de MSA</p>
+                    <div class="graficaInd">
+                        <canvas id="playlistsMSA"></canvas>
+                    </div>
+                </div>
+                </div>
+                <div class="graficasGen">
+                    <div class="textoGrafica">
+                        <p>Playlists más escuchadas de sistemas digitales</p>
+                    <div class="graficaInd">
+                        <canvas id="playlistsSD"></canvas>
+                    </div>
+                </div>
+                </div>
+                <div class="graficasGen">
+                    <div class="textoGrafica">
+                        <p>Playlists más escuchadas de mecatrónica</p>
+                    <div class="graficaInd">
+                        <canvas id="playlistsMeca"></canvas>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    <script src="JS/verEstadisticas.js"></script>
+</body>
+</html>
