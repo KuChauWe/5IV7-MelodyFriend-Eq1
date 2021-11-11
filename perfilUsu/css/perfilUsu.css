@@ -65,6 +65,10 @@ body{
     /*acá marca problema pero es necesario*/
     float: right;
 }
+.label-id{
+    float: right; 
+    margin-right: 10px;
+}
 .id{
     background-color: rgb(57, 57, 57);
     padding: 10px;
@@ -79,6 +83,7 @@ body{
     height:20%;
     text-align: center;
     font-size: 35px;
+    margin-top: 10px;
 }
 .sombreado{
     background-color: rgb(57, 57, 57);
@@ -87,7 +92,23 @@ body{
     width:200px;
     text-align: center;
 }
-
+.sombreado-cen{
+    background-color: rgb(57, 57, 57);
+    padding: 10px;
+    border-radius: 5px;
+    width:200px;
+    text-align: center;
+    margin: auto; 
+    margin-top: 5px;
+}
+.sombreado-izq{
+    background-color: rgb(57, 57, 57);
+    padding: 10px;
+    border-radius: 5px;
+    width:200px;
+    text-align: center;
+    margin-left: auto;
+}
 
 /*Contiene la descripción*/
 .div-desc{
@@ -97,6 +118,7 @@ body{
     background-color: rgb(57, 57, 57);
     text-align: center;
     border-radius: 5px;
+    margin-top: 10px
 }
 .label-desc{
     font-size: 17px;
@@ -121,6 +143,15 @@ body{
     margin-right: auto;
     width:100%;
     font-size: 17px;
+    margin-top: 30px
+}
+.div-labels2{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+    font-size: 17px;
+    margin-top: 5px;
 }
 select{
     color: rgb(255,255,255);
@@ -159,6 +190,7 @@ select{
     margin-left: auto;
     margin-right: auto;
     width:100%;
+    margin-top: 35px
 }
 .dr{
     display: inline-block;
