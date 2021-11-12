@@ -14,14 +14,14 @@
             <iframe src="https://docs.google.com/viewer?srcid=1ALErlQeCgE5tW7RS4uiprIkhWfTkwWb5&pid=explorer&efh=false&a=v&chrome=false&embedded=true" height="830px"></iframe>
             <!--https://drive.google.com/file/d/1ALErlQeCgE5tW7RS4uiprIkhWfTkwWb5/view?usp=sharing-->
         </div>
-        <form action="http://127.0.0.1:5500/indice.html">
+        <form action="#" method="post" onSubmit="return validar();">
             <div id="whenFlexeasBotones">
                 <div>
                     <section class="checklist">
-                        <input type="radio" name="aceptar"><p id="textoBlanco">He leído y acepto todos los terminos y condiciones</p> 
+                        <input type="radio" name="aceptar" id="radioInp"><p id="textoBlanco">He leído y acepto todos los terminos y condiciones</p>
                     </section>
                     <section class="btnSiguiente">
-                        <button id="btnEnv" type="submit">Siguiente</button>
+                        <input type="submit" id="btnEnv" value="Siguiente"/>
                     </section>
                 </div>
             </div>

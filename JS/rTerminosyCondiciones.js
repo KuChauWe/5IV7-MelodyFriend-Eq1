@@ -12,3 +12,12 @@ if (/iPad/.test(userAgent) && !window.MSStream) {
     document.getElementsByTagName('iframe')[0].style.height = '800px'; //De esta forma elijo la etiqueta a modificar y le agrego el css o lo que quiera
     document.getElementsByTagName('iframe')[0].style.width = '600px';
 }
+
+function validar() {
+    
+    if(!document.querySelector('input[name="aceptar"]:checked')) {
+        alert("Acepta los términos y condiciones para continuar");
+        return false;
+       }else
+       console.log("Me robaré todos tus datos jijijija 😱");
+}
