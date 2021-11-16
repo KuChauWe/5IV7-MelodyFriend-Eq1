@@ -1,4 +1,4 @@
-var UserControler = require('');
+var UserControler = require('../../package/controlador/UserControler');
 
 
 class User{
@@ -16,41 +16,47 @@ class User{
         this.rdSc_usu
 
     }
-    inicializar(id_usu_spoti){
+    getUserInBD(id_usu_spoti){
 
     }
-    createUser(getMe_Spoti, fullName_usu, sexo_usu, fcNaci_usu, semestre_usu, carrera_usu){
+    
+    /**
+     * 
+     * @param {String} id_usu_spoti 
+     * @param {String} nickname_usu_spoti 
+     * @param {String} fullName_usu 
+     * @param {String} sexo_usu 
+     * @param {Date} fcNaci_usu 
+     * @param {Int16Array} semestre_usu 
+     * @param {String} carrera_usu 
+     */
+    createUserInBD(id_usu_spoti, nickname_usu_spoti, fullName_usu, sexo_usu, fcNaci_usu, semestre_usu, carrera_usu){
 
         //Datos de la sesión Spoti
-        id_usu_spoti = getMe_Spoti.then(/** Invocar el ID */)
-        nickname_usu_spoti = getMe_Spoti.then(/** Invocar el nickname*/)
+        this.id_usu_spoti = id_usu_spoti;
+        this.nickname_usu_spoti = nickname_usu_spoti;
 
 
         //Datos que en el formulario
-        this.fullName_usu = fullName_usu
-        this.sexo_usu = sexo_usu
-        this.semestre_usu = fcNaci_usu
-        this.semestre_usu = semestre_usu
-        this.carrera_usu = carrera_usu
+        this.fullName_usu = fullName_usu;
+        this.sexo_usu = sexo_usu;
+        this.semestre_usu = fcNaci_usu;
+        this.semestre_usu = semestre_usu;
+        this.carrera_usu = carrera_usu;
 
         //Valores predeterminados
-        this.id_img_usu_drive = '1cK3jqu93qd2rUmz_4__P20a5lLGqWgNf' //Es la id de la imagen predeterminada en Drive
-        this.rdSc_usu = null
-        this.desc_usu = `Hola soy ${this.nickname_usu_spoti}` // Descripción predeterminada
+        this.id_img_usu_drive = '1cK3jqu93qd2rUmz_4__P20a5lLGqWgNf'; //Es la id de la imagen predeterminada en Drive
+        this.rdSc_usu = null;
+        this.desc_usu = `Hola soy ${this.nickname_usu_spoti}`; // Descripción predeterminada
 
         //Intento subir el Usuario a la BD
         try{
-            UserControler.insertToBD(this)
+            UserControler.insertToBD(this);
         }catch{
-            console.log('Erro al registrar el Usuario en la BD')
+            console.log('Error al registrar el Usuario en la BD');
 
         }
         
-
-
-    }
-    inicializar(id_usu_spoti){
-
 
 
     }
