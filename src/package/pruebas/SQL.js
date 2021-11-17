@@ -1,11 +1,17 @@
 
 
-var user = require("../modelo/User");
-var UserControler = require("../controlador/UserControler");
+import UserControler from "../controlador/UserControler.mjs";
+import User from "../modelo/User.mjs";
 
 const id_nuevoUsuario = "akjdhfkajc"
 
-user.createUserInBD(id_nuevoUsuario,"Kawaii","Requena Rojas Moisés Sófocles", "hombre", new Date("08/09/2003"), 5, "Programación");
+var UC = new UserControler;
+var U = new User;
+
+UC.createConnection();
+
+U.createUserInBD("aozxcvklasdf", "kawaii", "Requena Rojas Moisés Sofocles", "Masculino" , new Date("08/09/2003"), 5, "Técnico")
 
 
-UserControler.getUser(id_nuevoUsuario);
+
+UC.closeConnection();

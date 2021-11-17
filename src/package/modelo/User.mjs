@@ -1,25 +1,23 @@
-var UserControler = require('../../package/controlador/UserControler');
+import UserControler from "../controlador/UserControler.mjs";
 
 
-class User{
+export default class User{
 
     constructor(){
-        this.id_usu_spoti
-        this.nickname_usu_spoti
-        this.id_img_usu_drive
-        this.fullName_usu
-        this.fcNaci_usu
-        this.sexo_usu
-        this.semestre_usu
-        this.carrera_usu
-        this.desc_usu
-        this.rdSc_usu
+        this.id_usu_spoti = null;
+        this.nickname_usu_spoti = null;
+        this.id_img_drive = null;
+        this.fullName_usu = null;
+        this.fcNaci_usu = null;
+        this.sexo_usu = null;
+        this.semestre_usu = null;
+        this.carrera_usu = null;
+        this.desc_usu = null;
+        this.facebook = null;
+        this.twitter = null;
+        this.instagram = null;
 
     }
-    getUserInBD(id_usu_spoti){
-
-    }
-    
     /**
      * 
      * @param {String} id_usu_spoti 
@@ -45,8 +43,10 @@ class User{
         this.carrera_usu = carrera_usu;
 
         //Valores predeterminados
-        this.id_img_usu_drive = '1cK3jqu93qd2rUmz_4__P20a5lLGqWgNf'; //Es la id de la imagen predeterminada en Drive
-        this.rdSc_usu = null;
+        this.id_img_drive = '1cK3jqu93qd2rUmz_4__P20a5lLGqWgNf'; //Es la id de la imagen predeterminada en Drive
+        this.facebook  = "";
+        this.twitter = "";
+        this.instagram = "";
         this.desc_usu = `Hola soy ${this.nickname_usu_spoti}`; // Descripción predeterminada
 
         //Intento subir el Usuario a la BD
@@ -60,9 +60,5 @@ class User{
 
 
     }
-
-
-
-
-
 }
+

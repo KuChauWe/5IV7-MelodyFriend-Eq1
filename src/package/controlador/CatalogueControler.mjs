@@ -1,11 +1,7 @@
-const mysql = require('mysql')
-const User = require("../modelo/User");
+export default class CatalogueControler{
 
-class UserControler{
     
-    /**
-     * No olvidar cerrar la conexión 
-     */
+    
     createConnection(){
         this.conexion = mysql.createConnection({
             /**
@@ -25,7 +21,7 @@ class UserControler{
 
         });
 
-        conexion.connect(function(error){
+        this.conexion.connect(function(error){
             if(error){
                 throw error;
             }else{
@@ -37,70 +33,9 @@ class UserControler{
         this.conexion.end
     }
 
-
-    /**
-     *          SOBRE LOS USUARIOS
-     *              getUser, updateUserInBD, insertUserToBD
-     */
-
-    /**
-     * 
-     * @param {String} id_usu_spoti 
-     */
-    getUser(id_usu_spoti){
-         
-        user =  User.constructor();
-
-        this.conexion.query('Select * From mUser WHERE id_usu_spoti = ?',[
-            id_usu_spoti
-        ], function (error, rows){
-            if(error){
-                throw error;
-            }else{
-                /**
-                 * Necesito obtener los valores de los cátalogos y detalles
-                 * dRedSocial, cSexo, cCarrera, cSemestre, cImgPerfil
-                 * 
-                 * ¿Podré hacer una consulta dentro de otra consulta?
-                 */
-
-
-
-
-
-                
-            }
-        });
-        
-
-
-
-    }
-
-    /**
-     * 
-     * @param {id del Usuario} id_usu_spoti 
-     * @param {Plantilla de un Usuario} user
-     * A los atributos sin modificar se dejan en nulos
-     */
-    updateUserInBD(id_usu_spoti, user){
-
-    }
-
-    /**
-     * 
-     * @param {Usuario lleno} user 
-     * Debe de estar completo el usuario excepto por las redes sociales
-     * y la descripción
-     */
-    insertUserToBD(user){
-
-    }
-
-
     /**
      *          SOBRE LOS CATALOGOS (SEMESTRE, CARRERA ,SEXO, IMGPERFIL)
-     *              get*(id), getID(String), insertUserToBD
+     *              get*(id), getID*(String)
      */
 
     //Semestre
@@ -209,39 +144,32 @@ class UserControler{
     }
 
     //ImgPerfil
-    getcImgPerfil(id_imgPerf){
-        var link_imgPerf;
-        this.conexion.query('Select link_imgPerf From cImgPerfil WHERE id_imgPerf = ?',[
+    getImgPerfil(id_imgPerf){
+        var id_img_drive;
+        this.conexion.query('Select id_img_drive From cImgPerfil WHERE id_imgPerf = ?',[
             id_imgPerf
         ], function (error, rows){
             if(error){
                 throw error;
             }else{
 
-                link_imgPerf = rows.link_imgPerf;
+                id_img_drive = rows.id_img_drive;
             }
         });
         return sexo;
     }
-    getIDSexo(link_imgPerf){
+    getIDImgPerf(id_img_drive){
         var id_imgPerf;
-        this.conexion.query('Select id_imgPerf From cImgPerfil WHERE link_imgPerf = ?',[
-            link_imgPerf
+        this.conexion.query('Select id_imgPerf From cImgPerfil WHERE id_img_drive = ?',[
+            id_img_drive
         ], function (error, rows){
             if(error){
                 throw error;
             }else{
-                
+
                 id_imgPerf = rows.id_imgPerf;
             }
         });
         return id_imgPerf;
     }
-
-
-
-
-
-
-
 }
