@@ -1,11 +1,20 @@
+import mysql from 'mysql';
+
+let todos;
 export default class CatalogueControler{
 
     
-    
+    constructor(){
+        this.conexion = null;
+
+        //  NO SETTEAR ESTO, UNICAMENTE GET, por favor (*￣3￣)╭
+        this.result = null;
+    }
+
     createConnection(){
         this.conexion = mysql.createConnection({
             /**
-             * ~~~~~~Debería ser la del servicio heroki 
+             * ~~~~~~Debería ser la del servicio heroku 
                 host: 'en1ehf30yom7txe7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
                 database: 'v3tbxk5c4nip9j08',
                 user: 'cu6q3kic7stwiigd',
@@ -25,18 +34,28 @@ export default class CatalogueControler{
             if(error){
                 throw error;
             }else{
-                console.log('conexion exitosa');
+                console.log('conexion exitosa en CatalogueControler');
             }
         })
     }
     closeConnection(){
-        this.conexion.end
+        this.conexion.end(function (error){
+            if(error)throw error;
+            else{
+                console.log("se ha cerrado correctamente la conexion en CatalogueControler")
+            }
+
+        });
     }
 
     /**
      *          SOBRE LOS CATALOGOS (SEMESTRE, CARRERA ,SEXO, IMGPERFIL)
      *              get*(id), getID*(String)
      */
+
+
+
+    // COOREGIR TODO
 
     //Semestre
     getSemestre(id_semestre){
@@ -128,18 +147,30 @@ export default class CatalogueControler{
         });
         return sexo;
     }
+
+
+
+    //Este es el bueno
     getIDSexo(sexo){
         var id_sex;
-        this.conexion.query('Select id_sex From cSexo WHERE sexo = ?',[
-            sexo
-        ], function (error, rows){
-            if(error){
-                throw error;
-            }else{
+        const query = 'SELECT id_sex From cSexo WHERE sexo = ?';
+        console.log("Antes del query")
 
-                id_sex = rows.id_sex;
+
+        this.conexion.query( query, [sexo], async (error, rows) => {
+            if(error) throw error;
+            else{
+
+                rows.forEach( row => {
+                    id_sex = row.id_sex;
+                });
             }
+
+            console.log(id_sex);
         });
+
+        console.log(id_sex);
+
         return id_sex;
     }
 

@@ -5,13 +5,13 @@ import User from "../modelo/User.mjs";
 
 const id_nuevoUsuario = "akjdhfkajc"
 
-var UC = new UserControler;
-var U = new User;
-
-UC.createConnection();
-
-U.createUserInBD("aozxcvklasdf", "kawaii", "Requena Rojas Moisés Sofocles", "Masculino" , new Date("08/09/2003"), 5, "Técnico")
+var U = new User();
 
 
+//Inserto un Usuario en la BD, pero con lo ids indicados de sex, semestre, carre, imgPerf
 
-UC.closeConnection();
+
+// U.createUserInBD("aozxcvklasdf", "kawaii", "Requena Rojas Moisés Sofocles", 1 , new Date("08/09/2003"), 5, 4);
+
+U.toSring();
+

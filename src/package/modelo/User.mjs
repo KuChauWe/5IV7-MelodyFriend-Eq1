@@ -1,4 +1,4 @@
-import UserControler from "../controlador/UserControler.mjs";
+import UserControler from '../controlador/UserControler.mjs';
 
 
 export default class User{
@@ -18,6 +18,9 @@ export default class User{
         this.instagram = null;
 
     }
+
+    //  CORREGIR    
+
     /**
      * 
      * @param {String} id_usu_spoti 
@@ -38,23 +41,35 @@ export default class User{
         //Datos que en el formulario
         this.fullName_usu = fullName_usu;
         this.sexo_usu = sexo_usu;
-        this.semestre_usu = fcNaci_usu;
+        this.fcNaci_usu = fcNaci_usu;
         this.semestre_usu = semestre_usu;
         this.carrera_usu = carrera_usu;
 
         //Valores predeterminados
-        this.id_img_drive = '1cK3jqu93qd2rUmz_4__P20a5lLGqWgNf'; //Es la id de la imagen predeterminada en Drive
-        this.facebook  = "";
-        this.twitter = "";
-        this.instagram = "";
+        this.id_img_drive =   1; //'1cK3jqu93qd2rUmz_4__P20a5lLGqWgNf'; Es la id de la imagen predeterminada en Drive
+        this.facebook  = "facebook"; 
+        this.twitter = "twitter";
+        this.instagram = "instagram";
         this.desc_usu = `Hola soy ${this.nickname_usu_spoti}`; // Descripción predeterminada
 
         //Intento subir el Usuario a la BD
         try{
-            UserControler.insertToBD(this);
-        }catch{
-            console.log('Error al registrar el Usuario en la BD');
 
+            var UC = new UserControler();
+
+            UC.createConnection();
+
+            try{
+                UC.insertUserToBD(this);
+            }catch(error){
+                console.log(error);
+                console.log("Error en insertUserToBD");
+            }
+
+            UC.closeConnection();
+        }catch{
+            console.log('Error al crear la conex con el UserContr');
+            UC.closeConnection();
         }
         
 
