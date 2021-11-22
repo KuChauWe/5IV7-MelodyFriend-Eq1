@@ -18,7 +18,7 @@ export default class PlayTrack{
         ids_plays_spoti.array.forEach(id_playlist_spoty => {
 
             
-
+            
 
 
             

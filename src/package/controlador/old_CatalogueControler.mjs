@@ -1,6 +1,6 @@
+import { query } from 'express';
 import mysql from 'mysql';
 
-let todos;
 export default class CatalogueControler{
 
     
@@ -77,23 +77,21 @@ export default class CatalogueControler{
         return semestre;
 
     }
-    getIDSemestre(semestre){
+    getIDSemestre(semestre, callback){
 
-        var id_semestre;
+        const query = 'Select id_semestre From cSemestre WHERE semestre = ?';
+        function fn(error, rows){
+            if(error) callback(error, null);
+            else{
 
-        this.conexion.query('Select id_semestre From cSemestre WHERE semestre = ?',[
-            semestre
-        ], function (error, rows){
-            if(error){
-                throw error;
-            }else{
-
-                id_semestre = rows.id_semestre;
+                rows.forEach( row => {
+                   callback(null, row.id_semestre);
+                });
             }
-        });
+        };
 
+        this.conexion.query(query ,[semestre], fn);
 
-        return id_semestre;
 
     }
 
@@ -115,21 +113,20 @@ export default class CatalogueControler{
         return carrera;
 
     }
-    getIDCarrera(carrera){
+    getIDCarrera(carrera, callback){
 
-        var id_carr;
+        const query = 'Select id_carr From cCarrera WHERE carrera = ?';
+        function fn(error, rows){
+            if(error) callback(error, null);
+            else{
 
-        this.conexion.query('Select id_carrera From cCarrera WHERE carrera = ?',[
-            carrera
-        ], function (error, rows){
-            if(error){
-                throw error;
-            }else{
-
-                id_carr = rows.id_carr;
+                rows.forEach( row => {
+                   callback(null, row.id_carrera);
+                });
             }
-        });
-        return id_carr;
+        }
+
+        this.conexion.query(query,[carrera], fn);
     }
 
     //Sexo
@@ -147,32 +144,22 @@ export default class CatalogueControler{
         });
         return sexo;
     }
-
-
-
-    //Este es el bueno
-    getIDSexo(sexo){
-        var id_sex;
+    getIDSexo(sexo, callback){
         const query = 'SELECT id_sex From cSexo WHERE sexo = ?';
-        console.log("Antes del query")
+        function fn(error, rows) {
 
-
-        this.conexion.query( query, [sexo], async (error, rows) => {
-            if(error) throw error;
+            if(error) callback(error, null);
             else{
 
                 rows.forEach( row => {
-                    id_sex = row.id_sex;
+                   callback(null, row.id_sex);
                 });
             }
+        }
 
-            console.log(id_sex);
-        });
-
-        console.log(id_sex);
-
-        return id_sex;
+        this.conexion.query( query, [sexo],  fn);
     }
+
 
     //ImgPerfil
     getImgPerfil(id_imgPerf){
@@ -187,20 +174,19 @@ export default class CatalogueControler{
                 id_img_drive = rows.id_img_drive;
             }
         });
-        return sexo;
     }
-    getIDImgPerf(id_img_drive){
-        var id_imgPerf;
-        this.conexion.query('Select id_imgPerf From cImgPerfil WHERE id_img_drive = ?',[
-            id_img_drive
-        ], function (error, rows){
-            if(error){
-                throw error;
-            }else{
+    getIDImgPerf(id_img_drive, callback){
+        const query = 'Select id_imgPerf From cImgPerfil WHERE id_img_drive = ?';
+        function fn(error, rows) {
 
-                id_imgPerf = rows.id_imgPerf;
+            if(error) callback(error, null);
+            else{
+                rows.forEach( row => {
+                   callback(null, row.id_imgPerf);
+                });
             }
-        });
-        return id_imgPerf;
+        }
+
+        this.conexion.query(query,[id_img_drive], fn);
     }
 }

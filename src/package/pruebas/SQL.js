@@ -1,17 +1,26 @@
 
 
-import UserControler from "../controlador/UserControler.mjs";
-import User from "../modelo/User.mjs";
-
-const id_nuevoUsuario = "akjdhfkajc"
-
-var U = new User();
+import Pool from "../controlador/createConnection.mjs";
 
 
-//Inserto un Usuario en la BD, pero con lo ids indicados de sex, semestre, carre, imgPerf
+var pol = new Pool();
 
 
-// U.createUserInBD("aozxcvklasdf", "kawaii", "Requena Rojas Moisés Sofocles", 1 , new Date("08/09/2003"), 5, 4);
+try{
 
-U.toSring();
+    await pol.crearPool();
+    await pol.getAllSexo((error, results) =>{
+        if(error) throw error;
+        else{
+            pol.results = results;
+        }
+    });
+
+
+    
+    console.log(pol.results, "exitooooooo");
+}catch(error){
+    console.log(error);
+}
+
 

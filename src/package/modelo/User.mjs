@@ -1,4 +1,3 @@
-import UserControler from '../controlador/UserControler.mjs';
 
 
 export default class User{
@@ -17,63 +16,65 @@ export default class User{
         this.twitter = null;
         this.instagram = null;
 
+
+        this.id_sex = null;
+        this.id_carr = null;
+        this.id_semestre = null;
+        this.id_imgPerf = null;
+
     }
 
-    //  CORREGIR    
+    
+    // /**
+    //  * 
+    //  * @param {String} id_usu_spoti 
+    //  * @param {String} nickname_usu_spoti 
+    //  * @param {String} fullName_usu 
+    //  * @param {String} sexo_usu 
+    //  * @param {Date} fcNaci_usu 
+    //  * @param {Int16Array} semestre_usu 
+    //  * @param {String} carrera_usu 
+    //  */
+    // createUserInBD(id_usu_spoti, nickname_usu_spoti, fullName_usu, sexo_usu, fcNaci_usu, semestre_usu, carrera_usu){
 
-    /**
-     * 
-     * @param {String} id_usu_spoti 
-     * @param {String} nickname_usu_spoti 
-     * @param {String} fullName_usu 
-     * @param {String} sexo_usu 
-     * @param {Date} fcNaci_usu 
-     * @param {Int16Array} semestre_usu 
-     * @param {String} carrera_usu 
-     */
-    createUserInBD(id_usu_spoti, nickname_usu_spoti, fullName_usu, sexo_usu, fcNaci_usu, semestre_usu, carrera_usu){
-
-        //Datos de la sesión Spoti
-        this.id_usu_spoti = id_usu_spoti;
-        this.nickname_usu_spoti = nickname_usu_spoti;
+    //     //Datos de la sesión Spoti
+    //     this.id_usu_spoti = id_usu_spoti;
+    //     this.nickname_usu_spoti = nickname_usu_spoti;
 
 
-        //Datos que en el formulario
-        this.fullName_usu = fullName_usu;
-        this.sexo_usu = sexo_usu;
-        this.fcNaci_usu = fcNaci_usu;
-        this.semestre_usu = semestre_usu;
-        this.carrera_usu = carrera_usu;
+    //     //Datos que en el formulario
+    //     this.fullName_usu = fullName_usu;
+    //     this.sexo_usu = sexo_usu;
+    //     this.fcNaci_usu = fcNaci_usu;
+    //     this.semestre_usu = semestre_usu;
+    //     this.carrera_usu = carrera_usu;
 
-        //Valores predeterminados
-        this.id_img_drive =   1; //'1cK3jqu93qd2rUmz_4__P20a5lLGqWgNf'; Es la id de la imagen predeterminada en Drive
-        this.facebook  = "facebook"; 
-        this.twitter = "twitter";
-        this.instagram = "instagram";
-        this.desc_usu = `Hola soy ${this.nickname_usu_spoti}`; // Descripción predeterminada
+    //     //Valores predeterminados
+    //     this.id_img_drive = '1cK3jqu93qd2rUmz_4__P20a5lLGqWgNf'; //Es la id de la imagen predeterminada en Drive
+    //     this.facebook  = "facebook"; 
+    //     this.twitter = "twitter";
+    //     this.instagram = "instagram";
+    //     this.desc_usu = `Hola soy ${this.nickname_usu_spoti}`; // Descripción predeterminada
 
-        //Intento subir el Usuario a la BD
-        try{
+    //     //Intento subir el Usuario a la BD
+    //     try{
 
-            var UC = new UserControler();
+    //         var UC = new UserControler();
 
-            UC.createConnection();
+    //         try{
+    //             UC.insertUserToBD(this);
+    //         }catch(error){
+    //             console.log(error);
+    //             console.log("Error en insertUserToBD");
+    //         }
 
-            try{
-                UC.insertUserToBD(this);
-            }catch(error){
-                console.log(error);
-                console.log("Error en insertUserToBD");
-            }
-
-            UC.closeConnection();
-        }catch{
-            console.log('Error al crear la conex con el UserContr');
-            UC.closeConnection();
-        }
+    //     }catch{
+    //         console.log('Error al crear la conex con el UserContr');
+    //         UC.closeConnection();
+    //     }
         
 
 
-    }
+    // }
 }
 

@@ -1,5 +1,6 @@
-import mysql from 'mysql';
+
 import CatalogueControler from './CatalogueControler.mjs';
+
 
 export default class UserControler{
     
@@ -134,9 +135,11 @@ export default class UserControler{
      * instagram
      */
     updateUserInBD(id_usu_spoti, atributo, nuevo_valor){
-        this.conexion.query("UPDATE MUsuario SET ? = ? WHERE id_usu_spoty = ?",[
+        this.conexion.query("UPDATE MUsuario SET ?? = ? WHERE id_usu_spoty = ?",[
             atributo, nuevo_valor, id_usu_spoti
         ], function (error, rows){
+
+            this.conexion.release();
             if(error)throw error;
             else{
                 console.log("Actualización de los datos correcta")
@@ -155,87 +158,83 @@ export default class UserControler{
      * 
      */
     insertUserToBD(user){
+        
+        var id_sex_var = null;
+        var id_semestre_var = null;
+        var id_carr_var = null;
+        var id_imgPerf_var = null;
 
-        /*
-         * Consigo los Ids de los catalogos 
-         * id_rdSc_usu
-         * id_sex
-         * id_carr
-         * id_semestre
-         * id_imgPerf
-         * 
-         *
-*/
-        //  try{
-        //    var CataCon = new CatalogueControler();
-        //  }catch{
-        //      console.log("Error al crear el catacontr")
-        //  }
-
-        //  var id_sex = null;
-        //  var id_semestre = null;
-        //  var id_imgPerf = null;
-
-        // try{
-        //     CataCon.createConnection();
-            
-        //     try{
-        //         async function fm(){
-        //             console.log("Antes del await, funcion async")
-        //             return await CataCon.getIDSexo(user.sexo_usu);
-        //         } 
-
-        //         id_sex = CataCon.result;
-
-        //         console.log(id_sex, "En el trycatch");
-        //     }catch{
-        //         console.log("Error al consultar el id Sexo");
-        //     }
-
-        //     // try{
-        //     //     id_semestre = CataCon.getIDSemestre(user.semestre_usu);
-        //     //     console.log(id_semestre);
-        //     // }catch{
-        //     //     console.log("Error al consultar el id semestre");
-        //     // }
-        //     // try{
-        //     //     id_imgPerf = CataCon.getIDImgPerf(user.id_img_drive);
-        //     //     console.log(id_imgPerf);
-        //     // }catch{
-        //     //     console.log("Error al consultar el id ImgPerf");
-        //     // }
-        //     CataCon.closeConnection();
-        //     console.log("Consulta del catalogo exitoso");
+        var CataCon = new CatalogueControler();
 
 
+        function executeQuery(){
 
-        // }catch{
-            
-        //     CataCon.closeConnection();
-        //     console.log("Error en la consulta de los Ids");
-        // }
-
-        let query = "INSERT INTO MUsuario (id_usu_spoty, nickname_usu_spoti, name_usu, fcNaci_usu, "
+            let query = "INSERT INTO MUsuario (id_usu_spoty, nickname_usu_spoti, name_usu, fcNaci_usu, "
                     + "desc_usu, id_sex, id_carr, id_semestre, id_imgPerf, facebook, twitter, instagram)"
                         + "VALUES  (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?)";
 
-        let arrg = [
-            user.id_usu_spoti, user.nickname_usu_spoti, user.fullName_usu,
-            user.fcNaci_usu, user.desc_usu, user.sexo_usu, user.carrera_usu,user.semestre_usu, user.id_img_drive,
-            user.facebook, user.twitter, user.instagram
-         ]
+            let arrg = [
+                user.id_usu_spoti, user.nickname_usu_spoti, user.fullName_usu,
+                user.fcNaci_usu, user.desc_usu, id_sex_var, id_carr_var, id_semestre_var, id_imgPerf_var,
+                user.facebook, user.twitter, user.instagram
+            ]
 
-         let fn = function (error, rows){
+            let fn = function (error, rows){
 
-            if(error)throw error;
-            else{
-                console.log("Registro exitoso");
+                if(error)throw error;
+                else{
+                    console.log("Registro exitoso");
+                }
+                
             }
-            
-         }
 
-        //  console.log(arrg);
-        this.conexion.query( query, arrg, fn );
+            //  console.log(arrg);
+            this.conexion.query( query, arrg, fn );
+
+        }
+
+
+        CataCon.createConnection();
+
+        try{
+            CataCon.getIDSexo(user.sexo_usu, (error, id_sex) => {
+                if(error) throw error;
+                else{
+                    id_sex_var = id_sex;
+                    CataCon.getIDSemestre(user.semestre_usu,(error, id_semestre) => {
+                        if(error) throw error;
+                        else{
+                            id_semestre_var = id_semestre;
+                        }
+                        CataCon.getIDCarrera(user.carrera_usu,(error, id_carr) => {
+                            if(error) throw error;
+                            else{
+                                id_carr_var = id_carr;
+                            }
+                            CataCon.getIDImgPerf(user.id_img_drive,(error, id_imgPerf) => {
+                                if(error) throw error;
+                                else{
+                                    id_imgPerf_var = id_imgPerf;
+                                }
+
+                                this.createConnection();
+                                executeQuery();
+                                CataCon.closeConnection();
+                                this.closeConnection();
+                            });
+                        });
+                    });
+                }
+            });
+        }catch(error){
+            CataCon.closeConnection();
+            this.closeConnection();
+            throw error;
+        }
+        
+
+        
+        
 
     }
 
@@ -243,3 +242,5 @@ export default class UserControler{
     
    
 }
+
+
