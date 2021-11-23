@@ -175,6 +175,7 @@ select {
   border-radius: 5px;
   height: 40px;
   margin-top: 7px;
+  width: 30%;
 }
 
 /*Contiene el botón agregar*/
@@ -191,6 +192,7 @@ select {
   text-align: center;
   float: right;
 }
+
 .botón {
   background: rgb(136, 204, 6);
   border-radius: 30px;
