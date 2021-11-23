@@ -1,4 +1,5 @@
 export const queries = {
+    getAllIDUser: 'SELECT [id_usu_spoty] FROM [bd_melodyfriend].[mUsuario]',
     getIDSexo: 'SELECT [id_sex] FROM [bd_melodyfriend].[csexo] WHERE sexo = @sexo ',
     getSexo:'SELECT [sexo] FROM [bd_melodyfriend].[csexo] WHERE id_sex = @id_sex ',
     getAllSexo: 'SELECT [sexo] FROM [bd_melodyfriend].[csexo] ',
@@ -73,3 +74,18 @@ export const queries = {
        ' ,@instagram)'
 
 }
+
+export const dbsettings = {
+    user: 'melodyFriendUser',
+    password: 'gallinaToxica#Atomica@',
+    server: 'localhost',
+    database: 'bd_melodyFriend',
+    port: 1433,
+    options: {
+        encrypt: true, // for azure
+        trustServerCertificate: true // change to true for local dev / self-signed certs
+    }
+}
+
+module.exports = queries;
+module.exports = dbsettings;

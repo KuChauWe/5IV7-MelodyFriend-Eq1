@@ -1,21 +1,23 @@
-import { insertUser } from "../controlador/UserController.js";
+const insertUser = require('../controlador/UserController.js');
 
-export default class User{
+export const User = () => {
 
-    constructor(){
-        this.id_usu_spoti = null;
-        this.nickname_usu_spoti = null;
-        this.id_img_drive = null;
-        this.fullName_usu = null;
-        this.fcNaci_usu = null;
-        this.sexo_usu = null;
-        this.semestre_usu = null;
-        this.carrera_usu = null;
-        this.desc_usu = null;
-        this.facebook = null;
-        this.twitter = null;
-        this.instagram = null;
-    }
+    var User;
+    User.id_usu_spoti = null;
+    User.nickname_usu_spoti = null;
+    User.id_img_drive = null;
+    User.fullName_usu = null;
+    User.fcNaci_usu = null;
+    User.sexo_usu = null;
+    User.semestre_usu = null;
+    User.carrera_usu = null;
+    User.desc_usu = null;
+    User.facebook = null;
+    User.twitter = null;
+    User.instagram = null;
+
+    return User;
+
 }
 
 
@@ -33,7 +35,7 @@ export const createUserInBD =  async  (id_usu_spoti, nickname_usu_spoti,
                                       fullName_usu, sexo_usu, fcNaci_usu,
                                       semestre_usu, carrera_usu) => {
 
-    var user = new User();
+    var user = User();
 
     //Datos de la sesión Spoti
     user.id_usu_spoti = id_usu_spoti;
@@ -66,3 +68,6 @@ export const createUserInBD =  async  (id_usu_spoti, nickname_usu_spoti,
 
 }
 
+
+module.exports = User;
+module.exports = createUserInBD;

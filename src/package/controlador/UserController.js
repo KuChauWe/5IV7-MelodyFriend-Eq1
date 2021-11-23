@@ -148,4 +148,11 @@ export const insertUser = async (user_full) => {
     }
 }
 
+export const getAllIDUser = async () => {
+
+
+
+
+}
+
 

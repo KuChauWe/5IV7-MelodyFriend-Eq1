@@ -1,16 +1,5 @@
-import sql from 'mssql'
-
-const dbsettings = {
-    user: 'melodyFriendUser',
-    password: 'dJPSyqqftSaZ5gmq',
-    server: 'localhost',
-    database: 'bd_melodyFriend',
-    port: 1433,
-    options: {
-        encrypt: true, // for azure
-        trustServerCertificate: true // change to true for local dev / self-signed certs
-    }
-}
+const sql = require('mssql');
+const dbsettings = require('./querys.js');
 
 export async function getConnection() {
 

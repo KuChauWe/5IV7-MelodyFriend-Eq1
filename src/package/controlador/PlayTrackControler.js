@@ -1,7 +1,6 @@
-
-import sql from 'mssql';
-import { getConnection } from "./Connection.js";
-import { queries } from "./querys.js";
+const sql = require('mssql');
+const queries = require('./querys.js');
+const getConnection = require('./Connection.js');
 
 /**
  * 
@@ -141,3 +140,22 @@ export const getAllUser_IDTrack = async(id_trac_spoty) => {
     pool.close();
     return result;
 }
+
+
+module.exports = insertIDPlaylist;
+
+module.exports = insertIDTrack;
+module.exports = deleteIDPlaylist;
+
+module.exports = deleteIDTrack;
+module.exports = getAllIDPlaylist;
+
+module.exports = getAllIDTrack;
+module.exports = insertUser_IDPlay;
+module.exports = insertUser_IDTrack;
+module.exports = deleteUser_IDPlay;
+module.exports = deleteUser_IDTrack;
+module.exports = getAllIDPlay_User;
+module.exports = getAllIDTrack_User;
+module.exports = getAllUser_IDTrack;
+module.exports = getAllUser_IDPlay;

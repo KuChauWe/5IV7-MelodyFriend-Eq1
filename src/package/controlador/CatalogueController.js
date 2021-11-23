@@ -1,6 +1,6 @@
-import { getConnection } from "./Connection.js";
-import sql from 'mssql';
-import { queries } from "./querys.js";
+const sql = require('mssql');
+const queries = require('./querys.js');
+const getConnection = require('./Connection.js');
 
 
 export const getIDSexo = async (sexo_param) => {
@@ -125,7 +125,20 @@ export const getAllImgPerfil = async () => {
 }
 
 
+module.exports = getIDSexo;
+module.exports = getSexo;
+module.exports = getAllSexo;
 
+module.exports = getIDSemestre;
+module.exports = getSemestre;
+module.exports = getAllSemestre;
 
+module.exports = getIDCarr;
+module.exports = getCarr;
+module.exports = getAllCarrera;
+
+module.exports = getIDImgPerf;
+module.exports = getImgPerfil;
+module.exports = getAllImgPerfil;
 
 
