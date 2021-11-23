@@ -5,7 +5,7 @@ import { queries } from "./querys.js";
 
 export const getIDSexo = async (sexo_param) => {
     const pool = await getConnection();
-    const result = await pool.request().input('sexo', sql.NChar,sexo_param ).query(queries.getIDSexo);
+    const result = await pool.request().input('sexo', sql.NChar, sexo_param ).query(queries.getIDSexo);
     // console.log(result.recordset[0].id_sex);
 
     pool.close();
@@ -23,9 +23,20 @@ export const getSexo = async (id_sexo_param) => {
 
 }
 
+export const getAllSexo = async () => {
+    const pool = await getConnection();
+    const result = await pool.request().query(queries.getAllSexo);
+    // console.log(result.recordset[0].sexo);
+
+    pool.close();
+    return result.recordset;
+
+}
+
+
 export const getIDSemestre = async (semestre_param) => {
     const pool = await getConnection();
-    const result = await pool.request().input('semestre', sql.NChar,semestre_param).query(queries.getIDSexo);
+    const result = await pool.request().input('semestre', sql.NChar,semestre_param).query(queries.getIDSemestre);
     // console.log(result.recordset[0].id_semestre);
 
     pool.close();
@@ -40,6 +51,16 @@ export const getSemestre = async (id_semestre_param) => {
 
     pool.close();
     return result.recordset[0].semestre;
+
+}
+
+export const getAllSemestre = async () => {
+    const pool = await getConnection();
+    const result = await pool.request().query(queries.getAllSemestre);
+    // console.log(result.recordset[0].sexo);
+
+    pool.close();
+    return result.recordset;
 
 }
 
@@ -63,6 +84,16 @@ export const getCarr = async (id_carr_param) => {
 
 }
 
+export const getAllCarrera = async () => {
+    const pool = await getConnection();
+    const result = await pool.request().query(queries.getAllCarrera);
+    // console.log(result.recordset[0].sexo);
+
+    pool.close();
+    return result.recordset;
+
+}
+
 export const getIDImgPerf = async (id_img_drive_param) => {
     const pool = await getConnection();
     const result = await pool.request().input('id_img_drive', sql.NChar,id_img_drive_param).query(queries.getIDImgPerf);
@@ -83,17 +114,18 @@ export const getImgPerfil = async (id_imgPerf_param) => {
 
 }
 
+export const getAllImgPerfil = async () => {
+    const pool = await getConnection();
+    const result = await pool.request().query(queries.getAllImgPerfil);
+    // console.log(result.recordset[0].sexo);
 
+    pool.close();
+    return result.recordset;
 
-
-var result = null;
- result = await getIDSexo('Masculino');
-
-if(result == null){}
-else{
-    console.log(result);
 }
- 
+
+
+
 
 
 

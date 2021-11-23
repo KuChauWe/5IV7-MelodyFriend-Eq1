@@ -77,7 +77,6 @@ export default class PlayTrackControler{
 
 
     }
-
     insertIDTrack(id_trac_spoty){
 
         let query = "INSERT INTO MTrack (id_trac_spoty)"
@@ -121,7 +120,6 @@ export default class PlayTrackControler{
 
 
     }
-
     deleteIDTrack(id_trac_spoty){
 
         let query = "DELETE FROM MTrack WHERE id_trac_spoty = ?";
