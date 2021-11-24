@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist இ௰இ</title>
+    <link rel="stylesheet" href="CSS/vistaPlaylist.css">
+    <link rel="shortcut icon" href="img/LogoMelodyFriend.png">
+    <script src="https://kit.fontawesome.com/b4150a26b3.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <div class="contenedorPrincipal">
+        <div id="barraLateral">
+            <div class="toggle-btn">
+                <i class="fa fas fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="index.html"><img src="IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
+                <li class="textoenListas"><a href="encontrarPersonas.html">Encuentra personas</a></li>
+                <li class="textoenListas"><a href="encuentraMusica.html">Encuentra playlists</a></li>
+                <li class="textoenListas"><a href="verEstadisticas.html">Ver estadísticas</a></li>
+                <div id="info">
+                    <ul>
+                        <li class="informacion"><p>Contáctanos:</p></li>
+                        <li class="informacion"><a href="https://www.facebook.com/Fabiddat-104623465060255/"><p>Facebook</p></a></li>
+                        <li class="informacion"><a href="mailto:fabbidad@gmail.com"><p>fabbidad@gmail.com</p></a></li>
+                        <li class="informacion"><a href="terminosyCondiciones(Aceptados).html"><p>Términos y condiciones</p></a></li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div id="contenidoGeneral">
+            <div class="contenidoCabecera">
+                <p>Nombre de la playlist</p>
+            </div>
+            <div class="resultados">
+                <div class="vistaUsuarios">
+                    <!--Los section son los que repiten (⊙x⊙;)-->
+                    <%# for(var i=0; i<usuario.length i++){%> 
+                    <section class="usuarios">
+                        <a href="verperfil?id=<%#usario.id%>"><img src="<%#usuario.foto%>"></a>
+                        <a href="verperfil?id=<%#usario.id%>"><%#usuario.nombre%></a>
+                        <a href="verperfil?id=<%#usario.id%>"><%# usuario.descripcion%></a> <!--Creo que en estas es mejor poner labels dentro de las etiquetas, si se me olvida se la saben xd-->
+                    </section>
+<%#}%>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/encuentraMusica.js"></script>
+</body>
+</html>

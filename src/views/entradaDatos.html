@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresa tus datos ヽ（≧□≦）ノ</title>
+    <link rel="stylesheet" href="CSS/entradaDatos.css">
+    <link rel="shortcut icon" href="img/LogoMelodyFriend.png">
+</head>
+<body>
+    <div id="contenedorPrincipal">
+        <div class="contenedorFondo">
+            <form action="/terminos" method="get" onSubmit="return validar();">
+                <div id="ladosFormulario">
+                    <div class="izquierda">
+                        <p>Ingresa los datos solicitados</p>
+                        <input type="text" name="nombre" id="textoNom" placeholder="Nombre completo" required/>
+                        <br>
+                        <select name="semestre" id="semestre" class="datosP" required><!--El required es para especificar que se debe de completar, se ve feo pero ps x-->
+                            <option value="0" selected disabled>Semestre</option>
+                            <option value="1">Primer Semestre</option>
+                            <option value="2">Segundo Semestre</option>
+                            <option value="3">Tercer Semestre</option>
+                            <option value="4">Cuarto Semestre</option>
+                            <option value="5">Quinto Semestre</option>
+                            <option value="6">Sexto Semestre</option>
+                            <option value="7">mas de 6</option>
+                        </select>
+                        <br>
+                        <select name="carrera" id="carrera" class="datosP" required>
+                            <option value="0" selected disabled>Carrera Técnica</option>
+                            <option value="1">Tronco Común</option>
+                            <option value="2">Programación</option>
+                            <option value="3">MSA</option>
+                            <option value="4">Sistemas Digitales</option>
+                        </select>
+                        <br>
+
+
+                        <a>Ingresa tu fecha de nacimiento:</a>
+                        <br>
+
+                        <div class="range">
+                            <input type="date" name="fecha" required>
+                        </div>
+
+
+
+
+                        <br>
+                        <select name="sexo" id="sexo" class="datosP" required>
+                            <option value="0" selected disabled>Sexo</option>
+                            <option value="1">Masculino</option>
+                            <option value="2">Femenino</option>
+                            <option value="3">No Binario</option>
+                        </select>
+                    </div>
+                    <div class="derecha">
+                        <p>Bienvenido</p> 
+                        <p><%=name%></p>
+                        <input type="submit" id="button" value="Continuar"/> <!--No  se cómo se ponga el botón, ahí le mueven plox-->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="JS/entradaDatos.js"></script>
+</body>
+</html>
