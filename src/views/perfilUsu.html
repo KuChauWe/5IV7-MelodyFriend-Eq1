@@ -20,21 +20,21 @@
                 <a href="index.html"><img class="logo" src="IMG/LogoMelodyFriend.png"></a>
             </div>
             <div class="ds-cen">
-                <div class="img-perf"></div>
+                <div class="img-perf"><img src="<%=perfil.foto%>"></img></div>
             </div>
             <div class="ds-der">
                 <label style="float: right; margin-right: 10px;">ID:</label>
                 <br>
-                <label class="id">125268717197</label>
+                <label class="id"><%=perfil.id%></label>
             </div>
             <div class="ds-aba" style="margin-top: 10px;">
-                <label>Nombre del usuario</label>
+                <label><%=perfil.nombre%></label>
             </div>
         </div>
 
         <!--descripción-->
         <div class="div-desc" style="margin-top: 10px">
-            <label class="label-desc">Descripción</label>
+            <label class="label-desc"><%=perfil.descripcion%></label>
         </div>
 
         <!--labels sexo, carrera técnica y semestre-->
@@ -52,17 +52,17 @@
         <div class="div-labels" style="margin-top: 5px">
             <div class="dl-izq">
                 <div class="sombreado">
-                    <label>Masculino</label>
+                    <label><%=perfil.sexo%></label>
                 </div>
             </div>
             <div class="dl-cen">
                 <div class="sombreado" style="margin: auto; margin-top: 5px;">
-                    <label>Mecatrónica</label>
+                    <label><%=perfil.carrera%></label>
                 </div>
             </div>
             <div class="dl-der">
                 <div class="sombreado" style="margin-left: auto;">
-                    <label>Sexto o más</label>
+                    <label><%=perfil.semestre%></label>
                 </div>
             </div>
         </div>
@@ -72,13 +72,14 @@
             <div class="dr">
                 <label>Red social:</label>
                 <br>
-                <label class="redsocial" style="margin-top: 5px;">X</label>
+                <label class="redsocial" style="margin-top: 5px;"><%=perfil.twitter%></label>
+                <label class="redsocial" style="margin-top: 5px;"><%=perfil.instagram%></label>
             </div>
         </div>
         
     <div class="div-btn">
         <div class="db">
-            <button class="botón" action=""> <a href="editPerfilUsu.html">Editar</a></button> <!--La  etiqueta "a" solo es momentanea, ojo-->
+            <button class="botón" action=""> <a href="/editperfil">Editar</a></button> <!--La  etiqueta "a" solo es momentanea, ojo-->
         </div>
     </div>
     </div>

@@ -5,7 +5,6 @@ const sql = require('mssql');
 const queries = require('./querys.js');
 
 const getUserByID = async (id_usu_spoty) => {
-    console.log("asdasd");
 
 
     try {

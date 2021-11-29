@@ -7,7 +7,8 @@ const { createUserInBD } = require('../package/modelo/User')
 const track = require("../package/controlador/PlayTrackControler");
 const { format } = require('morgan');
 const e = require('connect-flash');
-const Playtrack = require('../package/modelo/Playtrack')
+const Playtrack = require('../package/modelo/Playtrack');
+const { on } = require('nodemon');
 
 router.get('/', (req, res) => {
 
@@ -19,7 +20,9 @@ router.get('/login', (req, res) => {
   res.redirect(spotifyApi.Login);
 });
 router.get('/editperfil', (req, res) => {
-  res.render('editPerfilUsu.html');
+
+
+  res.render('editPerfilUsu.html',);
 });
 router.get('/personas', (req, res) => {
   res.render('encontrarPersonas.html');
@@ -57,7 +60,7 @@ router.get('/entrada', (req, res) => {
         req.flash('name_spotify', me.body.display_name)
         spotifyApi.getUser(me.body.id)
           .then(function (data) {
-            console.log(me.body.images);
+            // console.log(me.body.images);
           }, function (err) {
             console.log('Something went wrong!', err);
           });
@@ -67,7 +70,7 @@ router.get('/entrada', (req, res) => {
         const usairo = await base.getUserByID(me.body.id)
         //console.log(usairo);
         if (usairo == null) {
-          console.log("ahdhidaasd");
+          //  console.log("ahdhidaasd");
           res.render('entradaDatos.html', { name: me.body.display_name });
         }
         res.redirect('/home')
@@ -103,8 +106,8 @@ router.get('/Home', (req, res) => {
       spotifyApi.setAccessToken(data.body['access_token']);
       spotifyApi.getMe().then(
         function (data) {
-          me = data.body.id
-
+          me = data.body
+          //   console.log(me);
           spotifyApi.getMyTopTracks().then(
             function (data) {
               Top = data.body.items
@@ -121,7 +124,7 @@ router.get('/Home', (req, res) => {
                   Todo = data
                   id_Todo = []
                   // console.log(Todo);
-                  track.getAllIDTrack_User(me).then(
+                  track.getAllIDTrack_User(me.id).then(
                     function (data) {
                       Encabezado = data
                       id_Encabezado = []
@@ -162,39 +165,39 @@ router.get('/Home', (req, res) => {
               )
               /*  */
             })
-        })
 
 
 
-      //console.log("aqui esta las recomentaciones");
-      spotifyApi.getRecommendations({
-        min_energy: 0.4,
-        seed_artists: ['6mfK6Q2tzLMEchAr0e9Uzu', '4DYFVNKZ1uixa6SQTvzQwJ'],
-        min_popularity: 50
-      })
-        .then(function (data) {
+
+          //console.log("aqui esta las recomentaciones");
+          spotifyApi.getRecommendations({
+            min_energy: 0.4,
+            seed_artists: ['6mfK6Q2tzLMEchAr0e9Uzu', '4DYFVNKZ1uixa6SQTvzQwJ'],
+            min_popularity: 50
+          })
+            .then(function (data) {
 
 
-          let recomendaciones = [];
+              let recomendaciones = [];
 
-          for (var i = 0; i < 10; i++) {
-            let id = data.body.tracks[i].id
-            let imagen = data.body.tracks[i].album.images[0].url
-            let nombre = data.body.tracks[i].name
-            let artista = data.body.tracks[i].artists[0].name
-            var song = {
-              id: id,
-              nombre: nombre,
-              imagen: imagen,
-              artista: artista
-            }
-            //console.log(song.id);
-            //track.insertIDTrack(id)
-            recomendaciones.push(song)
-          }
+              for (var i = 0; i < 10; i++) {
+                let id = data.body.tracks[i].id
+                let imagen = data.body.tracks[i].album.images[0].url
+                let nombre = data.body.tracks[i].name
+                let artista = data.body.tracks[i].artists[0].name
+                var song = {
+                  id: id,
+                  nombre: nombre,
+                  imagen: imagen,
+                  artista: artista
+                }
+                //console.log(song.id);
+                //track.insertIDTrack(id)
+                recomendaciones.push(song)
+              }
 
-          res.render('index.html', { recomendaciones: recomendaciones });
-
+              res.render('index.html', { recomendaciones: recomendaciones, nombre: me.display_name, foto: me.images[0].url });
+            })
         }, function (err) {
           console.log("Something went wrong!", err);
           res.render('errores.html', { Fallo: err });
@@ -263,95 +266,95 @@ router.get('/verperfil', (req, res) => {
 
   //Nombre, Descripcion Sexo,ID,carrera,semestre,red social
 
-  persoma = base.getUserByID(id)
-
-  usuario = persoma.recordset[0]
-  spotifyApi.getUser(usuario.id_usu_spoty).then(
-    function (data) {
-      foto = data.body.images.url
-      if (usuario.id_sex == 1) {
-        sexo = "Masculino"
-      }
-      if (usuario.id_sex == 2) {
-        sexo = "Femenino"
-      }
-      if (usuario.id_sex == 3) {
-        sexo = "No Binario"
-      }
-      if (usuario.id_carr == 4) {
-        carrera = "Técnico en Programación"
-      }
-      if (usuario.id_carr == 2) {
-        carrera = "Técnico en Máquinas con Sistemas Automatizados"
-      }
-      if (usuario.id_carr == 5) {
-        carrera = "Técnico en Sistemas Digitales"
-      }
-      if (usuario.id_carr == 6) {
-        carrera = "Tronco Común"
-      }
-
+  base.getUserByID(id).then((Data) => {
+    usuario = Data
+    spotifyApi.getUser(usuario.id_usu_spoty).then((data) => {
+      foto = data.body.images[0].url
+      // console.log(usuario);
       let usu = {
         id: id,
-        sexo: sexo,
-        carrera: carrera,
-        semestre: usuario.id_semeste,
-        twitter: usuario.twitter,
-        instagram: usuario.instagram,
+        sexo: usuario.sexo_usu,
+        carrera: usuario.carrera_usu,
+        semestre: usuario.semestre_usu,
+        twitter: (usuario.twitter == null) ? "no hay twitter" : usuario.twitter,
+        instagram: (usuario.instagram == null) ? "no hay instagram" : usuario.twitter,
         nombre: usuario.nickname_usu_spoti,
-        descripcion: usuari.desc_usu.url,
+        descripcion: usuario.desc_usu,
         foto: foto
       }
-    }
-  )
-
-
-
-
-  res.render('verPerfilUsu.html', { usuario: usu });
-
+      //console.log(usu);
+      res.render('verPerfilUsu.html', { usuario: usu });
+    })
+  })
 });
 router.get('/verplaylist', (req, res) => {
-  /*  id = "6kl9wh5F5yb2bKlOV7toWH" //req.query.id
-    let usus = []
-    track.getAllUser_IDTrack(id).then(
-      function (data) {
-        personas = data[0]
-        //console.log(personas);
-        for (var i = 0; i < personas.length; i++) {
-          base.getUserByID(personas[i].id_usu_spoty).then(
-            function (data) {
-  
-              usuario = data
-              //console.log(data);
-  
-  
-              spotifyApi.getUser(usuario.id_usu_spoty).then(
-                function (data) {
-                  foto = data.body.images[0].url
-                  let usu = {
-                    id: id,
-                    nombre: usuario.nickname_usu_spoti,
-                    descripcion: usuario.desc_usu,
-                    foto: foto
-                  }
-                  usus.push(usu)
-                  console.log(usu);
-                  console.log(usus);
-                }
-              )
-            })
-  
-        }
-  
+  id = "6kl9wh5F5yb2bKlOV7toWH" //req.query.id
+  personas = [];
+  track.getAllUser_IDTrack(id).then(
+    function (data) {
+      if (data[0].length == 0) {
+        cero = []
+        res.render('vistaPlaylist.html', { usario: cero });
       }
-    )*/
-  res.render('vistaPlaylist.html',/* { usario: usus }*/);
+      // todos los id de las personas 
+      //console.log(data[0]);
+      ids_usuarios = data[0]
+      usuarios = []
+      ids_usuarios.forEach((element, index) => {
+
+        base.getUserByID(element.id_usu_spoty).then(
+          (data) => {
+            usu = data
+            spotifyApi.getUser(element.id_usu_spoty).then(
+              (data) => {
+                foto = data.body.images[0].url
+                //console.log(foto);
+                //console.log(usu);
+                let usuario = {
+                  id: usu.id_usu_spoti,
+                  nombre: usu.nickname_usu_spoti,
+                  descripcion: usu.desc_usu,
+                  foto: foto
+                }
+                usuarios.push(usuario)
+                if (index == (ids_usuarios.length - 1)) {
+                  // console.log(usuarios);
+                  res.render('vistaPlaylist.html', { usario: usuarios });
+                }
+              }
+            )
+          })
+      });
+
+    })
 
 });
-router.get('/pefil', (req, res) => {
+router.get('/perfil', (req, res) => {
 
-  res.render("perfilUsu.html")
+  spotifyApi.refreshAccessToken
+  spotifyApi.getMe().then((data) => {
+    usuario = data.body
+    id = usuario.id
+    foto = usuario.images[0].url
+    base.getUserByID(id).then((data) => {
+      Usu = data
+      let perfil = {
+        id: id,
+        sexo: Usu.sexo_usu,
+        carrera: Usu.carrera_usu,
+        semestre: Usu.semestre_usu,
+        twitter: (Usu.twitter == null) ? "no hay twitter" : usuario.twitter,
+        instagram: (Usu.instagram == null) ? "no hay instagram" : usuario.twitter,
+        nombre: Usu.nickname_usu_spoti,
+        descripcion: Usu.desc_usu,
+        foto: foto
+      }
+      res.render("perfilUsu.html", { perfil: perfil })
+    })
+
+  }
+  )
+
 })
 
 

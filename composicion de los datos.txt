@@ -1,0 +1,47 @@
+{
+  id_usu_spoti: '0e3vqcnni1dm5q2fhsdz0lqi0',
+  nickname_usu_spoti: 'Eduwigsh',
+  fullName_usu: 'Solis alvarado eduwigsh fernando',
+  fcNaci_usu: 2004-03-02T00:00:00.000Z,
+  desc_usu: 'Hola soy Eduwigsh',
+  facebook: null,
+  twitter: null,
+  instagram: null,
+  id_img_drive: '1cK3jqu93qd2rUmz_4__P20a5lLGqWgNf',
+  sexo_usu: 'Masculino',
+  carrera_usu: 'Técnico en Programación',
+  semestre_usu: 5
+}
+{
+  country: 'MX',
+  display_name: 'Eduwigsh',
+  email: 'eduwigsh0203@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: {
+    spotify: 'https://open.spotify.com/user/0e3vqcnni1dm5q2fhsdz0lqi0'
+  },
+  followers: { href: null, total: 1 },
+  href: 'https://api.spotify.com/v1/users/0e3vqcnni1dm5q2fhsdz0lqi0',
+  id: '0e3vqcnni1dm5q2fhsdz0lqi0',
+  images: [
+    {
+      height: null,
+      url: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1156572577830806&height=300&width=300&ext=1640544850&hash=AeQlHiz0usQwKp8nGqU',
+      width: null
+    }
+  ],
+  product: 'open',
+  type: 'user',
+  uri: 'spotify:user:0e3vqcnni1dm5q2fhsdz0lqi0'
+}
+ let perfil= {
+        id: id,
+        sexo: Usu.sexo_usu,
+        carrera: Usu.carrera_usu,
+        semestre: Usu.semestre_usu,
+        twitter: (Usu.twitter == null) ? "no hay twitter" : usuario.twitter,
+        instagram: (Usu.instagram == null) ? "no hay instagram" : usuario.twitter,
+        nombre: Usu.nickname_usu_spoti,
+        descripcion: Usu.desc_usu,
+        foto: foto
+      }

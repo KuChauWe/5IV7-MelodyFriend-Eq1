@@ -37,13 +37,13 @@
             <div class="resultados">
                 <div class="vistaUsuarios">
                     <!--Los section son los que repiten (⊙x⊙;)-->
-                    <%# for(var i=0; i<usuario.length i++){%> 
+                    <%for(var i=0; i<usario.length; i++){%> 
                     <section class="usuarios">
-                        <a href="verperfil?id=<%#usario.id%>"><img src="<%#usuario.foto%>"></a>
-                        <a href="verperfil?id=<%#usario.id%>"><%#usuario.nombre%></a>
-                        <a href="verperfil?id=<%#usario.id%>"><%# usuario.descripcion%></a> <!--Creo que en estas es mejor poner labels dentro de las etiquetas, si se me olvida se la saben xd-->
+                        <a href="/verperfil?id=<%=usario[i].id%>"><img src="<%=usario[i].foto%>"></a>
+                        <a href="/verperfil?id=<%=usario[i].id%>"><%=usario[i].nombre%></a>
+                        <a href="/verperfil?id=<%usario[i].id%>"><%= usario[i].descripcion%></a> <!--Creo que en estas es mejor poner labels dentro de las etiquetas, si se me olvida se la saben xd-->
                     </section>
-<%#}%>
+<%}%>
                    
                 </div>
             </div>
