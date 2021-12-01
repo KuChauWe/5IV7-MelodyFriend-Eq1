@@ -95,6 +95,19 @@ input {
 #ingresarTexto {
   width: 240px;
 }
+.botón {
+  background: rgb(136, 204, 6);
+  border-radius: 30px;
+  border: none;
+  font-size: 17px;
+  padding: 5px;
+  width: 100px;
+  cursor: pointer;
+}
+.botón:hover {
+  background: rgb(33, 84, 0);
+  transition: 500ms;
+}
 
 /*Slider, lo que aparece es ya limpio.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
 

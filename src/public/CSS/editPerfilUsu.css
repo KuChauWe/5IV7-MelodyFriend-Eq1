@@ -223,4 +223,9 @@ body::-webkit-scrollbar-thumb {
   border-radius: 100px; /* roundness of the scroll thumb */
   border: none;
 }
+.img-perf img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
 /*Aquí termina*/

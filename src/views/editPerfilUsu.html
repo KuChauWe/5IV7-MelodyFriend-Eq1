@@ -20,21 +20,22 @@
                 <a href="/Home"><img class="logo" src="IMG/LogoMelodyFriend.png"></a>
             </div>
             <div class="ds-cen">
-                <a href="seleccionarFoto.html"><div class="img-perf"></div></a>
+               <div class="img-perf"><img src="<%=perfil.foto%>"></img></div>
             </div>
             <div class="ds-der">
                 <label style="float: right; margin-right: 10px;">ID:</label>
                 <br>
-                <label class="id">125268717197</label>
+                <label class="id"><%=perfil.id%></label>
             </div>
             <div class="ds-aba" style="margin-top: 10px;">
-                <label>Nombre del usuario</label>
+                <label><%=perfil.nombre%></label>
             </div>
         </div>
 
         <!--descripción-->
         <div class="div-desc" style="margin-top: 10px">
-            <textarea class="descripcion" id="textarea" maxlength="100" placeholder="Ingresa tu descripción"></textarea>
+             <form method="post" action="/editperfil">
+            <textarea  class="descripcion" id="textarea" maxlength="100" placeholder="Ingresa tu descripción"  name="Descripcion"><%=perfil.descripcion%></textarea>
         </div>
 
         <!--labels sexo, carrera técnica y semestre-->
@@ -51,34 +52,34 @@
         </div>
         <div class="div-labels" style="margin-top: 5px">
             <div class="dl-izq">
-                <div class="sombreado">
-                    <select>  
+                <div class="sombreado" >
+                    <select name="sexo">  
                         <option value="Seleccione" selected disabled>Seleccione su sexo</option>
-                        <option value="Masculino"> Masculino</option>  
-                        <option value="Femenino">Femenino</option>  
+                        <option value="1"  <% if( perfil.sexo=="Masculino"){%>selected <%}%> > Masculino</option>  
+                        <option value="2"  <% if( perfil.sexo=="Femenino"){%>selected <%}%> >Femenino</option>  
                     </select>
                 </div>
             </div>
             <div class="dl-cen">
                 <div class="sombreado" style="margin: auto; margin-top: 5px;">
-                    <select>  
-                        <option value="Tronco Común">Tronco Común</option>  
-                        <option value="Programación">Programación</option>  
-                        <option value="Sistemas Digitales">Sistemas Digitales</option>  
-                        <option value="Máquinas">Máquinas</option>  
-                        <option value="Mecatrónica">Mecatrónica</option>  
+                    <select name="carrera">  
+                        <option value="6"  <% if( perfil.carrera=="Tronco Común"){%>selected <%}%> >Tronco Común</option>  
+                        <option value="4"  <% if( perfil.carrera=="Técnico en Programación"){%>selected <%}%>>Programación</option>  
+                        <option value="5"  <% if( perfil.carrera=="Técnico en Máquinas con Sistemas Automatizados"){%>selected <%}%>>Sistemas Digitales</option>  
+                        <option value="2"  <% if( perfil.carrera=="Técnico en Sistemas Digitales"){%>selected <%}%>>Máquinas</option>  
                     </select>  
                 </div>
             </div>
             <div class="dl-der">
                 <div class="sombreado" style="margin-left: auto;">
-                    <select>  
-                        <option value="Primero">Primero</option>  
-                        <option value="Segundo">Segundo</option>  
-                        <option value="Tercero">Tercero</option>  
-                        <option value="Cuarto">Cuarto</option>  
-                        <option value="Quinto">Quinto</option> 
-                        <option value="Sexto o más">Sexto o más</option>   
+                    <select name="semestre">  
+                        <option value="1"  <% if( perfil.semestre==1){%>selected <%}%>>Primero</option>  
+                        <option value="2" <% if( perfil.semestre==2){%>selected <%}%>>Segundo</option>  
+                        <option value="3" <% if( perfil.semestre==3){%>selected <%}%>>Tercero</option>  
+                        <option value="4" <% if( perfil.semestre==4){%>selected <%}%>>Cuarto</option>  
+                        <option value="5" <% if( perfil.semestre==5){%>selected <%}%>>Quinto</option> 
+                        <option value="6 " <% if( perfil.semestre==6){%>selected <%}%>>Sexto o más</option>   
+                        <option value="7" <% if( perfil.semestre==7){%>selected <%}%>>Arriba de sexto</option>  
                     </select>  
                 </div>
             </div>
@@ -89,16 +90,18 @@
             <div class="dr">
                 <label>Red social:</label>
                 <br>
-                <input type="text" class="txtrs" id="rs" maxlength="100" placeholder="Ingresa tu Instagram">
-                <input type="text" class="txtrs" id="rs" maxlength="100" placeholder="Ingresa tu Twiter">
+                <input type="text" class="txtrs" id="rs" maxlength="100" placeholder="Ingresa tu Instagram"value="<%=perfil.instagram%>" name="instagram">
+                <input type="text" class="txtrs" id="rs" maxlength="100" placeholder="Ingresa tu Twiter" value="<%=perfil.twitter%>" name="twitter">
             </div>
         </div>
     </div>
     
     <div class="div-btn">
         <div class="db">
-            <button class="botón"  >Aceptar</button>
+            <input type="submit" class="botón" value="Aceptar">
+     </form>
         </div>
+        
     </div>
 
     <!--Esto evita que se pulse enter en el textarea de la descripción y red social-->

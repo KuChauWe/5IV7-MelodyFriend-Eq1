@@ -9,6 +9,7 @@ const { format } = require('morgan');
 const e = require('connect-flash');
 const Playtrack = require('../package/modelo/Playtrack');
 const { on } = require('nodemon');
+const User = require('../package/modelo/User');
 
 router.get('/', (req, res) => {
 
@@ -20,17 +21,80 @@ router.get('/login', (req, res) => {
   res.redirect(spotifyApi.Login);
 });
 router.get('/editperfil', (req, res) => {
+  spotifyApi.getMe().then((data) => {
+    usuario = data.body
+    id = usuario.id
+    foto = usuario.images[0].url
+    base.getUserByID(id).then((data) => {
+      Usu = data
+      console.log(data);
+      let perfil = {
+        id: id,
+        sexo: Usu.sexo_usu,
+        carrera: Usu.carrera_usu,
+        semestre: Usu.semestre_usu,
+        twitter: (Usu.twitter == null) ? "no hay twitter" : Usu.twitter,
+        instagram: (Usu.instagram == null) ? "no hay instagram" : Usu.instagram,
+        nombre: Usu.nickname_usu_spoti,
+        descripcion: Usu.desc_usu,
+        foto: foto
+      }
 
+      res.render("editPerfilUsu.html", { perfil: perfil })
+    })
 
-  res.render('editPerfilUsu.html',);
+  }
+  )
 });
+router.post('/editperfil', (req, res) => {
+  spotifyApi.refreshAccessToken
+  spotifyApi.getMe().then((data) => {
+    cambios = req.body
+    console.log(cambios);
+
+    id = data.body.id
+    base.updateUser(id, 'twitter', (cambios.twitter == '') ? "No hay twiter" : cambios.twitter)
+
+    base.updateUser(id, 'instagram', (cambios.instagram == '') ? "No hay instagram" : cambios.instagram)
+    base.updateUser(id, 'id_sex', cambios.sexo)
+    base.updateUser(id, 'id_semestre', cambios.semestre)
+    base.updateUser(id, 'id_carr', cambios.carrera)
+    base.updateUser(id, 'desc_usu', cambios.Descripcion)
+    console.log("esto pasa antes o despues ");
+    res.redirect("/Home")
+  })
+})
 router.get('/personas', (req, res) => {
   res.render('encontrarPersonas.html');
 
 });
 router.get('/musica', (req, res) => {
-  res.render('encuentraMusica.html');
+  res.render('encuentraMusica.html', { busqueda: null });
 });
+router.post('/musica', (req, res) => {
+  buscar = req.body.busqueda
+  spotifyApi.searchTracks('buscar')
+    .then(function (data) {
+      songs = data.body.tracks.items
+      lista = []
+      for (var i = 0; i < 10; i++) {
+        let id = songs[i].id
+        let imagen = songs[i].album.images[0].url
+        let nombre = songs[i].name
+        let artista = songs[i].artists[0].name
+        var song = {
+          id: id,
+          nombre: nombre,
+          imagen: imagen,
+          artista: artista
+        }
+        lista.push(song)
+      }
+      res.render('encuentraMusica.html', { busqueda: lista })
+    }, function (err) {
+      console.error(err);
+    });
+})
 router.get('/entrada', (req, res) => {
 
   const error = req.query.error;
@@ -331,7 +395,6 @@ router.get('/verplaylist', (req, res) => {
 });
 router.get('/perfil', (req, res) => {
 
-  spotifyApi.refreshAccessToken
   spotifyApi.getMe().then((data) => {
     usuario = data.body
     id = usuario.id
@@ -343,8 +406,8 @@ router.get('/perfil', (req, res) => {
         sexo: Usu.sexo_usu,
         carrera: Usu.carrera_usu,
         semestre: Usu.semestre_usu,
-        twitter: (Usu.twitter == null) ? "no hay twitter" : usuario.twitter,
-        instagram: (Usu.instagram == null) ? "no hay instagram" : usuario.twitter,
+        twitter: (Usu.twitter == null) ? "no hay twitter" : Usu.twitter,
+        instagram: (Usu.instagram == null) ? "no hay instagram" : Usu.instagram,
         nombre: Usu.nickname_usu_spoti,
         descripcion: Usu.desc_usu,
         foto: foto
