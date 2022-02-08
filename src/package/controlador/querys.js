@@ -76,10 +76,10 @@ const queries = {
 }
 
 const dbsettings = {
-  user: 'fabbidatUserPro',
+  user: 'F9bb1D97ñ',
   password: 'd3ccivo+#ForEv3r',
-  server: 'melodyfriendserver.database.windows.net',
-  database: 'bd-MelodyFriend-Deployed',
+  server: 'sofo9.database.windows.net',
+  database: 'MelodyFriend',
   port: 1433,
   options: {
     encrypt: true, // for azure

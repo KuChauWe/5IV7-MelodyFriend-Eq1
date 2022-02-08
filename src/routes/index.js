@@ -73,7 +73,7 @@ router.get('/musica', (req, res) => {
 });
 router.post('/musica', (req, res) => {
   buscar = req.body.busqueda
-  spotifyApi.searchTracks('buscar')
+  spotifyApi.searchTracks(buscar)
     .then(function (data) {
       songs = data.body.tracks.items
       lista = []
