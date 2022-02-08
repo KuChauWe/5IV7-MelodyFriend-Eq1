@@ -1,39 +1,39 @@
 const queries = {
-  getAllIDUser: 'SELECT [id_usu_spoty] FROM [bd_melodyfriend].[mUsuario]',
-  getIDSexo: 'SELECT [id_sex] FROM [bd_melodyfriend].[csexo] WHERE sexo = @sexo ',
-  getSexo: 'SELECT [sexo] FROM [bd_melodyfriend].[csexo] WHERE id_sex = @id_sex ',
-  getAllSexo: 'SELECT [sexo] FROM [bd_melodyfriend].[csexo] ',
-  getIDSemestre: 'SELECT [id_semestre] FROM [bd_melodyfriend].[cSemestre] WHERE semestre = @semestre',
-  getSemestre: 'SELECT [semestre] FROM [bd_melodyfriend].[cSemestre] WHERE id_semestre = @id_semestre',
-  getAllSemestre: 'SELECT [semestre] FROM [bd_melodyfriend].[cSemestre] ',
-  getIDCarrera: 'SELECT [id_carr] FROM [bd_melodyfriend].[cCarrera] WHERE carrera = @carrera',
-  getCarrera: 'SELECT [carrera] FROM [bd_melodyfriend].[cCarrera] WHERE id_carr = @id_carr',
-  getAllCarrera: 'SELECT [carrera] FROM [bd_melodyfriend].[cCarrera] ',
-  getIDImgPerf: 'SELECT [id_imgPerf] FROM [bd_melodyfriend].[cImgPerfil] WHERE id_img_drive = @id_img_drive',
-  getImgPerfil: 'SELECT [id_img_drive] FROM [bd_melodyfriend].[cImgPerfil] WHERE id_imgPerf = @id_imgPerf',
-  getAllImgPerfil: 'SELECT [id_img_drive] FROM [bd_melodyfriend].[cImgPerfil] ',
+  getAllIDUser: 'SELECT [id_usu_spoty] FROM [dbo].[mUsuario]',
+  getIDSexo: 'SELECT [id_sex] FROM [dbo].[cSexo] WHERE sexo = @sexo ',
+  getSexo: 'SELECT [sexo] FROM [dbo].[cSexo] WHERE id_sex = @id_sex ',
+  getAllSexo: 'SELECT [sexo] FROM [dbo].[cSexo] ',
+  getIDSemestre: 'SELECT [id_semestre] FROM [dbo].[cSemestre] WHERE semestre = @semestre',
+  getSemestre: 'SELECT [semestre] FROM [dbo].[cSemestre] WHERE id_semestre = @id_semestre',
+  getAllSemestre: 'SELECT [semestre] FROM [dbo].[cSemestre] ',
+  getIDCarrera: 'SELECT [id_carr] FROM [dbo].[cCarrera] WHERE carrera = @carrera',
+  getCarrera: 'SELECT [carrera] FROM [dbo].[cCarrera] WHERE id_carr = @id_carr',
+  getAllCarrera: 'SELECT [carrera] FROM [dbo].[cCarrera] ',
+  getIDImgPerf: 'SELECT [id_imgPerf] FROM [dbo].[cImgPerfil] WHERE id_img_drive = @id_img_drive',
+  getImgPerfil: 'SELECT [id_img_drive] FROM [dbo].[cImgPerfil] WHERE id_imgPerf = @id_imgPerf',
+  getAllImgPerfil: 'SELECT [id_img_drive] FROM [dbo].[cImgPerfil] ',
 
-  insertIDPlaylist: 'INSERT INTO [bd_melodyfriend].[mplaylist] ([id_playlist_spoty]) VALUES ( @id_playlist_spoty )',
-  insertIDTrack: 'INSERT INTO [bd_melodyfriend].[mtrack] ([id_trac_spoty]) VALUES ( @id_trac_spoty )',
-  deleteIDPlaylist: 'DELETE FROM [bd_melodyfriend].[mplaylist] WHERE [id_playlist_spoty] =  @id_playlist_spoty ',
-  deleteIDTrack: 'DELETE FROM [bd_melodyfriend].[mtrack] WHERE [id_trac_spoty] =  @id_trac_spoty ',
-  getAllIDPlaylist: 'SELECT id_playlist_spoty FROM [bd_melodyfriend].[mplaylist]',
-  getAllIDTrack: 'SELECT id_trac_spoty FROM [bd_melodyfriend].[mtrack]',
+  insertIDPlaylist: 'INSERT INTO [dbo].[mPlaylist] ([id_playlist_spoty]) VALUES ( @id_playlist_spoty )',
+  insertIDTrack: 'INSERT INTO [dbo].[mTrack] ([id_trac_spoty]) VALUES ( @id_trac_spoty )',
+  deleteIDPlaylist: 'DELETE FROM [dbo].[mPlaylist] WHERE [id_playlist_spoty] =  @id_playlist_spoty ',
+  deleteIDTrack: 'DELETE FROM [dbo].[mTrack] WHERE [id_trac_spoty] =  @id_trac_spoty ',
+  getAllIDPlaylist: 'SELECT id_playlist_spoty FROM [dbo].[mPlaylist]',
+  getAllIDTrack: 'SELECT id_trac_spoty FROM [dbo].[mTrack]',
 
-  insertUser_IDPlay: 'INSERT INTO [bd_melodyfriend].[eplaylist] ([id_usu_spoty],  [id_playlist_spoty]) VALUES (@id_usu_spoty, @id_playlist_spoty )',
-  insertUser_IDTrack: 'INSERT INTO [bd_melodyfriend].[etrack] ([id_usu_spoty], [id_trac_spoty]) VALUES (@id_usu_spoty, @id_trac_spoty )',
-  deleteUser_IDPlay: 'DELETE FROM [bd_melodyfriend].[eplaylist] WHERE [id_playlist_spoty] =  @id_playlist_spoty AND [id_usu_spoty] = @id_usu_spoty',
-  deleteUser_IDTrack: 'DELETE FROM [bd_melodyfriend].[etrack] WHERE [id_trac_spoty] =  @id_trac_spoty AND [id_usu_spoty] = @id_usu_spoty',
-  getAllIDPlay_User: 'SELECT id_playlist_spoty FROM [bd_melodyfriend].[eplaylist] WHERE [id_usu_spoty] = @id_usu_spoty',
-  getAllIDTrack_User: 'SELECT id_trac_spoty FROM [bd_melodyfriend].[etrack] WHERE [id_usu_spoty] = @id_usu_spoty',
-  getAllUser_IDPlay: 'SELECT id_usu_spoty FROM [bd_melodyfriend].[eplaylist] WHERE [id_playlist_spoty] =  @id_playlist_spoty',
-  getAllUser_IDTrack: 'SELECT id_usu_spoty FROM [bd_melodyfriend].[etrack] WHERE [id_trac_spoty] =  @id_trac_spoty',
-  isInMTrack: 'SELECT id_trac_spoty FROM [bd_melodyfriend].[mtrack] WHERE id_trac_spoty = @id_trac_spoty ',
+  insertUser_IDPlay: 'INSERT INTO [dbo].[ePlaylist] ([id_usu_spoty],  [id_playlist_spoty]) VALUES (@id_usu_spoty, @id_playlist_spoty )',
+  insertUser_IDTrack: 'INSERT INTO [dbo].[eTrack] ([id_usu_spoty], [id_trac_spoty]) VALUES (@id_usu_spoty, @id_trac_spoty )',
+  deleteUser_IDPlay: 'DELETE FROM [dbo].[ePlaylist] WHERE [id_playlist_spoty] =  @id_playlist_spoty AND [id_usu_spoty] = @id_usu_spoty',
+  deleteUser_IDTrack: 'DELETE FROM [dbo].[eTrack] WHERE [id_trac_spoty] =  @id_trac_spoty AND [id_usu_spoty] = @id_usu_spoty',
+  getAllIDPlay_User: 'SELECT id_playlist_spoty FROM [dbo].[ePlaylist] WHERE [id_usu_spoty] = @id_usu_spoty',
+  getAllIDTrack_User: 'SELECT id_trac_spoty FROM [dbo].[eTrack] WHERE [id_usu_spoty] = @id_usu_spoty',
+  getAllUser_IDPlay: 'SELECT id_usu_spoty FROM [dbo].[ePlaylist] WHERE [id_playlist_spoty] =  @id_playlist_spoty',
+  getAllUser_IDTrack: 'SELECT id_usu_spoty FROM [dbo].[eTrack] WHERE [id_trac_spoty] =  @id_trac_spoty',
+  isInMTrack: 'SELECT id_trac_spoty FROM [dbo].[mTrack] WHERE id_trac_spoty = @id_trac_spoty ',
 
 
 
-  getUserByID: 'SELECT * FROM [bd_melodyfriend].[mUsuario] WHERE id_usu_spoty = @id_usu_spoty',
-  // UpdateUser1: 'UPDATE [bd_melodyfriend].[musuario]'+
+  getUserByID: 'SELECT * FROM [dbo].[mUsuario] WHERE id_usu_spoty = @id_usu_spoty',
+  // UpdateUser1: 'UPDATE [dbo].[musuario]'+
   //             'SET [nickname_usu_spoti] = @nickname_usu_spoti'+
   //             ',[name_usu] = @name_usu'+
   //             ',[fcNaci_usu] = @fcNaci_usu'+
@@ -46,8 +46,8 @@ const queries = {
   //             ',[twitter] = @twitter'+
   //             ',[instagram] = @instagram'+
   //             ' WHERE [id_usu_spoty] = @id_usu_spoty',
-  // UpdateUser: 'UPDATE [bd_melodyfriend].[musuario] SET @atribute = @new_value  WHERE [id_usu_spoty] = @id_usu_spoty'
-  insertUser: 'INSERT INTO [bd_melodyfriend].[musuario] ([id_usu_spoty]' +
+  // UpdateUser: 'UPDATE [dbo].[musuario] SET @atribute = @new_value  WHERE [id_usu_spoty] = @id_usu_spoty'
+  insertUser: 'INSERT INTO [dbo].[mUsuario] ([id_usu_spoty]' +
     ' ,[nickname_usu_spoti]' +
     ' ,[name_usu]' +
     '  ,[fcNaci_usu]' +
