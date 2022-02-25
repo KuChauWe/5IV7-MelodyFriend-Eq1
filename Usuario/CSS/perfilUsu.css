@@ -54,6 +54,13 @@ body {
   margin: auto;
   background-color: rgb(255, 255, 255);
 }
+.img-perf img {
+  max-width: 200px;
+  max-height: 200px;
+  min-width: 199px;
+  min-height: 199px;
+  border-radius: 50%;
+}
 .ds-der {
   width: 33%;
   height: 80%;
