@@ -119,9 +119,6 @@ section a {
   font-size: 12px;
   margin-bottom: -10px;
 }
-#info {
-  padding-top: 15vw;
-}
 
 /*Lo de abajo quita los horribles estilos que incluye el navegador para las etiquetas <a>*/
 a:-webkit-any-link {
@@ -155,3 +152,36 @@ body::-webkit-scrollbar-thumb {
         filter: blur(2px);
     No los usé pero ps x
 **/
+@media only screen and (max-width: 1280px) {
+  #barraLateral {
+    width: 226px;
+  }
+  #barraLateral.active {
+    left: -226px;
+  }
+  #barraLateral ul li {
+    margin-block: 20px;
+    font-size: 17px;
+  }
+  .textoenListas {
+    width: 185px;
+  }
+  #barraLateral .toggle-btn {
+    left: 246px;
+  }
+  #barraLateral .toggle-btn i {
+    width: 35px;
+    font-size: 25px;
+  }
+  #barraLateral img {
+    max-width: 100px;
+  }
+  #info {
+    margin-top: 30vh;
+    bottom: 0;
+    left: 0;
+  }
+  #contenidoGeneral {
+    margin-left: 325px;
+  }
+}

@@ -175,18 +175,16 @@ section a {
   font-size: 12px;
   margin-bottom: -10px;
 }
-#info {
-  padding-top: 15vw;
-}
+
 /*Cambiar las barras de desplazamiento*/
 body::-webkit-scrollbar {
   width: 12px; /* width of the entire scrollbar */
+  display: none;
 }
 
 body::-webkit-scrollbar-track {
   background: none; /* color of the tracking area */
 }
-
 body::-webkit-scrollbar-thumb {
   background-color: rgb(14, 14, 14); /* color of the scroll thumb */
   border-radius: 100px; /* roundness of the scroll thumb */
@@ -250,5 +248,50 @@ body::-webkit-scrollbar-thumb {
   }
   .textoInferior {
     margin-top: 12px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  #barraLateral {
+    width: 226px;
+  }
+  #barraLateral.active {
+    left: -226px;
+  }
+  #barraLateral ul li {
+    margin-block: 20px;
+    font-size: 17px;
+  }
+  .textoenListas {
+    width: 185px;
+  }
+  #barraLateral .toggle-btn {
+    left: 246px;
+  }
+  #barraLateral .toggle-btn i {
+    width: 35px;
+    font-size: 25px;
+  }
+  #barraLateral img {
+    max-width: 100px;
+  }
+  #info {
+    margin-top: 30vh;
+    bottom: 0;
+    left: 0;
+  }
+  #contenidoGeneral {
+    margin-left: 305px;
+  }
+  /* #contenidoGeneral {
+    margin-left: 390px;
+    transition: all 200ms linear;
+  }
+  */
+  #contenidoGeneral.active {
+    margin-left: 70px;
+  }
+  i.fa-caret-left,
+  i.fa-caret-right {
+    display: none;
   }
 }
