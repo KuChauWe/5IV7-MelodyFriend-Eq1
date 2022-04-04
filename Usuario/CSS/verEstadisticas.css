@@ -111,7 +111,9 @@ section a {
   font-size: 12px;
   margin-bottom: -10px;
 }
-
+#info {
+  padding-top: 15vw;
+}
 /*Cambiar las barras de desplazamiento*/
 body::-webkit-scrollbar {
   width: 12px; /* width of the entire scrollbar */
@@ -158,5 +160,8 @@ body::-webkit-scrollbar-thumb {
   }
   #contenidoGeneral {
     margin-left: 325px;
+  }
+  #info {
+    padding-top: 0;
   }
 }

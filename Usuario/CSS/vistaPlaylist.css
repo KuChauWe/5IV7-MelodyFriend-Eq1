@@ -119,6 +119,9 @@ section a {
   font-size: 12px;
   margin-bottom: -10px;
 }
+#info {
+  padding-top: 15vw;
+}
 
 /*Lo de abajo quita los horribles estilos que incluye el navegador para las etiquetas <a>*/
 a:-webkit-any-link {
@@ -183,5 +186,8 @@ body::-webkit-scrollbar-thumb {
   }
   #contenidoGeneral {
     margin-left: 325px;
+  }
+  #info {
+    padding-top: 0;
   }
 }
