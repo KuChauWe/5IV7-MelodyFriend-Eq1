@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    outline: none;
+    border: none;
+    transition: 500ms;
+}
+div.contenedorPrincipal {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-around;
+}
+
+figure.logo-app img {
+    width: 174px;
+    height: 174px;
+    margin-top: 40px;
+}
+
+div.contenedorDatosU {
+    backdrop-filter: brightness(160%);
+    flex-direction: column;
+    border-radius: 15px;
+    margin-top: 75px;
+    padding-top: 25px;
+    padding-inline: 110px;
+    padding-bottom: 63px;
+    width: 1238.2px;
+    margin-bottom: 75px;
+    /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+}
+
+div.trampa {
+    width: 174px;
+    height: 174px;
+    margin-top: 27px;
+}
+
+/*Inicia Primera sección*/
+div.trampa2 {
+    width: 267px;
+    height: 52px;
+}
+
+div.primeraS {
+    display: flex;
+    font-size: 28px;
+    text-align: right;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+div.primeraS div.imagenPerf {
+    width: 376px;
+    height: 376px;
+    border-radius: 50%;
+    background-color: rgb(76,76,76);
+}
+
+div.primeraS div.usuarioID {
+    width: 267px;
+    height: 52px;
+}
+
+/*Termina Primera sección*/
+/*Inicia Segunda sección*/
+div.segundaS {
+    font-size: 68px;
+    text-align: center;
+}
+div.segundaS .fa-external-link-alt{
+    font-size: 28px;
+}
+div.segundaS .ra:hover{
+    color: rgb(136,204,6);
+}
+/*Termina Segunda sección*/
+/*Inicia Tercera sección*/
+div.terceraS{
+    margin-top: 54px;
+    font-size: 28px;
+    
+}
+div.terceraS .datosGnral{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+textarea#usuDesc{
+    background-color: rgb(76,76,76);
+    padding: 20px;
+    border-radius: 5px;
+    width: 1017.58px;
+    max-width: 1017.58px;
+    height: 209px;
+    max-height: 209px;
+    text-align: center;
+    padding: 80px;
+    font-size: 28px;
+}
+/*Cambiar las barras de desplazamiento*/
+*::-webkit-scrollbar {
+    width: 5px;
+  }
+  body::-webkit-scrollbar-track {
+    background: none;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(14, 14, 14);
+    border-radius: 100px;
+    border: none;
+  }
+  textarea::-webkit-scrollbar-track {
+    background: none;
+  }
+  textarea::-webkit-scrollbar-thumb {
+    background-color: rgb(31, 31, 31);
+    border-radius: 100px;
+    border: none;
+  }
+div.terceraS p{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+div.terceraS select,
+div.terceraS select option{
+    color: rgb(14,14,14);
+    font-size: 28px;
+    text-align: center;
+}
+div.terceraS select{
+    border-radius: 5px;
+    height: 58px;
+}
+div.terceraS select#semestreOpt{
+    margin-bottom: 44px;
+}
+div.terceraS input#redSocial{
+    width: 100%;
+    height: 68px;
+    border-radius: 5px;
+    font-size: 28px;
+    padding-inline: 20px;
+    color: rgb(14,14,14);
+    margin-bottom:40px
+}
+/*Termina Tercera sección*/
+/*Inicia Cuarta sección*/
+div.cuartaS{
+    display: flex;
+    justify-content: flex-end; 
+}
+div.cuartaS input{
+    color: rgb(255,255,255);
+    background-color: rgb(136,204,6);
+    width: 212px;
+    height: 58px;
+    border-radius: 100px;
+    font-size: 28px;
+}
+div.cuartaS input:hover{
+    background-color: rgb(33,84,0);
+}

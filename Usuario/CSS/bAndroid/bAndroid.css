@@ -6,9 +6,8 @@
   outline: none;
 }
 body {
-  background: rgb(31, 31, 31);
   background: linear-gradient(
-    90deg rgb(31, 31, 31) 0%,
+    180deg, rgb(31, 31, 31) 0%,
     rgb(26, 26, 26) 16%,
     rgb(18, 18, 18) 100%
   );
