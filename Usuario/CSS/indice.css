@@ -50,6 +50,7 @@
 }
 html,
 body {
+  height: 100%;
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -58,14 +59,6 @@ div.todo {
   height: 100%;
   background: linear-gradient(
     180deg,
-    rgb(31, 31, 31) 0%,
-    rgb(26, 26, 26) 16%,
-    rgb(18, 18, 18) 100%
-  );
-}
-body {
-  background: linear-gradient(
-    90deg,
     rgb(31, 31, 31) 0%,
     rgb(26, 26, 26) 16%,
     rgb(18, 18, 18) 100%
@@ -211,7 +204,8 @@ body::-webkit-scrollbar-thumb {
 /*Aquí termina*/
 /*Barra lateral:*/
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1600px) {
+  /*Unicamente aquí se queda en 1600px, en los demás como máximo será 1440px*/
   #barraLateral {
     width: 226px;
   }
@@ -284,5 +278,15 @@ body::-webkit-scrollbar-thumb {
   div#contenidoInferiorAlinear {
     padding-bottom: 30px;
     margin-left: -50px;
+  }
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  div.todo {
+    height: auto;
   }
 }
