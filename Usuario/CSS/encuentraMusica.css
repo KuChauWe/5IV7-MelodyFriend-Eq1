@@ -52,10 +52,19 @@
   font-size: 30px;
   color: rgb(136, 204, 6);
 }
+html,
 body {
-  background: rgb(31, 31, 31);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+div.todo {
+  height: 100%;
   background: linear-gradient(
-    90deg rgb(31, 31, 31) 0%,
+    180deg,
+    rgb(31, 31, 31) 0%,
     rgb(26, 26, 26) 16%,
     rgb(18, 18, 18) 100%
   );

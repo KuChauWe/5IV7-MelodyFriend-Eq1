@@ -48,9 +48,26 @@
   font-size: 30px;
   color: rgb(136, 204, 6);
 }
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+div.todo {
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgb(31, 31, 31) 0%,
+    rgb(26, 26, 26) 16%,
+    rgb(18, 18, 18) 100%
+  );
+}
 body {
   background: linear-gradient(
-    90deg, rgb(31, 31, 31) 0%,
+    90deg,
+    rgb(31, 31, 31) 0%,
     rgb(26, 26, 26) 16%,
     rgb(18, 18, 18) 100%
   );
@@ -58,7 +75,6 @@ body {
 #contenidoGeneral {
   margin-left: 390px;
   transition: all 200ms linear;
-  padding-bottom: 15%;
 }
 #contenidoGeneral.active {
   margin-left: 80px;
