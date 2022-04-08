@@ -97,12 +97,12 @@
     
     <div class="div-btn">
         <div class="db">
-            <button class="botón">Agregar</button>
+            <button class="botón" action="ValidaUrl()">Agregar</button>
         </div>
     </div>
 
-    <!--Esto evita que se pulse enter en el textarea de la descripción y red social-->
     <script>
+        //Esto evita que se pulse enter en el textarea de la descripción y red social
         constrainInput = (event) => { 
             event.target.value = event.target.value.replace(/[\r\n\v]+/g, '')
         }
@@ -118,6 +118,25 @@
         document.querySelectorAll('rs').forEach(el => {
         el.addEventListener('keyup', constrainInput)
         })
+        
+        function ValidaUrl(url){
+            var urlSplit = url.split(".");
+            if(urlSplit.length >= 2){
+                if(urlSplit[0] == "https://twitter/" ){
+                    console.log("invalida");
+                }
+                else if( urlSplit[1] == "instagram"){
+                    console.log("url válida");
+                }
+                else if(   urlSplit[1] =="facebook"  &&  urlSplit[2] == "com/profile"){   
+                    console.log("url válida");}
+                else {
+                    console.log("url inválida");
+                }
+            }
+        }
     </script>
+
+    <!--Validar red social-->
 </body>
 </html>
