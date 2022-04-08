@@ -174,7 +174,10 @@ section a {
   font-size: 12px;
   margin-bottom: -10px;
 }
-
+div.imagenes:hover {
+  filter: brightness(120%);
+  transition: 500ms;
+}
 /*Cambiar las barras de desplazamiento*/
 body::-webkit-scrollbar {
   width: 12px; /* width of the entire scrollbar */
@@ -220,6 +223,40 @@ body::-webkit-scrollbar-thumb {
     left: 0;
   }
   #contenidoGeneral {
-    margin-left: 325px;
+    margin-left: 246px;
   }
+  #contenidoGeneral.active {
+    margin-left: 70px;
+  }
+
+  /*Inicia responsive único
+  :v:v:v:v:v:v:v:v:v:v:v:v*/
+  /*Al fina esta parte no es
+  muy unica.*/
+  .imagenes {
+    min-width: 125px;
+    min-height: 174px;
+    margin-inline: 18px;
+    border-radius: 5px;
+  }
+  .glider-contain {
+    max-width: 840px;
+  }
+  .partesCasilla img {
+    width: 120px;
+    max-height: 120px;
+    min-height: 110px;
+    padding-inline: 2px;
+  }
+  .partesCasilla a {
+    font-size: 12px;
+  }
+  .textoInferior {
+    margin-top: 5px;
+    margin-left: 6px;
+    margin-bottom: 15px;
+  }
+  /*Hasta aquí es es responsive de
+  los sliders, contando a el menú 
+  izquierdo.*/
 }
