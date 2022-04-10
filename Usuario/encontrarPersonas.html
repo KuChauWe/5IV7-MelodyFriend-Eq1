@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="CSS/encontrarPersonas.css">
     <link rel="shortcut icon" href="img/LogoMelodyFriend.png">
     <link rel="stylesheet" href="CSS/bAndroid/bAndroid.css">
-    <script src="https://kit.fontawesome.com/b4150a26b3.js" crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/1f6d8d7d59.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 <body>
     <div id="primera-linea">
@@ -56,49 +57,25 @@
                                 <input id="ingresarTexto" type="search" placeholder="Buscar una persona por su ID"/>
                             </section>
                         </div>
-                    </form>
-                            <!--But lo terminas-->
-                    <div class="botonesDerecha">
-                        <div class="superiorDerecha1">
-                            <input type="button" id="gustosComun" value="Personas con gustos en común"/>
-                        </div>
-                        <div class="superiorDerecha2">
-                            <input type="button" id="miGrupo" value="Mi Grupo"/>
-                        </div>
-                    </div>
-                </div>
-                <div id="contenidoAlinear">
-                    <div class="formulario&resultados">
-                        <form id="fdesp">
-                            <select name="carreraTecnica" class="desplegables">
-                                <option value="0" selected disabled>Carrera técnica</option>
-                                <option value="1">Tronco Común</option>
-                                <option value="2">Programación</option>
-                                <option value="3">MSA</option>
-                                <option value="4">Sistemas Digitales</option>
-                                <option value="5">Mecatrónica</option>
-                            </select>
-                            <select name="semestre" class="desplegables">
-                                <option value="0" selected disabled>Semestre</option>
-                                <option value="1">Primer Semestre</option>
-                                <option value="2">Segundo Semestre</option>
-                                <option value="3">Tercer Semestre</option>
-                                <option value="4">Cuarto Semestre</option>
-                                <option value="5">Quinto Semestre</option>
-                                <option value="6">Sexto Semestre</option>
-                            </select>
-                        </form>
-
-                        <div class="resultados">
-                            <div class="vistaUsuarios">
-                                <section class="usuarios">
-                                        <a href="verPerfilUsu.html"><img src="IMG/gatoLatino.jpg"></a>
-                                        <a href="verPerfilUsu.html">Nombre del usuario</a>
-                                        <a href="verPerfilUsu.html">Breve descripción</a> <!--Creo que en estas es mejor poner labels dentro de las etiquetas, si se me olvida se la saben xd-->
-                                </section>
+                        <div class="filtrosBuscador">
+                            <section><i class="bi bi-filter-circle" id="btnFiltro"></i></section>
+                            <div class="contenedorOpt" id="contenedorOpt">
+                                <section class="filtrosOpts" id="primerF"><p>Carrera técnica</p><input type="checkbox" class="filtroCkx"></section> <!--Aquí se establecen los filtros 😘-->
+                                <section class="filtrosOpts" id="segundoF"><p>Semestre</p><input type="checkbox" class="filtroCkx"></section> <!--Aquí se establecen los filtros 😘-->
                             </div>
                         </div>
+                    </form>
+                            <!--But lo terminas-->
+                            <!--Lo siento señora Jackson uuuuuh
+                            lo digo encerio
+                            nunca quise hacer a su hija llorar-->
+                    <div class="gustosBtn">
+                        <a>Gustos Similares</a>
                     </div>
+                </div>
+                <!--Header completamente terminado-->
+                <div class="resultados">
+                    
                 </div>
             </div>
         </div>

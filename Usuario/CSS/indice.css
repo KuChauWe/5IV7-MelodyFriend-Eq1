@@ -58,8 +58,7 @@ body {
 div.todo {
   height: 100%;
   background: linear-gradient(
-    180deg,
-    rgb(31, 31, 31) 0%,
+    180deg rgb(31, 31, 31) 0%,
     rgb(26, 26, 26) 16%,
     rgb(18, 18, 18) 100%
   );
