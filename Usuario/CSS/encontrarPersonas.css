@@ -9,6 +9,9 @@
   border: none;
   transition: 300ms;
 }
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
   height: auto;
