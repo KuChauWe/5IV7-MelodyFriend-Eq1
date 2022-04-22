@@ -1,0 +1,312 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  outline: none;
+  border: none;
+  transition: 300ms;
+}
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+div.todo {
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgb(31, 31, 31) 0%,
+    rgb(26, 26, 26) 16%,
+    rgb(18, 18, 18) 100%
+  );
+}
+#barraLateral {
+  position: fixed;
+  width: 316px;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  left: 0;
+  transition: all 200ms linear;
+}
+#barraLateral.active {
+  left: -316px;
+}
+#barraLateral ul li {
+  color: rgb(250, 250, 250);
+  text-align: center;
+  margin-block: 25px;
+  font-size: 25px;
+}
+.textoenListas {
+  background: rgb(30, 30, 30);
+  border-radius: 3px;
+  width: 225px;
+  padding: 4px;
+}
+.textoenListas:hover {
+  background: rgb(33, 84, 0);
+  transition: 700ms;
+}
+#pagActual {
+  background: rgb(136, 204, 6);
+}
+#barraLateral .toggle-btn {
+  position: absolute;
+  left: 336px;
+  top: 20px;
+  cursor: pointer;
+}
+#barraLateral .toggle-btn i {
+  display: block;
+  width: 40px;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(136, 204, 6);
+}
+#contenidoGeneral {
+  transition: all 200ms linear;
+  margin-left: 390px;
+}
+#contenidoGeneral.active {
+  margin-left: 80px;
+}
+/*Buscador*/
+input#ingresarTexto {
+  background: none;
+  border: none;
+  color: rgb(14, 14, 14);
+  font-size: 17px;
+  padding-block: 19px;
+}
+.fa-search {
+  color: rgb(136, 204, 6);
+  font-size: 27px;
+  margin: 13px;
+}
+#fondo {
+  display: flex;
+  justify-content: flex-start;
+}
+.contenedorBuscador {
+  margin-top: 51px;
+  margin-left: 60px;
+  background: rgb(250, 250, 250);
+  width: 320px;
+  max-height: 59px;
+  border-radius: 100px;
+}
+#ingresarTexto {
+  width: 240px;
+}
+div.filtrosBuscador,
+div.contenedorOpt,
+section.filtrosOpts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.filtrosBuscador {
+  margin-top: 51px;
+  max-height: 59px;
+  margin-left: 10px;
+}
+div.contenedorOpt {
+  background-color: rgb(250, 250, 250);
+  width: 0px;
+  height: 0px;
+  margin-left: 10px;
+  margin-top: 3px;
+  border-radius: 50px;
+  transition-delay: 100ms;
+}
+div#contenedorOpt.active {
+  height: 47px;
+  width: 350px;
+}
+div.contenedorOpt section.filtrosOpts.active {
+  padding: 10px;
+  height: 100%;
+  width: 187px;
+  font-size: 18px;
+  display: flex;
+  color: rgb(14, 14, 14);
+}
+div.contenedorOpt section.filtrosOpts {
+  font-size: 0px;
+  color: rgb(31, 31, 31);
+}
+input[type="checkbox"].active {
+  width: auto;
+  height: auto;
+  transition-delay: 500ms;
+}
+input[type="checkbox"] {
+  width: 0px;
+  height: 0px;
+  transition-delay: 500ms;
+}
+div.contenedorOpt section.filtrosOpts p {
+  color: rgb(14, 14, 14);
+  padding-inline: 10px;
+}
+div.contenedorOpt section#primerF {
+  border-right: 2px solid rgb(30, 30, 30);
+}
+div.contenedorOpt section#segundoF {
+  border-left: 2px solid rgb(30, 30, 30);
+}
+div.filtrosBuscador i {
+  color: rgb(136, 204, 6);
+  font-size: 48px;
+}
+div.filtrosBuscador i:hover {
+  color: rgb(33, 84, 0);
+  font-size: 48px;
+}
+/*Termina el buscador*/
+div.encabezado {
+  display: flex;
+  justify-content: space-between;
+}
+div.gustosBtn {
+  background-color: rgb(136, 204, 6);
+  margin-top: 62px;
+  width: 225px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 91px;
+  text-align: center;
+  padding-block: 3px;
+  font-size: 24px;
+}
+div.gustosBtn:hover {
+  background-color: rgb(33, 84, 0);
+  transition: 500ms ease;
+}
+/*A partir de este punto empieza la sección de resultados*/
+div.resultados {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 55px;
+}
+div.contenedorUsuario section {
+  background-color: rgb(250, 250, 250);
+  width: 760.18px;
+  border-radius: 5px;
+  margin-block: 35px;
+}
+div.contenedorUsuario section:hover {
+  background-color: rgb(235, 235, 235);
+}
+section.protectorFlex a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+section.protectorFlex figure img {
+  max-width: 47px;
+  width: 47px;
+  max-height: 47px;
+  height: 47px;
+  border-radius: 50%;
+  border: 2px solid rgb(136, 204, 6); /*Borrar esto después*/
+  margin: 11px;
+  margin-top: 14px;
+  margin-left: 14px;
+}
+section.protectorFlex p {
+  color: rgb(14, 14, 14);
+  text-align: center;
+  margin-inline: 20px;
+  font-size: 16px;
+}
+section.protectorFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+section.protectorFlex p.porcentajeCoincidencia {
+  width: 30%;
+}
+#info {
+  padding-top: 15vw;
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+/*Header terminado ¿Sabias que el 50% de Salchica es sal?*/
+.informacion a {
+  text-align: center;
+  color: rgb(33, 84, 0);
+  font-size: 12px;
+  text-decoration: underline;
+}
+.informacion p {
+  text-align: center;
+  color: rgb(33, 84, 0);
+  font-size: 12px;
+  margin-bottom: -10px;
+}
+
+/*Cambiar las barras de desplazamiento*/
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: none; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(14, 14, 14); /* color of the scroll thumb */
+  border-radius: 100px; /* roundness of the scroll thumb */
+  border: none;
+}
+/*Aquí termina*/
+@media only screen and (max-width: 1280px) {
+  #barraLateral {
+    width: 226px;
+  }
+  #barraLateral.active {
+    left: -226px;
+  }
+  #barraLateral ul li {
+    margin-block: 20px;
+    font-size: 17px;
+  }
+  .textoenListas {
+    width: 185px;
+  }
+  #barraLateral .toggle-btn {
+    left: 246px;
+  }
+  #barraLateral .toggle-btn i {
+    width: 35px;
+    font-size: 25px;
+  }
+  #barraLateral img {
+    max-width: 100px;
+  }
+  #info {
+    margin-top: 30vh;
+    bottom: 0;
+    left: 0;
+  }
+  #contenidoGeneral {
+    margin-left: 325px;
+  }
+}
