@@ -5,6 +5,9 @@
   color: rgb(250, 250, 250);
   outline: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: linear-gradient(
     180deg,

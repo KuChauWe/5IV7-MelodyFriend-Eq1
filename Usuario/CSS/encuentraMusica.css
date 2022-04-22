@@ -94,8 +94,9 @@ input {
   justify-content: flex-start;
 }
 .contenedorBuscador {
-  margin-top: 30px;
+  margin-top: 51px;
   margin-left: 60px;
+  margin-bottom: 20px;
   background: rgb(250, 250, 250);
   width: 320px;
   max-height: 59px;
@@ -174,6 +175,9 @@ section a {
   font-size: 12px;
   margin-bottom: -10px;
 }
+#info {
+  padding-top: 15vw;
+}
 div.imagenes:hover {
   filter: brightness(120%);
   transition: 500ms;
@@ -218,7 +222,7 @@ body::-webkit-scrollbar-thumb {
     max-width: 100px;
   }
   #info {
-    margin-top: 30vh;
+    margin-top: 0;
     bottom: 0;
     left: 0;
   }

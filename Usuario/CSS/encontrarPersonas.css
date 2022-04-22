@@ -241,6 +241,9 @@ section.protectorFlex {
 section.protectorFlex p.porcentajeCoincidencia {
   width: 30%;
 }
+#info {
+  padding-top: 15vw;
+}
 a:-webkit-any-link {
   text-decoration: none;
   cursor: pointer;

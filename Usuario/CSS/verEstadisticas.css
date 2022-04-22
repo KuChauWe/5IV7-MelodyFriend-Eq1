@@ -78,6 +78,17 @@ body {
   margin-left: 80px;
 }
 /*Gráficas*/
+div.graficasGen p#titulo {
+  margin-bottom: 20px;
+}
+div.graficasGen p#titulo,
+div.graficasGen p a#melody {
+  font-size: 42px;
+}
+div.graficasGen p a#melody {
+  color: rgb(136, 204, 6);
+  font-style: italic;
+}
 canvas {
   max-width: 450px;
   max-height: 400px;
@@ -107,7 +118,8 @@ p.leyendaGraf {
 }
 .graficasGen {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-left: -100px;
 }
 .graficaInd {

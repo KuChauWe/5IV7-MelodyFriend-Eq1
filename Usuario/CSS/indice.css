@@ -182,6 +182,9 @@ section a {
   font-size: 12px;
   margin-bottom: -10px;
 }
+#info {
+  padding-top: 15vw;
+}
 div.imagenes:hover {
   filter: brightness(120%);
   transition: 500ms;
