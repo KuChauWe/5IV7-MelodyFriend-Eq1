@@ -4,12 +4,20 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 body {
-  background: rgb(31, 31, 31);
   background: linear-gradient(
-    90deg rgb(31, 31, 31) 0%,
+    180deg,
+    rgb(31, 31, 31) 0%,
     rgb(26, 26, 26) 16%,
     rgb(18, 18, 18) 100%
   );
+}
+html,
+body {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 .contenedorPrincipal {
   display: flex;
@@ -26,7 +34,6 @@ body {
   margin-block: 5%;
   padding: 2rem;
   border-radius: 25px;
-  background: rgb(40, 40, 40);
   background: radial-gradient(
     circle,
     rgb(40, 40, 40) 0%,
@@ -53,8 +60,12 @@ body {
   background: rgb(21, 136, 62);
   width: 265px;
   height: 61px;
+  transition: 500ms;
 }
-.textoInferior {
+.botonesSesiones:hover {
+  filter: brightness(80%);
+}
+.textoInferior p {
   color: rgb(21, 136, 62);
   display: flex;
   justify-content: flex-start;

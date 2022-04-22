@@ -6,10 +6,18 @@
   text-align: center;
   transition: 500ms;
 }
+html,
 body {
-  background: rgb(31, 31, 31);
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+body {
   background: linear-gradient(
-    90deg rgb(31, 31, 31) 0%,
+    180deg,
+    rgb(31, 31, 31) 0%,
     rgb(26, 26, 26) 16%,
     rgb(18, 18, 18) 100%
   );
