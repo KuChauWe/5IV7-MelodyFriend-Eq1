@@ -9,6 +9,17 @@
   border: none;
   transition: 500ms;
 }
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
 div.contenedorPrincipal {
   display: flex;
   align-items: flex-start;
@@ -31,7 +42,7 @@ div.contenedorDatosU {
   padding-inline: 110px;
   padding-bottom: 63px;
   width: 1238.2px;
-  margin-bottom: 75px;
+  margin-bottom: 0px;
 }
 
 div.trampa {
@@ -148,6 +159,38 @@ div.terceraS a#redSocial {
 div.cuartaS {
   display: flex;
   justify-content: flex-end;
+}
+/*Cuadro inferior*/
+.soporte-texto {
+  text-align: center;
+  font-size: 28px;
+}
+.soporte-texto a {
+  color: rgb(136, 204, 6);
+}
+.soporte-btn {
+  text-align: center;
+  margin-block: 15px;
+}
+.soporte-btn button {
+  background: rgba(0, 0, 0, 0);
+}
+.soporte-btn button i {
+  color: rgb(136, 204, 6);
+  font-size: 88px;
+}
+.soporte-btn button i:hover {
+  color: rgb(21, 136, 62);
+}
+.soporte-nota {
+  margin-top: 50px;
+}
+.soporte-nota p {
+  color: rgb(21, 136, 62);
+  font-size: 14px;
+}
+div.secundario {
+  margin-bottom: 75px;
 }
 @media only screen and (max-width: 1280px) {
   div.contenedorPrincipal {

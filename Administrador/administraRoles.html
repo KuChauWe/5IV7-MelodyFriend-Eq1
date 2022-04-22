@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Administra Roles 🐱‍🐉</title>
+        <link rel="shortcut icon" href="img/LogoMelodyFriend.png">
+        <link rel="stylesheet" href="CSS/bAndroid/bAndroid.css">
+        <link rel="stylesheet" href="CSS/administraRoles.css">
+        <script src="https://kit.fontawesome.com/1f6d8d7d59.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        
+    </head>
+<body>
+    <div id="primera-linea">
+        <div>
+            <p>
+                ¿Quieres usar nuestra aplicación desde tu movil?
+                <br>
+                ¡<a href="https://github.com/KuChauWe/5IV7-MelodyFriend-Eq1/tree/master">Descarga</a> nuestra app!
+            </p>
+            <div id="fEquipo">
+                <p>-Equipo de <a>MelodyFriend</a>
+                    <p><img src="IMG/LogoMelodyFriend.png"></p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="contenedorPrincipal">
+        <div id="barraLateral">
+            <div class="toggle-btn">
+                <i class="fa fas fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="index.html"><img src="IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
+                <li class="textoenListas"><a href="encontrarPersonas.html">Encuentra personas</a></li>
+                <li class="textoenListas"><a href="administraRoles.html">Administra roles</a></li>
+                <li class="textoenListas"><a href="verEstadisticas.html">Ver estadísticas</a></li>
+                <li class="textoenListas sugerencias"><a href="mailto:fabbidad@gmail.com?subject=Sugerencia sobre MelodyFriend.&body=Ingresa tu sugerencia :D">Comentarios</a></li>
+                <div id="info">
+                    <ul>
+                        <li class="informacion"><p>Contáctanos:</p></li>
+                        <li class="informacion"><a href="https://www.facebook.com/Fabiddat-104623465060255/"><p>Facebook</p></a></li>
+                        <li class="informacion"><a href="mailto:fabbidad@gmail.com?subject=Sugerencia sobre MelodyFriend.&body=Ingresa tu sugerencia :D"><p>fabbidad@gmail.com</p></a></li>
+                        <li class="informacion"><a href="terminosyCondiciones(Aceptados).html"><p>Términos y condiciones</p></a></li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div id="contenidoGeneral">
+            <div class="contenidoCabecera">
+                <p>Administrador de roles</p>
+            </div>
+            <div class="subt">
+                <p>Usuarios <a>Mirones</a></p>
+            </div>
+            <div class="resultados">
+                <div class="vistaUsuarios">
+                    <!--Los section son los que repiten (⊙x⊙;)-->
+                    <div class="resultados">
+                        <div class="contenedorResultados">
+                            <div class="contenedorUsuario">
+
+                                <div class="contenedorFlex">
+                                    <section class="protectorFlex">
+                                        <a href="perfilUsu(actualizado).html">
+                                            <figure>
+                                                <img src="IMG/LogoMelodyFriend.png"><!--Nalgona, aquí va la fotopolla de perfil-->
+                                            </figure>
+                                            <p class="nombreUsuario">Pepe el Toro</p>
+                                            <p class="descripcionUsuario">¡Hola! Esta es mi descripción.</p>
+                                        </a>
+                                        <p class="porcentajeCoincidencia">Coincide contigo: 100%</p>
+                                    </section>
+                                    <div class="btn-del">
+                                        <button id="btn-abrir-popup" class="btn-abrir-popup"><i class="bi bi-x-square"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="contenedorFlex">
+                                    <section class="protectorFlex">
+                                        <a href="perfilUsu(actualizado).html">
+                                            <figure>
+                                                <img src="IMG/buraimdecuin.jpg">
+                                            </figure>
+                                            <p class="nombreUsuario">Pepe el Toro</p>
+                                            <p class="descripcionUsuario">¡Hola! Esta es mi descripción.</p>
+                                        </a>
+                                        <p class="porcentajeCoincidencia">Coincide contigo: 100%</p>
+                                    </section>
+                                    <div class="btn-del">
+                                        <button id="btn-abrir-popup" class="btn-abrir-popup"><i class="bi bi-x-square"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Todo esto se copia
+                                <section class="protectorFlex">
+                                    <a href="perfilUsu(actualizado).html">
+                                        <figure>
+                                            <img src="IMG/buraimdecuin.jpg">
+                                        </figure>
+                                        <p class="nombreUsuario">Pepe el Toro</p>
+                                        <p class="descripcionUsuario">¡Hola! Esta es mi descripción.</p>
+                                    </a>
+                                    <p class="porcentajeCoincidencia">Coincide contigo: 100%</p>
+                                    <i class="bi bi-x-square"></i>
+                                </section>
+                                -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+                <div class="pop-flex">
+                    <section class="texto_pop-up">
+                        <p>¿Quieres <a>remover</a> a esta persona de tu lista?</p>
+                        <p>Esta acción <a>no podrá</a> revertirse.</p>
+                    </section>
+                    <section class="btn_pop-up">
+                        <button id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="bi bi-x-square"></i></button>
+                        <button id="btn-abrir-popup" class="btn-abrir-popup"><i class="bi bi-check-square"></i></button>
+                    </section>
+                </div>  
+			</div>
+		</div>
+
+    <script src="JS/administraRoles.js"></script>
+    <script src="JS/bAndroid.js"></script>
+</body>
+</html>
