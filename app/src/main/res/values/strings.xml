@@ -1,0 +1,32 @@
+<resources>
+    <string name="entrada_de_da">6IV7_Melody_Friend_1</string>
+    <string-array name="Semestre">
+        <item>1er Semestre</item>
+        <item>2do Semestre</item>
+        <item>3er Semestre</item>
+        <item>4to Semestre</item>
+        <item>5to Semestre</item>
+        <item>6to Semestre</item>
+    </string-array>
+
+    <string name="entrada_de_datos">6IV7_Melody_Friend_1</string>
+    <string-array name="Carrera">
+        <item>1er Semestre</item>
+        <item>2do Semestre</item>
+        <item>3er Semestre</item>
+        <item>4to Semestre</item>
+        <item>5to Semestre</item>
+        <item>6to Semestre</item>
+    </string-array>
+    <string name="title_activity_menu_desplegable">MenuDesplegable</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+</resources>

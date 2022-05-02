@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1715" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/drawable/ic_baseline_cancel_presentation_24.xml" value="0.1715" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1715" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.1715" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/admin_roles.xml" value="0.33" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/consultar_perfil_usuario.xml" value="0.2957427536231884" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/consultar_usuario.xml" value="0.2957427536231884" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/content_menu_desplegable.xml" value="0.25" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/entrada_de_datos.xml" value="0.2957427536231884" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/graficas.xml" value="0.33" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/header.xml" value="0.25" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/indu_activity_main.xml" value="0.33" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/list_element.xml" value="0.33" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/pagina_error.xml" value="0.33" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/menu/consultar_usuario.xml" value="0.3375" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/menu/drawer_menu.xml" value="0.3323076923076923" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
