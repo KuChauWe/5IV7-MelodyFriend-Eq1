@@ -1,5 +1,6 @@
 <resources>
-    <string name="entrada_de_da">6IV7_Melody_Friend_1</string>
+    /*Inicio String Semestre*/
+    <string name="entrada_de_datos">6IV7_Melody_Friend_1</string>
     <string-array name="Semestre">
         <item>1er Semestre</item>
         <item>2do Semestre</item>
@@ -8,16 +9,36 @@
         <item>5to Semestre</item>
         <item>6to Semestre</item>
     </string-array>
+    /*Final Sstring Semestre*/
 
-    <string name="entrada_de_datos">6IV7_Melody_Friend_1</string>
+    /*Inicio String Carrera*/
+    <string name="entrada_de_datos_c">6IV7_Melody_Friend_1</string>
     <string-array name="Carrera">
-        <item>1er Semestre</item>
-        <item>2do Semestre</item>
-        <item>3er Semestre</item>
-        <item>4to Semestre</item>
-        <item>5to Semestre</item>
-        <item>6to Semestre</item>
+        <item>Maquinas</item>
+        <item>Sistemas</item>
+        <item>Programación</item>
+        <item>Mecatronica</item>
     </string-array>
+    /*Final String Semestre*/
+
+    /*Inicio String Edad*/
+    <string name="entrada_de_datos_e">6IV7_Melody_Friend_1</string>
+    <string-array name="Edad">
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18 o más</item>
+    </string-array>
+    /*Final String Semestre*/
+
+    /*Inicio String Edad*/
+    <string name="entrada_de_datos_sx">6IV7_Melody_Friend_1</string>
+    <string-array name="Sexo">
+        <item>Femenino</item>
+        <item>Masculino</item>
+    </string-array>
+    /*Final String Semestre*/
+
     <string name="title_activity_menu_desplegable">MenuDesplegable</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

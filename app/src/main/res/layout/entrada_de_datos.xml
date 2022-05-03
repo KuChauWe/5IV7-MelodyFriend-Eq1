@@ -22,13 +22,14 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="89dp"
         android:layout_marginTop="184dp"
+        android:fontFamily="@font/roboto"
         android:text="Ingresa los datos solicitados"
         android:textAlignment="center"
-        android:textSize="18dp"
         android:textColor="#FFF"
-        android:fontFamily="@font/roboto"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="78dp" />
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinner_semestre"
@@ -37,9 +38,9 @@
         android:layout_marginStart="74dp"
         android:layout_marginTop="228dp"
         android:backgroundTint="#FFF"
-        app:cornerRadius="100dp"
-        android:spinnerMode="dropdown"
         android:fontFamily="@font/roboto"
+        android:spinnerMode="dropdown"
+        app:cornerRadius="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,10 +50,10 @@
         android:layout_height="40dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="440dp"
-        android:text="Crear Sesión"
-        app:cornerRadius="100dp"
         android:backgroundTint="#15883E"
         android:fontFamily="@font/roboto"
+        android:text="Crear Sesión"
+        app:cornerRadius="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,8 +61,28 @@
         android:id="@+id/spinner_carrera"
         android:layout_width="265dp"
         android:layout_height="28dp"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="74dp"
         android:layout_marginTop="276dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_edad"
+        android:layout_width="265dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="324dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_sexo"
+        android:layout_width="265dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="372dp"
         android:spinnerMode="dropdown"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

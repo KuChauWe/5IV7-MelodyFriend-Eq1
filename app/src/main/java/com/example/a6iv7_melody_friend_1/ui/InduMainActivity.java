@@ -43,21 +43,6 @@ public class InduMainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
-                    case R.id.nav_drawer1:
-                        Intent intent1 = new Intent(InduMainActivity.this , NavigationOne.class);
-
-                        startActivity(intent1);
-                        break;
-                    case R.id.nav_drawer2:
-                        Intent intent2 = new Intent(InduMainActivity.this , NavigationTwo.class);
-
-                        startActivity(intent2);
-                        break;
-                    case R.id.nav_aboutus:
-                        Intent intent3 = new Intent(InduMainActivity.this , aboutus.class);
-                        startActivity(intent3);
-                        break;
-
 
 //Paste your privacy policy link
 

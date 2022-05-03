@@ -42,63 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="320dp"
-        android:ems="3"
-        android:inputType="textPersonName"
-        android:text="Sexo"
-        android:textColor="#15883E"
-        android:fontFamily="@font/roboto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="390dp"
-        android:ems="7"
-        android:inputType="textPersonName"
-        android:text="Carrera Técnica"
-        android:textColor="#15883E"
-        android:fontFamily="@font/roboto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="548dp"
-        android:ems="7"
-        android:inputType="textPersonName"
-        android:text="Red Social"
-        android:textAlignment="center"
-        android:textColor="#15883E"
-        android:fontFamily="@font/roboto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="460dp"
-        android:ems="5"
-        android:inputType="textPersonName"
-        android:text="Semestre"
-        android:textColor="#15883E"
-        android:fontFamily="@font/roboto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
@@ -151,6 +94,62 @@
         android:textColor="#FFF"
         android:textSize="18dp"
         android:fontFamily="@font/roboto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="324dp"
+        android:fontFamily="@font/roboto"
+        android:text="Sexo"
+        android:textAlignment="center"
+        android:textColor="#15883E"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="396dp"
+        android:fontFamily="@font/roboto"
+        android:text="Carrera Técnica"
+        android:textAlignment="center"
+        android:textColor="#15883E"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="468dp"
+        android:fontFamily="@font/roboto"
+        android:text="Semestre"
+        android:textAlignment="center"
+        android:textColor="#15883E"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="548dp"
+        android:fontFamily="@font/roboto"
+        android:text="Red Social"
+        android:textAlignment="center"
+        android:textColor="#15883E"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

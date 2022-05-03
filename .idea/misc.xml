@@ -8,16 +8,23 @@
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1715" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.1715" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/activity_menu_desplegable.xml" value="0.1641337386018237" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/admin_roles.xml" value="0.33" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/app_bar_menu_desplegable.xml" value="0.1641337386018237" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/consultar_perfil_usuario.xml" value="0.2957427536231884" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/consultar_usuario.xml" value="0.2957427536231884" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/content_menu_desplegable.xml" value="0.25" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/entrada_de_datos.xml" value="0.2957427536231884" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/fragment_gallery.xml" value="0.1641337386018237" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/fragment_home.xml" value="0.1641337386018237" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/fragment_slideshow.xml" value="0.1641337386018237" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/graficas.xml" value="0.33" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/header.xml" value="0.25" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/indu_activity_main.xml" value="0.33" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/list_element.xml" value="0.33" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/nav_header_menu_desplegable.xml" value="0.1641337386018237" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/layout/pagina_error.xml" value="0.33" />
+        <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/menu/activity_main_drawer.xml" value="0.3323076923076923" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/menu/consultar_usuario.xml" value="0.3375" />
         <entry key="..\:/6IV7_Melody_Friend_1/app/src/main/res/menu/drawer_menu.xml" value="0.3323076923076923" />
       </map>

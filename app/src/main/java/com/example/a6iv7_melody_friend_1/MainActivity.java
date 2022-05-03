@@ -1,16 +1,22 @@
 package com.example.a6iv7_melody_friend_1;
 
+/*Los imports de spiner*/
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Toast;
+/*Hasta aquí*/
 
 import java.util.ArrayList;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+/*Los imports de las graficas*/
+import android.graphics.Color;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.Chart;
 import com.github.mikephil.charting.components.Legend;
@@ -22,6 +28,7 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.DataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+/*Hasta aquí*/
 
 
 public class MainActivity extends AppCompatActivity {
@@ -42,11 +49,38 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*Esto de abajo es del spiner, lo que sirve para la entrada de datos*/
-        Spinner spinnerSemestre = findViewById(R.id.spinner_semestre);
-        ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(this, R.array.Semestre, android.R.layout.simple_spinner_item);
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        spinnerSemestre.setAdapter(adapter);
+        /*Inicio Spinner Semestre*/
+        Spinner spinnerSemestre = findViewById(R.id.spinner_semestre);
+        ArrayAdapter<CharSequence>adapterSemestre=ArrayAdapter.createFromResource(this, R.array.Semestre, android.R.layout.simple_spinner_item);
+
+        adapterSemestre.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinnerSemestre.setAdapter(adapterSemestre);
+        /*Final Spinner Semestre*/
+
+        /*Inicio Spinner Carrera*/
+        Spinner spinnerCarrera=findViewById(R.id.spinner_carrera);
+        ArrayAdapter<CharSequence>adapterCarrera=ArrayAdapter.createFromResource(this, R.array.Carrera, android.R.layout.simple_spinner_item);
+
+        adapterCarrera.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinnerCarrera.setAdapter(adapterCarrera);
+        /*Final Spinner Carrera*/
+
+        /*Inicio Spinner Edad*/
+        Spinner spinnerEdad=findViewById(R.id.spinner_edad);
+        ArrayAdapter<CharSequence>adapterEdad=ArrayAdapter.createFromResource(this, R.array.Edad, android.R.layout.simple_spinner_item);
+
+        adapterEdad.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinnerEdad.setAdapter(adapterEdad);
+        /*Final Spinner Edad*/
+
+        /*Inicio Spinner Sexo*/
+        Spinner spinnerSexo=findViewById(R.id.spinner_sexo);
+        ArrayAdapter<CharSequence>adapterSexo=ArrayAdapter.createFromResource(this, R.array.Sexo, android.R.layout.simple_spinner_item);
+
+        adapterSexo.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinnerSexo.setAdapter(adapterSexo);
+        /*Final Spinner Sexo*/
 
     }
     private Chart getSameChart(Chart chart,String description,int textColor,int background,int animateY){
