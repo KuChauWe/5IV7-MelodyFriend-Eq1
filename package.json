@@ -1,33 +1,27 @@
 {
-  "name": "5iv7-melodyfriend-eq1",
+  "name": "melodyfriend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src",
-    "dev": "nodemon src"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KuChauWe/5IV7-MelodyFriend-Eq1.git"
+    "dev": "nodemon src",
+    "start": "node src"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KuChauWe/5IV7-MelodyFriend-Eq1/issues"
-  },
-  "homepage": "https://github.com/KuChauWe/5IV7-MelodyFriend-Eq1#readme",
   "dependencies": {
     "connect-flash": "^0.1.1",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
     "express-session": "^1.17.2",
+    "jquery": "^3.6.0",
     "morgan": "^1.10.0",
-    "mssql": "^7.3.0",
+    "mssql": "^8.1.0",
+    "node-fetch": "^2.6.1",
     "spotify-web-api-node": "^5.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.16"
   }
 }
