@@ -34,12 +34,14 @@ body {
   margin-block: 5%;
   padding: 2rem;
   border-radius: 25px;
-  background: radial-gradient(
+  /*background: radial-gradient(
     circle,
     rgb(40, 40, 40) 0%,
     rgb(35, 35, 35) 50%,
     rgb(40, 40, 40) 100%
   );
+  */
+  backdrop-filter: brightness(87%);
 }
 .textoIntroductorio {
   color: rgb(250, 250, 250);
