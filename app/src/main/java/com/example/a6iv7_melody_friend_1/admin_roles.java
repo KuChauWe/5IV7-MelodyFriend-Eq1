@@ -21,8 +21,7 @@ public class admin_roles extends AppCompatActivity{
 
         init();
 
-        Intent intencion = new Intent(getApplicationContext(), MenuDesplegable.class);
-        startActivity(intencion);
+
     }
 
     public void init(){

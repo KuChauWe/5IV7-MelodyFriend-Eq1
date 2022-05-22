@@ -1,4 +1,7 @@
 <resources>
+
+    <string name="app_name">Melody Friend</string>
+
     /*Inicio String Semestre*/
     <string name="entrada_de_datos">6IV7_Melody_Friend_1</string>
     <string-array name="Semestre">
@@ -50,4 +53,8 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
 </resources>
+
+
+

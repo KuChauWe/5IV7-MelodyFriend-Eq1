@@ -10,11 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.6IV7_Melody_Friend_1">
         <activity
-            android:name=".MenuDesplegable"
-            android:exported="false"
-            android:label="@string/title_activity_menu_desplegable"
-            android:theme="@style/Theme.6IV7_Melody_Friend_1.NoActionBar" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
