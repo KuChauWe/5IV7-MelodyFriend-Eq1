@@ -231,7 +231,7 @@ body::-webkit-scrollbar-thumb {
     max-width: 100px;
   }
   #info {
-    margin-top: 30vh;
+    margin-top: -3vh;
     bottom: 0;
     left: 0;
   }

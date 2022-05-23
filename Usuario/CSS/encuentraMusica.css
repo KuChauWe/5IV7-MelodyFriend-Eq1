@@ -205,7 +205,7 @@ body::-webkit-scrollbar-thumb {
     max-width: 100px;
   }
   #info {
-    margin-top: 0;
+    margin-top: -3vh;
     bottom: 0;
     left: 0;
   }
@@ -246,4 +246,16 @@ body::-webkit-scrollbar-thumb {
   /*Hasta aquí es es responsive de
   los sliders, contando a el menú 
   izquierdo.*/
+  .contenedorBuscador {
+    margin-top: 31px;
+    margin-left: 80px;
+  }
+  .fa-search {
+    font-size: 23px;
+    margin: 17px;
+  }
+  input#ingresarTexto {
+    font-size: 16px;
+    padding-block: 10px;
+  }
 }

@@ -103,7 +103,7 @@ section.protectorFlex figure img {
   max-height: 47px;
   height: 47px;
   border-radius: 50%;
-  border: 2px solid rgb(136, 204, 6); /*Borrar esto después*/
+  outline: 2px solid rgb(136, 204, 6); /*Borrar esto después*/
   margin: 11px;
   margin-top: 14px;
   margin-left: 14px;
@@ -177,7 +177,7 @@ body::-webkit-scrollbar-thumb {
         filter: blur(2px);
     No los usé pero ps x
 **/
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1600px) {
   #barraLateral {
     width: 226px;
   }
@@ -211,5 +211,42 @@ body::-webkit-scrollbar-thumb {
   }
   #info {
     padding-top: 0;
+  }
+  /*Responsive de la barra lateral terminada*/
+  .contenidoCabecera {
+    padding-top: 20px;
+    color: rgb(250, 250, 250);
+    font-size: 25px;
+    margin-left: 20px;
+    padding-bottom: 24px;
+  }
+  div.contenedorUsuario section {
+    width: 570.18px;
+    border-radius: 5px;
+    margin-block: 20px;
+  }
+  section.protectorFlex figure img {
+    max-width: 37px;
+    width: 37px;
+    max-height: 37px;
+    height: 37px;
+    border-radius: 50%;
+    margin: 6px;
+    margin-top: 11px;
+    margin-left: 11px;
+  }
+  section.protectorFlex p {
+    margin-inline: 15px;
+    font-size: 14px;
+  }
+  .informacion a {
+    font-size: 10px;
+  }
+  .informacion p {
+    font-size: 10px;
+    margin-bottom: -10px;
+  }
+  #info {
+    padding-top: -3vw;
   }
 }
