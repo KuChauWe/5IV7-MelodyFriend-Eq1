@@ -61,6 +61,10 @@ select,
   font-size: 17px;
   margin-block: 11.5px;
 }
+select,
+select option {
+  color: rgb(14, 14, 14);
+}
 a {
   color: rgb(250, 250, 250);
 }

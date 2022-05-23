@@ -64,3 +64,69 @@ div.main-container {
     margin-top: 55px;
   }
 }
+* {
+  box-sizing: border-box;
+  color: rgb(250, 250, 250);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+  transition: 500ms;
+}
+html,
+body {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background: linear-gradient(
+    180deg,
+    rgb(31, 31, 31) 0%,
+    rgb(26, 26, 26) 16%,
+    rgb(18, 18, 18) 100%
+  );
+}
+p a {
+  color: rgb(136, 204, 6);
+}
+p {
+  font-size: 78px;
+  margin-bottom: -100px;
+}
+img {
+  border-radius: 10px;
+  height: 595.5px;
+  margin-top: 110px;
+}
+div.main-container {
+  display: grid;
+  justify-content: center;
+}
+/*
+@media (prefers-reduced-motion: no-preference) {
+  #img {
+    animation: App-logo-spin infinite 5s linear;
+  }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*/
+@media only screen and (max-width: 1280px) {
+  p {
+    font-size: 38px;
+    margin-top: 60px;
+    margin-bottom: -40px;
+  }
+  img {
+    height: 290px;
+    margin-top: 55px;
+  }
+}
