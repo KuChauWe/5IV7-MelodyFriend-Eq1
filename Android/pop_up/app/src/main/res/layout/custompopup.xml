@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="350dp"
+    android:layout_gravity="center"
+    android:background="#1F1F1F"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="290dp"
+        android:layout_height="76dp"
+        android:layout_marginHorizontal="89dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/roboto"
+        android:text="¿Quieres remover a esta persona de tu lista? Esta acción no podra revertirse"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/txtclose"
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="40dp"
+        android:background="#00FFFFFF"
+        android:drawableTop="@drawable/ic_baseline_check_24"
+        android:onClick="ShowPopup"
+        android:outlineProvider="background"
+        android:outlineSpotShadowColor="#88CC06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/btnfollow"
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="40dp"
+        android:background="#00FDFDFD"
+        android:drawableTop="@drawable/ic_baseline_clear_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
