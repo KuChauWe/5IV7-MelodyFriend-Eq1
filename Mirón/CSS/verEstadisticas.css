@@ -103,11 +103,10 @@ canvas {
 }
 .graficaInd canvas {
   border-radius: 10px;
-  transition: 700ms;
+  transition: 500ms;
 }
 .graficaInd canvas:hover {
   backdrop-filter: brightness(90%);
-  zoom: 1.01; /*No me termina de convencer*/
 }
 /*No qedó tan mal eh*/
 p.leyendaGraf {
@@ -148,7 +147,6 @@ section a {
   text-align: center;
   color: rgb(33, 84, 0);
   font-size: 12px;
-  text-decoration: underline;
 }
 .informacion p {
   text-align: center;
@@ -174,7 +172,7 @@ body::-webkit-scrollbar-thumb {
   border: none;
 }
 /*Aquí termina*/
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1600px) {
   #barraLateral {
     width: 226px;
   }
@@ -208,5 +206,67 @@ body::-webkit-scrollbar-thumb {
   }
   #info {
     padding-top: 0;
+  }
+  /*Gráficas*/
+  div.graficasGen p#titulo {
+    margin-bottom: 10px;
+  }
+  div.graficasGen p#titulo,
+  div.graficasGen p a#melody {
+    font-size: 32px;
+  }
+  canvas {
+    max-width: 350px;
+    max-height: 300px;
+    min-width: 350px;
+  }
+  .graficaInd {
+    padding-inline: 60px;
+    margin-top: 10px;
+  }
+  .graficaInd canvas {
+    border-radius: 5px;
+    transition: 400ms;
+  }
+  p.leyendaGraf {
+    font-size: 10px;
+  }
+  .graficasGen {
+    margin-left: -100px;
+  }
+  .textoGrafica {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  /*Gráficas*/
+  div.graficasGen p#titulo {
+    margin-bottom: 10px;
+  }
+  div.graficasGen p#titulo,
+  div.graficasGen p a#melody {
+    font-size: 22px;
+  }
+  canvas {
+    max-width: 250px;
+    max-height: 200px;
+    min-width: 250px;
+  }
+  .graficaInd {
+    padding-inline: 30px;
+    margin-top: 10px;
+  }
+  .graficaInd canvas {
+    border-radius: 2px;
+    transition: 400ms;
+  }
+  p.leyendaGraf {
+    font-size: 8px;
+  }
+  .graficasGen {
+    margin-left: -100px;
+  }
+  .textoGrafica {
+    font-size: 12px;
   }
 }

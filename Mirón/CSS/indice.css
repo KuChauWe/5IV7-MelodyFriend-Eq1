@@ -10,7 +10,7 @@
   position: fixed;
   width: 316px;
   height: 100%;
-  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.88);
   display: flex;
   justify-content: center;
   left: 0;
@@ -50,7 +50,7 @@
 }
 html,
 body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -114,7 +114,7 @@ div.todo {
   width: 260px;
   height: 56px;
   border-radius: 100px;
-  border: 1px solid rgb(112, 112, 112);
+  border: 1px solid rgb(11, 11, 11);
 }
 .apartadoUsuario:hover {
   background: rgb(112, 112, 112);
@@ -127,7 +127,7 @@ div.todo {
   width: 47px;
   justify-self: flex-start;
   border-radius: 50%;
-  border: 2px solid rgb(136, 204, 6);
+  outline: none;
 }
 #nombreUsuario {
   margin-left: 27px;
@@ -191,12 +191,11 @@ div.imagenes:hover {
 }
 /*Cambiar las barras de desplazamiento*/
 body::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
-  display: none;
+  width: 5px; /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: none; /* color of the tracking area */
+  background: transparent; /* color of the tracking area */
 }
 body::-webkit-scrollbar-thumb {
   background-color: rgb(14, 14, 14); /* color of the scroll thumb */
@@ -232,7 +231,7 @@ body::-webkit-scrollbar-thumb {
     max-width: 100px;
   }
   #info {
-    margin-top: 30vh;
+    margin-top: -3vh;
     bottom: 0;
     left: 0;
   }
@@ -283,12 +282,12 @@ body::-webkit-scrollbar-thumb {
   }
   html,
   body {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     margin: 0px;
     padding: 0px;
   }
   div.todo {
-    height: auto;
+    height: 100%;
   }
 }

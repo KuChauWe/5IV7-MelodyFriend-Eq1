@@ -52,23 +52,6 @@
   font-size: 30px;
   color: rgb(136, 204, 6);
 }
-html,
-body {
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-div.todo {
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgb(31, 31, 31) 0%,
-    rgb(26, 26, 26) 16%,
-    rgb(18, 18, 18) 100%
-  );
-}
 #contenidoGeneral {
   margin-left: 390px;
   transition: all 200ms linear;
@@ -222,7 +205,7 @@ body::-webkit-scrollbar-thumb {
     max-width: 100px;
   }
   #info {
-    margin-top: 0;
+    margin-top: -3vh;
     bottom: 0;
     left: 0;
   }
@@ -263,4 +246,16 @@ body::-webkit-scrollbar-thumb {
   /*Hasta aquí es es responsive de
   los sliders, contando a el menú 
   izquierdo.*/
+  .contenedorBuscador {
+    margin-top: 31px;
+    margin-left: 80px;
+  }
+  .fa-search {
+    font-size: 23px;
+    margin: 17px;
+  }
+  input#ingresarTexto {
+    font-size: 16px;
+    padding-block: 10px;
+  }
 }
