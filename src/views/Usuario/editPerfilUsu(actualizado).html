@@ -48,7 +48,8 @@
             </div>
             <div class="terceraS">
                 <div class="datosGnral">
-                    <textarea id="usuDesc" placeholder="Ingresa tu descripción" maxlength="100"></textarea>
+                    <form action="/edit" method="post" >
+                    <textarea id="usuDesc"  name= "decripcion" placeholder="Ingresa tu descripción" maxlength="100"></textarea>
                     <p>Carrera técnica</p>
                     <select class="entrbasica" id="carreraOpt" name="carrera" required>  
                         <option value="0" selected disabled>Seleccione carrera</option>
@@ -74,11 +75,12 @@
                         <option value="5">Quinto</option> 
                         <option value="6">Sexto o más</option>   
                     </select> 
-                    <input class="entrbasica" id="redSocial" type="text" placeholder="Ingresa una red social: ">
+                    <input class="entrbasica"  name="red_social" id="redSocial" type="text" placeholder="Ingresa una red social: ">
                 </div>
             </div>
             <div class="cuartaS">
                 <input type="submit" value="Actualizar">
+            </form>
             </div>
         </div>
         <div class="trampa"></div>
