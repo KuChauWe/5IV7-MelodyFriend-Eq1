@@ -70,7 +70,7 @@
                             lo digo encerio
                             nunca quise hacer a su hija llorar-->
                     <div class="gustosBtn">
-                        <a>Gustos Similares</a>
+                        <a href="/gustosSimilares">Gustos Similares</a>
                     </div>
                     
                 </div>
@@ -78,41 +78,22 @@
                 <div class="resultados">
                     <div class="contenedorResultados">
                         <div class="contenedorUsuario">
-                            <section class="protectorFlex">
-                                <a href="perfilUsu(actualizado).html">
+                            <% if(busqueda!=null){%>
+                                <%=<for(i=0; i<busqueda.length; i++){%>
+                                 <section class="protectorFlex">
+                                    <a href="/verperfil?id=<%=busqueda[i].id %>">
                                     <figure>
-                                        <img src="IMG/LogoMelodyFriend.png"><!--Nalgona, aquí va la fotopolla de perfil-->
+                                        <img src="<%=img[i]%>"><!--Nalgona, aquí va la fotopolla de perfil-->
                                     </figure>
-                                    <p class="nombreUsuario">Pepe el Toro</p>
-                                    <p class="descripcionUsuario">¡Hola! Esta es mi descripción.</p>
-                                </a>
-                                <p class="porcentajeCoincidencia">Coincide contigo: 100%</p>
-                            </section>
-
-                            <section class="protectorFlex">
-                                <a href="perfilUsu(actualizado).html">
-                                    <figure>
-                                        <img src="IMG/buraimdecuin.jpg">
-                                    </figure>
-                                    <p class="nombreUsuario">Pepe el Toro</p>
-                                    <p class="descripcionUsuario">¡Hola! Esta es mi descripción.</p>
-                                </a>
-                                <p class="porcentajeCoincidencia">Coincide contigo: 100%</p>
-                            </section>
-                            
-                            
-                            <!-- Todo esto se copia
-                            <section class="protectorFlex">
-                                <a href="perfilUsu(actualizado).html">
-                                    <figure>
-                                        <img src="IMG/buraimdecuin.jpg">
-                                    </figure>
-                                    <p class="nombreUsuario">Pepe el Toro</p>
-                                    <p class="descripcionUsuario">¡Hola! Esta es mi descripción.</p>
-                                </a>
-                                <p class="porcentajeCoincidencia">Coincide contigo: 100%</p>
-                            </section>
-                            -->
+                                    <p class="nombreUsuario"><%=buesqueda[i].name_usu%></p>
+                                    <p class="descripcionUsuario"><%=busqueda[i].desc_usu></busqueda></p>
+                                    </a>
+                                    <p class="porcentajeCoincidencia">Coincide contigo:  <%=por[i]%> </p>
+                                </section>
+                               <%
+                                }    
+                            }
+                               %>
                         </div>
                     </div>
                 </div>

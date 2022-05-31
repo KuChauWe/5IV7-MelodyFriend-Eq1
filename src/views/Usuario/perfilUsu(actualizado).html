@@ -41,21 +41,23 @@
                 <div class="primeraS">
                     <div class="trampa2"></div>
                     <div class="imagenPerf"></div>
-                    <div class="usuarioID">ID: 5656565656</div>
+                    <div class="usuarioID">ID: <%=usuario.id%></div>
                 </div>
                 <div class="segundaS">
-                    <a class="ra" href="">Nombre del usuario <i class="ra fa fas fa-external-link-alt"></i></a><!--Ingresar link al perfil de spotify del usuario en el href-->
+                    <a class="ra" href=""> <%=usuario.nombre%> <i class="ra fa fas fa-external-link-alt"></i></a><!--Ingresar link al perfil de spotify del usuario en el href-->
                 </div>
                 <div class="terceraS">
                     <div class="datosGnral">
-                        <p id="usuDesc">¡Hola! Mi descripción está fea.</p>
+                        <p id="usuDesc"> <%=usuario.descripcion%></p>
                         <p>Carrera técnica</p>
-                        <a class="entrbasica" id="carreraOpt">Máquinas con sistemas automatizados</a>  
+                        <a class="entrbasica" id="carreraOpt"> <%=usuario.carrera%></a>  
                         <p>Sexo</p>
-                        <a class="entrbasica" id="sexoOpt">Masculino</a>  
-                        <p>Semestre</p>
-                        <a class="entrbasica" id="semestreOpt">Segundo</a>  
-                        <a class="entrbasica" id="redSocial">https://www.instagram.com/eduwigsh0203/</a>
+                        <a class="entrbasica" id="sexoOpt"> <%=usuario.sexo%></a>  
+                        <p> <%=usuario.id%></p>
+                        <a class="entrbasica" id="semestreOpt"> <%=usuario.semestre%></a>  
+                        <a class="entrbasica" id="redSocial"> <%=usuario.twitter%></a>
+                        <a class="entrbasica" id="redSocial"> <%=usuario.instagram%></a>
+                        <a class="entrbasica" id="redSocial"> <%=usuario.facebook%></a>
                     </div>
                 </div>
             </div>

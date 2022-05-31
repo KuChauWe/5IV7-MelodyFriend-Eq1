@@ -40,42 +40,44 @@
         <div class="contenedorDatosU">
             <div class="primeraS">
                 <div class="trampa2"></div>
-                <div class="imagenPerf"></div>
-                <div class="usuarioID">ID: 5656565656</div>
+                <div class="imagenPerf"><img src="<%=usuario.foto%>"></div>
+                <div class="usuarioID">ID: <%=usuario.id%>></div>
             </div>
             <div class="segundaS">
-                <a class="ra" href="https://www.spotify.com/mx/account/overview/?utm_source=spotify&utm_medium=menu&utm_campaign=your_account">Nombre del usuario <i class="ra fa fas fa-external-link-alt"></i></a>
+                <a class="ra" href="https://www.spotify.com/mx/account/overview/?utm_source=spotify&utm_medium=menu&utm_campaign=your_account"> <%=usuario.nombre%><i class="ra fa fas fa-external-link-alt"></i></a>
             </div>
             <div class="terceraS">
                 <div class="datosGnral">
                     <form action="/edit" method="post" >
-                    <textarea id="usuDesc"  name= "decripcion" placeholder="Ingresa tu descripción" maxlength="100"></textarea>
+                    <textarea id="usuDesc"  name= "decripcion" placeholder="Ingresa tu descripción" maxlength="100"><%=usuario.descripcion%></textarea>
                     <p>Carrera técnica</p>
                     <select class="entrbasica" id="carreraOpt" name="carrera" required>  
                         <option value="0" selected disabled>Seleccione carrera</option>
-                        <option value="1">Tronco Común</option>  
-                        <option value="2">Programación</option>  
-                        <option value="3">Sistemas Digitales</option>  
-                        <option value="4">Máquinas con sistemas automatizados</option>  
-                        <option value="5">Mecatrónica</option>  
+                        <option value="1" <% if( usuario.semestre==1){%>selected <%}%>>Tronco Común</option>  
+                        <option value="4" <% if( usuario.semestre==4){%>selected <%}%>>Programación</option>  
+                        <option value="5" <% if( usuario.semestre==5){%>selected <%}%>>Sistemas Digitales</option>  
+                        <option value="2" <% if( usuario.semestre==2){%>selected <%}%>>Máquinas con sistemas automatizados</option>  
+                        <option value="3" <% if( usuario.semestre==3){%>selected <%}%>>Mecatrónica</option>  
                     </select>  
                     <p>Sexo</p>
                     <select class="entrbasica" id="sexoOpt" name="sexo" required>  
                         <option value="0" selected disabled>Seleccione sexo</option>
-                        <option value="1"> Masculino</option>  
-                        <option value="2">Femenino</option>  
+                        <option value="1" <% if( usuario.sexo==1){%>selected <%}%>> Masculino</option>  
+                        <option value="2" <% if( usuario.sexo==2){%>selected <%}%>>Femenino</option>  
                     </select>
                     <p>Semestre</p>
                     <select class="entrbasica" id="semestreOpt" name="semestre" required>  
                         <option value="0" selected disabled>Seleccione semestre</option>
-                        <option value="1">Primero</option>  
-                        <option value="2">Segundo</option>  
-                        <option value="3">Tercero</option>  
-                        <option value="4">Cuarto</option>  
-                        <option value="5">Quinto</option> 
-                        <option value="6">Sexto o más</option>   
+                        <option value="1" <% if( usuario.semestre==1){%>selected <%}%>>Primero</option>  
+                        <option value="2"  <% if( usuario.semestre==2){%>selected <%}%>>Segundo</option>  
+                        <option value="3"  <% if( usuario.semestre==3){%>selected <%}%>>Tercero</option>  
+                        <option value="4"  <% if( usuario.semestre==4){%>selected <%}%>>Cuarto</option>  
+                        <option value="5"  <% if( usuario.semestre==5){%>selected <%}%>>Quinto</option> 
+                        <option value="6"  <% if( usuario.semestre==6){%>selected <%}%>>Sexto o más</option>   
                     </select> 
-                    <input class="entrbasica"  name="red_social" id="redSocial" type="text" placeholder="Ingresa una red social: ">
+                    <input class="entrbasica"  name="twitter" value="<%=usuario.twitter%>" id="redSocial" type="text" placeholder="Ingresa una red social: ">
+                    <input class="entrbasica"  name="facebook" value="<%=usuario.facebook%>" id="redSocial" type="text" placeholder="Ingresa una red social: ">
+                    <input class="entrbasica"  name="instagram"  value="<%=usuario.instagram%>"id="redSocial" type="text" placeholder="Ingresa una red social: ">
                 </div>
             </div>
             <div class="cuartaS">

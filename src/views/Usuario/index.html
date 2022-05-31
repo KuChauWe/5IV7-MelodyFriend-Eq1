@@ -69,94 +69,21 @@
             <div id="contenidoSuperiorAlinear">
                 <div class="glider-contain"> 
                     <div class="glider">
-                        <div class="imagenes">
-                            <div class="contenidoCasillas">
-                                <a href="vistaPlaylist.html">
-                                <section class="partesCasilla"><img src="IMG/LogoMelodyFriend.png"></section>
-                                <section class="textoInferior">
-                                    <section class="partesCasilla"><a class="nombrePlaylist">Playlist</a></section>
-                                    <section class="partesCasilla"><a class="propiedadAutor">De usuario</a></section>
-                                </section>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="imagenes">
-                            <div class="contenidoCasillas">
-                                <a href="vistaPlaylist.html">
-                                <section class="partesCasilla"><img src="IMG/9k.png"></section>
-                                <section class="textoInferior">
-                                    <section class="partesCasilla"><a class="nombrePlaylist">Playlist</a></section>
-                                    <section class="partesCasilla"><a class="propiedadAutor">De usuario</a></section>
-                                </section>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="imagenes">
-                            <div class="contenidoCasillas">
-                                <a href="vistaPlaylist.html">
-                                <section class="partesCasilla"><img src="IMG/9k.png"></section>
-                                <section class="textoInferior">
-                                    <section class="partesCasilla"><a class="nombrePlaylist">Playlist</a></section>
-                                    <section class="partesCasilla"><a class="propiedadAutor">De usuario</a></section>
-                                </section>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="imagenes">
-                            <div class="contenidoCasillas">
-                                <a href="vistaPlaylist.html">
-                                <section class="partesCasilla"><img src="IMG/gatoLatino.jpg"></section>
-                                <section class="textoInferior">
-                                    <section class="partesCasilla"><a class="nombrePlaylist">Playlist</a></section>
-                                    <section class="partesCasilla"><a class="propiedadAutor">De usuario</a></section>
-                                </section>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="imagenes">
-                            <div class="contenidoCasillas">
-                                <a href="vistaPlaylist.html">
-                                <section class="partesCasilla"><img src="IMG/gatoLatino.jpg"></section>
-                                <section class="textoInferior">
-                                    <section class="partesCasilla"><a class="nombrePlaylist">Playlist</a></section>
-                                    <section class="partesCasilla"><a class="propiedadAutor">De usuario</a></section>
-                                </section>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="imagenes">
-                            <div class="contenidoCasillas">
-                                <a href="vistaPlaylist.html">
-                                <section class="partesCasilla"><img src="IMG/gatoLatino.jpg"></section>
-                                <section class="textoInferior">
-                                    <section class="partesCasilla"><a class="nombrePlaylist">Playlist</a></section>
-                                    <section class="partesCasilla"><a class="propiedadAutor">De usuario</a></section>
-                                </section>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="imagenes">
-                            <div class="contenidoCasillas">
-                                <a href="#">
-                                <section class="partesCasilla"><img src="IMG/gatoLatino.jpg"></section>
-                                <section class="textoInferior">
-                                    <section class="partesCasilla"><a class="nombrePlaylist">Playlist</a></section>
-                                    <section class="partesCasilla"><a class="propiedadAutor">De usuario</a></section>
-                                </section>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="imagenes">
-                            <div class="contenidoCasillas">
-                                <a href="vistaPlaylist.html">
-                                <section class="partesCasilla"><img src="IMG/gatoLatino.jpg"></section>
-                                <section class="textoInferior">
-                                    <section class="partesCasilla"><a class="nombrePlaylist">Playlist</a></section>
-                                    <section class="partesCasilla"><a class="propiedadAutor">De usuario</a></section>
-                                </section>
-                                </a>
-                            </div>
-                        </div>
+                        <%
+                        for (var i=0; i<canciones.length; i++){   
+                       %>
+                      <div class="imagenes">
+                           <div class="contenidoCasillas">
+                               <a href="/verplaylist?id=<%=canciones[i].id%>">
+                               <section class="partesCasilla" ><center> <img src="<%=canciones[i].imagen %>"></center></section>
+                               <section class="textoInferior">
+                                   <section class="partesCasilla"><a class="nombrePlaylist"><%=canciones[i].nombre %></a></section>
+                                   <section class="partesCasilla"><a class="propiedadAutor"><%=canciones[i].artista %>S</a></section>
+                               </section>
+                               </a>
+                           </div>
+                       </div>
+                       <% }%>
                     </div>
                     <button aria-label="Previous" class="glider-prev"><i class="fa fas fa-caret-left"></i></button>
                     <button aria-label="Next" class="glider-next"><i class="fa fas fa-caret-right"></i></button>
