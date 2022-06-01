@@ -180,7 +180,7 @@ body::-webkit-scrollbar-thumb {
   border: none;
 }
 /*Aquí termina*/
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1600px) {
   #barraLateral {
     width: 226px;
   }
