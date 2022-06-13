@@ -7,7 +7,9 @@ const SpotifyWebApi = require('spotify-web-api-node');
 const { json } = require('express/lib/response');
 const res = require('express/lib/response');
 const { on } = require('nodemon');
+const { token } = require('morgan');
 const pagina = "https://api-rest-melodyfriend.herokuapp.com"
+
 
 router.get('/edit', (req, res) => {
     id = req.flash('id_spotify')
@@ -157,29 +159,30 @@ router.get('/entrada', (req, res) => {
             spotifyApi.setAccessToken(access_token);
             spotifyApi.setRefreshToken(refresh_token);
             spotifyApi.getMe().then(data => {
+                console.log(data.body.id);
                 req.flash('id_spotify', data.body.id)
 
                 fetch(pagina + "/usuario/" + data.body.id).then(data => {
+                    if (data.status != 500) {
 
-                    if (res.status != 500) {
+
                         return data.json()
                     }
                     else {
                         res.redirect("/teriminos")
                     }
                 }).then(data => {
-                    console.log(data);
-
-                    if (data.rol == 1) {
-                        res.redirect("/homeU")
+                    if (data != null) {
+                        if (data.rol == 1) {
+                            res.redirect("/homeU")
+                        }
+                        if (data.rol == 2) {
+                            res.redirect("/homeM")
+                        }
+                        if (data.rol == 3) {
+                            res.redirect("/homeA")
+                        }
                     }
-                    if (data.rol == 2) {
-                        res.redirect("/homeM")
-                    }
-                    if (data.rol == 3) {
-                        res.redirect("/homeA")
-                    }
-
 
 
                 }
@@ -199,16 +202,17 @@ router.get('/datos', (req, res) => {
     })
 });
 router.post('/datos', (req, res) => {
+    spotifyApi.refreshAccessToken()
     spotifyApi.getMe().then(data => {
         usu = {
             "id_usu_spoty": data.body.id,
             "rol": 1,
-            "name_usu": req.query.nombre,
-            "fcNac_usu": req.query.fecha,
-            "desc_usu": "Hola soy" + req.query.nombre,
-            "id_sex": req.query.sexo,
-            "id_carr": req.query.carrera,
-            "semestre": req.query.semestre
+            "name_usu": req.body.nombre,
+            "fcNac_usu": req.body.fecha,
+            "desc_usu": "Hola soy" + req.body.nombre,
+            "id_sex": req.body.sexo,
+            "id_carr": req.body.carrera,
+            "semestre": req.body.semestre
         }
         let info = JSON.stringify(usu);
         fetch(pagina + "/usuario", {
@@ -217,13 +221,13 @@ router.post('/datos', (req, res) => {
                 "Content-Type": "application/json"
             },
             body: info
+        }).then(res => res.json()).then(data => {
+            res.redirect('/HomeU')
         })
-        res.redirect('/HomeU')
-
-
     })
 })
 router.get('/HomeU', (req, res) => {
+    spotifyApi.refreshAccessToken()
     spotifyApi.getRecommendations({
         min_energy: 0.4,
         seed_artists: ['6mfK6Q2tzLMEchAr0e9Uzu', '4DYFVNKZ1uixa6SQTvzQwJ'],
@@ -261,14 +265,41 @@ router.get('/HomeU', (req, res) => {
                 body: ids
             })
             fetch(pagina + "/filtros_porcentajes/tracks_top_batiz", {
-            }).then(res => res.json).then(data => {
+            }).then(res => res.json()).then(data => {
+
                 lista = []
                 for (i = 0; i < data.length; i++) {
                     lista.push(data[i][0])
                 }
+                lista = [
+                    '0X5jHsNHshuHNfAWs1sxQ5',
+                    '1KbpLSwQ8vBc0mRvCkKEPt',
+                    '25uN86jLVXNnusQDA3il8S',
+                    '2DwTME1HMySsnglHE1T0zZ',
+                    '2wQBzAZdsaqDBbtwBk5MhA',
+                    '3a2aBKuvgP1qHo3BqU3lGh',
+                    '3qwB1GLNMogyktLqN5ANBE',
+                    '3QwBODjSEzelZyVjxPOHdq',
+                    '4aAfLSx9IthpC3Pw5pNk3E',
+                    '4B6ko7lt1sUtyFzBDF4yfK'
+                ]
+
+                console.log(lista);
                 spotifyApi.getTracks(lista).then(data => {
-                    canciones = data.body
-                    res.render('Usuario/index.html', { recomendaciones: recomendaciones, name: me.display_name, foto: me.images[0].url, canciones: canciones });
+                    songs = []
+                    canciones = data.body.tracks
+                    // console.log(canciones[0].album);
+                    //console.log(canciones[0].artists);
+                    canciones.forEach(Element => {
+                        music = {
+                            nombre: Element.name,
+                            id: Element.id,
+                            artista: Element.artists[0].name,
+                            img: Element.album.images[0].url,
+                        }
+                        songs.push(music)
+                    })
+                    res.render('Usuario/index.html', { recomendaciones: recomendaciones, name: me.display_name, foto: me.images[0].url, canciones: songs });
                 })
 
             })
@@ -356,8 +387,9 @@ router.get('/gustosSimilares', (res, req) => {
 
 })
 router.post('/encotrarp', (req, res) => {
-    data = req.query
-    id = data.id
+    console.log(req.body.id);
+    data = req.body
+    id = req.body.id
     semestre = data.semestre
     id_usu = req.flash('id_spotify')
     carrera = data.carrera
@@ -366,44 +398,32 @@ router.post('/encotrarp', (req, res) => {
         fetch(pagina + "/usuario/" + id).then(res => res.json()).then(data => {
             lista = []
             lista.push(data)
-            let id = []
-
             let img = []
             let por = []
-            for (i = 0; i < lista.length; i++) {
-                id.push(lista[i].id_usu_spoty)
-                fetch(pagina + "/filtros_porcentajes/porComp", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(
-                        {
-                            "id_usu1": id_usu,
-                            "id_usu2": lista[i].id_usu_spoty
-                        }
-                    )
-                }).then(res => res.json()).then(
-                    data => {
-                        por.push(data)
+            fetch(pagina + "/filtros_porcentajes/porComp", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(
+                    {
+                        "id_usu1": id_usu,
+                        "id_usu2": id
                     }
                 )
-                spotifyApi.getUser(Element).then(data => {
-                    img.push(data.body.images[0].url)
-                    if (element == id[id.length - 1]) {
-                        res.render('Usuario/encontrarPersonas.html', { busqueda: usu, img: img, por: por });
-                    }
-                })
-            }
-            id.forEach(Element => {
-                spotifyApi.getUser(Element).then(data => {
-                    img.push(data.body.images[0].url)
-                    if (element == id[id.length - 1]) {
-                        res.render('Usuario/encontrarPersonas.html', { busqueda: lista, img: img, por: por });
-                    }
-                })
+            }).then(res => res.json()).then(
+                data => {
+                    console.log(data);
+                    por.push(data)
+                }
+            )
 
+            spotifyApi.getUser(id).then(data => {
+                img.push(data.body.images[0].url)
+                res.render('Usuario/encontrarPersonas.html', { busqueda: lista, img: img, por: por });
             })
+
+
 
         }
         )

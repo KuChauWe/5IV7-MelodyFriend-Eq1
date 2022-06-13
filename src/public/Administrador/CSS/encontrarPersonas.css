@@ -277,7 +277,7 @@ body::-webkit-scrollbar-thumb {
   border: none;
 }
 /*Aquí termina*/
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1600px) {
   #barraLateral {
     width: 226px;
   }
@@ -302,11 +302,92 @@ body::-webkit-scrollbar-thumb {
     max-width: 100px;
   }
   #info {
-    margin-top: 30vh;
+    margin-top: -3vh;
     bottom: 0;
     left: 0;
   }
   #contenidoGeneral {
     margin-left: 325px;
+  }
+  /*Empiezan los section*/
+  .contenidoCabecera {
+    padding-top: 20px;
+    font-size: 25px;
+    margin-left: 20px;
+    padding-bottom: 24px;
+  }
+  div.contenedorUsuario section {
+    width: 570.18px;
+    border-radius: 5px;
+    margin-block: 20px;
+  }
+  section.protectorFlex figure img {
+    max-width: 37px;
+    width: 37px;
+    max-height: 37px;
+    height: 37px;
+    border-radius: 50%;
+    margin: 6px;
+    margin-top: 11px;
+    margin-left: 11px;
+  }
+  section.protectorFlex p {
+    margin-inline: 15px;
+    font-size: 14px;
+  }
+  .informacion a {
+    font-size: 10px;
+  }
+  .informacion p {
+    font-size: 10px;
+    margin-bottom: -10px;
+  }
+  /*Empieza el header (Buscador y Gustos similares)*/
+  input#ingresarTexto {
+    font-size: 16px;
+    padding-block: 10px;
+  }
+  .fa-search {
+    font-size: 23px;
+    margin: 17px;
+  }
+  .contenedorBuscador {
+    margin-top: 31px;
+    margin-left: 0px;
+    width: 320px;
+    max-height: 59px;
+    border-radius: 100px;
+  }
+  #ingresarTexto {
+    width: 240px;
+  }
+  div#contenedorOpt.active {
+    height: 47px;
+    width: 250px;
+  }
+  div.filtrosBuscador {
+    margin-top: 31px;
+    max-height: 59px;
+    margin-left: 10px;
+  }
+  div.contenedorOpt section.filtrosOpts.active {
+    font-size: 14px;
+  }
+  div.filtrosBuscador i {
+    font-size: 38px;
+  }
+  div.filtrosBuscador i:hover {
+    color: rgb(33, 84, 0);
+    font-size: 38px;
+  }
+  div.gustosBtn {
+    margin-top: 43px;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 51px;
+    text-align: center;
+    padding-block: 7px;
+    font-size: 18px;
   }
 }

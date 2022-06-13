@@ -253,7 +253,85 @@ div.contenedorFlex {
 .popup.active .contenedor-inputs {
   animation: entradaInputs 1s linear 1s forwards;
 }
-
+@media only screen and (max-width: 1600px) {
+  /*Unicamente aquí se queda en 1600px, en los demás como máximo será 1440px*/
+  #barraLateral {
+    width: 226px;
+  }
+  #barraLateral.active {
+    left: -226px;
+  }
+  #barraLateral ul li {
+    margin-block: 20px;
+    font-size: 17px;
+  }
+  .textoenListas {
+    width: 185px;
+  }
+  #barraLateral .toggle-btn {
+    left: 246px;
+  }
+  #barraLateral .toggle-btn i {
+    width: 35px;
+    font-size: 25px;
+  }
+  #barraLateral img {
+    max-width: 100px;
+  }
+  #info {
+    margin-top: -3vh;
+    bottom: 0;
+    left: 0;
+  }
+  #contenidoGeneral {
+    margin-left: 305px;
+  }
+  /* #contenidoGeneral {
+    margin-left: 390px;
+    transition: all 200ms linear;
+  }
+  */
+  #contenidoGeneral.active {
+    margin-left: 70px;
+  }
+  div.contenedorUsuario section {
+    width: 570.18px;
+    border-radius: 5px;
+    margin-block: 20px;
+  }
+  section.protectorFlex figure img {
+    max-width: 37px;
+    width: 37px;
+    max-height: 37px;
+    height: 37px;
+    border-radius: 50%;
+    margin: 6px;
+    margin-top: 11px;
+    margin-left: 11px;
+  }
+  section.protectorFlex p {
+    margin-inline: 15px;
+    font-size: 14px;
+  }
+  .informacion a {
+    font-size: 10px;
+  }
+  .informacion p {
+    font-size: 10px;
+    margin-bottom: -10px;
+  }
+  .contenidoCabecera {
+    padding-top: 30px;
+    font-size: 35px;
+    margin-left: 0;
+    padding-bottom: 24px;
+    text-align: center;
+    font-weight: 600;
+  }
+  div.subt p {
+    font-size: 22px;
+  }
+}
 /*Ni me acuerdo de donde lo robé, igual era más secillo solo hacer un zoom= 0; a un zoom= 1, retrasarlo 1s y hacer que antes desaparezca todo lo demás
 incluso es más veloz por ser puramente css pero q weba hacerlo xd*/
 

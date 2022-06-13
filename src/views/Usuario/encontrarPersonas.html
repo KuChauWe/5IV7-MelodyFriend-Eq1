@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encuentra personas (´▽`ʃ♡ƪ)</title>
-    <link rel="stylesheet" href="CSS/encontrarPersonas.css">
-    <link rel="shortcut icon" href="img/LogoMelodyFriend.png">
-    <link rel="stylesheet" href="CSS/bAndroid/bAndroid.css">
+    <link rel="stylesheet" href="Usuario/CSS/encontrarPersonas.css">
+    <link rel="shortcut icon" href="Usuario/img/LogoMelodyFriend.png">
+    <link rel="stylesheet" href="Usuario/CSS/bAndroid/bAndroid.css">
     <script src="https://kit.fontawesome.com/1f6d8d7d59.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
@@ -32,7 +32,7 @@
                 <i class="fa fas fa-bars"></i>
             </div>
             <ul>
-                <li><a href="index.html"><img src="IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
+                <li><a href="index.html"><img src="Usuario/IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
                 <li class="textoenListas" id="pagActual"><a href="encontrarPersonas.html">Encuentra personas</a></li>
                 <li class="textoenListas"><a href="encuentraMusica.html">Encuentra playlists</a></li>
                 <li class="textoenListas sugerencias"><a href="mailto:fabbidad@gmail.com?subject=Sugerencia sobre MelodyFriend.&body=Ingresa tu sugerencia :D">Comentarios</a></li>
@@ -50,11 +50,11 @@
             <div class="muestradeContenido">
                 <div class="encabezado">
                             <!--When haces el Buscador-->
-                    <form id="fondo" action="/ePersonas" method="post">  <!--Sooooooooofoooooooooooo pon lo que tengas que poner aquíaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+                    <form id="fondo" action="/encotrarp" method="post">  <!--Sooooooooofoooooooooooo pon lo que tengas que poner aquíaaaaaaaaaaaaaaaaaaaaaaaaaa-->
                         <div class="contenedorBuscador">
                             <section class="entrada">
                                 <span class="icon"><i class="fa fas fa-search"></i></span>
-                                <input id="ingresarTexto" type="search" placeholder="Buscar una persona por su ID"/>
+                                <input id="ingresarTexto" type="search" name="id" placeholder="Buscar una persona por su ID"/>
                             </section>
                         </div>
                         <div class="filtrosBuscador">
@@ -79,17 +79,17 @@
                     <div class="contenedorResultados">
                         <div class="contenedorUsuario">
                             <% if(busqueda!=null){%>
-                                <%=<for(i=0; i<busqueda.length; i++){%>
+                                <%for(i=0; i<busqueda.length; i++){%>
                                  <section class="protectorFlex">
-                                    <a href="/verperfil?id=<%=busqueda[i].id %>">
+                                    <a href="/verperfil?id?<%=busqueda[i].id%>">
                                     <figure>
                                         <img src="<%=img[i]%>"><!--Nalgona, aquí va la fotopolla de perfil-->
                                     </figure>
-                                    <p class="nombreUsuario"><%=buesqueda[i].name_usu%></p>
-                                    <p class="descripcionUsuario"><%=busqueda[i].desc_usu></busqueda></p>
+                                    <p class="nombreUsuario"><%=busqueda[i].name_usu%></p>
+                                    <p class="descripcionUsuario"><%=busqueda[i].desc_usu%></busqueda></p>
                                     </a>
-                                    <p class="porcentajeCoincidencia">Coincide contigo:  <%=por[i]%> </p>
-                                </section>
+                                    <p class="porcentajeCoincidencia">Coincide contigo:<%=por[i]%></p>
+                                    </section>
                                <%
                                 }    
                             }
@@ -100,7 +100,7 @@
             </div>
         </div>
     </div>
-    <script src="JS/encuentraPersonas.js"></script>
-    <script src="JS/bAndroid.js"></script>
+    <script src="Usuario/JS/encuentraPersonas.js"></script>
+    <script src="Usuario/JS/bAndroid.js"></script>
 </body>
 </html>

@@ -9,6 +9,21 @@
   border: none;
   transition: 500ms;
 }
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+div.todo {
+  height: 100%;
+  background: linear-gradient(
+    180deg rgb(31, 31, 31) 0%,
+    rgb(26, 26, 26) 16%,
+    rgb(18, 18, 18) 100%
+  );
+}
 div.contenedorPrincipal {
   display: flex;
   align-items: flex-start;
@@ -17,21 +32,21 @@ div.contenedorPrincipal {
 }
 
 figure.logo-app img {
-  width: 174px;
-  height: 174px;
+  width: 154px;
+  height: 154px;
   margin-top: 40px;
 }
 
 div.contenedorDatosU {
   backdrop-filter: brightness(160%);
   flex-direction: column;
-  border-radius: 15px;
-  margin-top: 75px;
-  padding-top: 25px;
-  padding-inline: 110px;
-  padding-bottom: 63px;
-  width: 1238.2px;
-  margin-bottom: 75px;
+  border-radius: 10px;
+  margin-top: 50px;
+  padding-top: 18px;
+  padding-inline: 35px;
+  padding-bottom: 27px;
+  width: 830px;
+  margin-bottom: 50px;
   /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
 }
 
@@ -49,15 +64,15 @@ div.trampa2 {
 
 div.primeraS {
   display: flex;
-  font-size: 28px;
+  font-size: 18px;
   text-align: right;
   justify-content: space-between;
   margin-left: 10px;
 }
 
 div.primeraS div.imagenPerf {
-  width: 376px;
-  height: 376px;
+  min-width: 250px;
+  min-height: 250px;
   border-radius: 50%;
   background-color: rgb(76, 76, 76);
 }
@@ -70,11 +85,11 @@ div.primeraS div.usuarioID {
 /*Termina Primera sección*/
 /*Inicia Segunda sección*/
 div.segundaS {
-  font-size: 68px;
+  font-size: 45px;
   text-align: center;
 }
 div.segundaS .fa-external-link-alt {
-  font-size: 28px;
+  font-size: 18px;
 }
 div.segundaS .ra:hover {
   color: rgb(136, 204, 6);
@@ -82,8 +97,8 @@ div.segundaS .ra:hover {
 /*Termina Segunda sección*/
 /*Inicia Tercera sección*/
 div.terceraS {
-  margin-top: 54px;
-  font-size: 28px;
+  margin-top: 40px;
+  font-size: 20px;
 }
 div.terceraS .datosGnral {
   display: flex;
@@ -93,15 +108,14 @@ div.terceraS .datosGnral {
 }
 textarea#usuDesc {
   background-color: rgb(76, 76, 76);
-  padding: 20px;
   border-radius: 5px;
-  width: 1017.58px;
-  max-width: 1017.58px;
-  height: 209px;
-  max-height: 209px;
+  width: 680px;
+  max-width: 680px;
+  height: 139px;
+  max-height: 139px;
   text-align: center;
-  padding: 80px;
-  font-size: 28px;
+  padding: 50px;
+  font-size: 20px;
 }
 /*Cambiar las barras de desplazamiento*/
 *::-webkit-scrollbar {
@@ -125,30 +139,30 @@ textarea::-webkit-scrollbar-thumb {
 }
 div.terceraS p {
   text-align: center;
-  margin-top: 25px;
-  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 13px;
 }
 div.terceraS select,
 div.terceraS select option {
   color: rgb(14, 14, 14);
-  font-size: 28px;
+  font-size: 20px;
   text-align: center;
 }
 div.terceraS select {
   border-radius: 5px;
-  height: 58px;
+  height: 40px;
 }
 div.terceraS select#semestreOpt {
-  margin-bottom: 44px;
+  margin-bottom: 35px;
 }
 div.terceraS input#redSocial {
   width: 100%;
-  height: 68px;
+  height: 50px;
   border-radius: 5px;
-  font-size: 28px;
+  font-size: 20px;
   padding-inline: 20px;
   color: rgb(14, 14, 14);
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 /*Termina Tercera sección*/
 /*Inicia Cuarta sección*/
@@ -159,22 +173,15 @@ div.cuartaS {
 div.cuartaS input {
   color: rgb(255, 255, 255);
   background-color: rgb(136, 204, 6);
-  width: 212px;
-  height: 58px;
+  width: 152px;
+  height: 40px;
   border-radius: 100px;
-  font-size: 28px;
+  font-size: 20px;
 }
 div.cuartaS input:hover {
   background-color: rgb(33, 84, 0);
 }
-@media only screen and (max-width: 1280px) {
-  div.contenedorPrincipal {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-    justify-content: space-around;
-  }
-
+@media only screen and (max-width: 1600px) {
   figure.logo-app img {
     width: 114px;
     height: 114px;
@@ -182,149 +189,88 @@ div.cuartaS input:hover {
   }
 
   div.contenedorDatosU {
-    backdrop-filter: brightness(160%);
-    flex-direction: column;
-    border-radius: 10px;
-    margin-top: 45px;
-    padding-top: 15px;
-    padding-inline: 41px;
-    padding-bottom: 41px;
-    width: 840px;
-    margin-bottom: 31px;
+    border-radius: 5px;
+    margin-top: 35px;
+    padding-top: 10px;
+    padding-inline: 26px;
+    padding-bottom: 26px;
+    width: 640px;
+    margin-bottom: 26px;
     /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
   }
-
-  div.trampa {
-    width: 114px;
-    height: 114px;
-    margin-top: 20px;
-  }
-
   /*Inicia Primera sección*/
-  div.trampa2 {
-    width: 267px;
-    height: 52px;
-  }
-
   div.primeraS {
-    display: flex;
-    font-size: 18px;
-    text-align: right;
-    justify-content: space-between;
-    margin-left: 10px;
+    font-size: 14px;
+    margin-left: 5px;
   }
-
   div.primeraS div.imagenPerf {
-    min-width: 236px;
-    min-height: 236px;
-    max-width: 236px;
-    max-height: 236px;
+    min-width: 166px;
+    min-height: 166px;
+    max-width: 166px;
+    max-height: 166px;
     border-radius: 50%;
-    background-color: rgb(76, 76, 76);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   div.primeraS div.usuarioID {
-    height: 52px;
+    height: 32px;
   }
   /*Termina Primera sección*/
   /*Inicia Segunda sección*/
   div.segundaS {
-    font-size: 38px;
-    text-align: center;
+    font-size: 28px;
   }
   div.segundaS .fa-external-link-alt {
-    font-size: 18px;
-  }
-  div.segundaS .ra:hover {
-    color: rgb(136, 204, 6);
+    font-size: 16px;
   }
   /*Termina Segunda sección*/
   /*Inicia Tercera sección*/
   div.terceraS {
-    margin-top: 34px;
-    font-size: 18px;
-  }
-  div.terceraS .datosGnral {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-top: 24px;
+    font-size: 16px;
   }
   textarea#usuDesc {
-    background-color: rgb(76, 76, 76);
-    padding: 20px;
-    border-radius: 5px;
-    width: 720px;
-    max-width: 720px;
-    height: 130px;
-    max-height: 130px;
-    text-align: center;
-    padding: 50px;
-    font-size: 18px;
+    padding: 10px;
+    border-radius: 3px;
+    width: 550px;
+    max-width: 550px;
+    height: 110px;
+    max-height: 110px;
+    padding: 40px;
+    font-size: 14px;
   }
   /*Cambiar las barras de desplazamiento*/
   *::-webkit-scrollbar {
     width: 3px;
   }
-  body::-webkit-scrollbar-track {
-    background: none;
-  }
-  body::-webkit-scrollbar-thumb {
-    background-color: rgb(14, 14, 14);
-    border-radius: 100px;
-    border: none;
-  }
-  textarea::-webkit-scrollbar-track {
-    background: none;
-  }
-  textarea::-webkit-scrollbar-thumb {
-    background-color: rgb(31, 31, 31);
-    border-radius: 100px;
-    border: none;
-  }
   div.terceraS p {
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
   div.terceraS select,
   div.terceraS select option {
-    color: rgb(14, 14, 14);
-    font-size: 18px;
-    text-align: center;
+    font-size: 14px;
   }
   div.terceraS select {
-    border-radius: 5px;
-    height: 44px;
+    border-radius: 2px;
+    height: 30px;
   }
   div.terceraS select#semestreOpt {
     margin-bottom: 32px;
   }
   div.terceraS input#redSocial {
-    width: 100%;
-    height: 48px;
-    border-radius: 5px;
-    font-size: 18px;
+    height: 38px;
+    border-radius: 2px;
+    font-size: 14px;
     padding-inline: 20px;
-    color: rgb(14, 14, 14);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   /*Termina Tercera sección*/
   /*Inicia Cuarta sección*/
-  div.cuartaS {
-    display: flex;
-    justify-content: flex-end;
-  }
   div.cuartaS input {
-    color: rgb(255, 255, 255);
-    background-color: rgb(136, 204, 6);
-    width: 112px;
-    height: 48px;
-    border-radius: 100px;
-    font-size: 18px;
-  }
-  div.cuartaS input:hover {
-    background-color: rgb(33, 84, 0);
+    width: 82px;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 14px;
   }
 }
