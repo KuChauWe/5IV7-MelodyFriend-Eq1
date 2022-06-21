@@ -35,16 +35,16 @@
                 <i class="fa fas fa-bars"></i>
             </div>
             <ul>
-                <li><a href="index.html"><img src="Usuario/IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
+                <li><a href="/homeU"><img src="Usuario/IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
                 <li class="textoenListas"><a href="/encotrarp">Encuentra personas</a></li>
-                <li class="textoenListas"><a href="/Musica">Encuentra playlists</a></li>
+                <li class="textoenListas"><a href="/musica">Encuentra playlists</a></li>
                 <li class="textoenListas sugerencias"><a href="mailto:fabbidad@gmail.com?subject=Sugerencia sobre MelodyFriend.&body=Ingresa tu sugerencia :D">Comentarios</a></li>
                 <div id="info">
                     <ul>
                         <li class="informacion"><p>Contáctanos:</p></li>
                         <li class="informacion"><a href="https://www.facebook.com/Fabiddat-104623465060255/"><p>Facebook</p></a></li>
                         <li class="informacion"><a href="mailto:fabbidad@gmail.com?subject=Sugerencia sobre MelodyFriend.&body=Ingresa tu sugerencia :D"><p>fabbidad@gmail.com</p></a></li>
-                        <li class="informacion"><a href="terminosyCondiciones(Aceptados).html"><p>Términos y condiciones</p></a></li>
+                        <li class="informacion"><a href="/terminosyCondiciones"><p>Términos y condiciones</p></a></li>
                         
                     </ul>
                 </div>
@@ -58,10 +58,10 @@
                         <p class="textoBlanco">Más escuchadas en Bátiz</p>
                     </div>
                     <div class="elementosEncabezado">
-                        <a href="editPerfilUsu(actualizado).html">
+                        <a href="/editPerfil">
                             <div class="apartadoUsuario">
                                 <div id="imagenPerfil"><img src="<%=foto%>"></div>
-                                <div id="nombreUsuario"><a class="textoBlanco" id="textoUsuario" href="editPerfilUsu(actualizado).html"><%=name%></a></div>
+                                <div id="nombreUsuario"><a class="textoBlanco" id="textoUsuario" href="/editPerfil"><%=name%></a></div>
                             </div>
                         </a>
                     </div>
@@ -74,7 +74,7 @@
                        %>
                       <div class="imagenes">
                            <div class="contenidoCasillas">
-                               <a href="/verplaylist?id=<%=canciones[i].id%>">
+                               <a href="/verplaylist?id=<%=canciones[i].id%>&nombre=<%=canciones[i].nombre%>">
                                <section class="partesCasilla" ><center> <img src="<%=canciones[i].img %>"></center></section>
                                <section class="textoInferior">
                                    <section class="partesCasilla"><a class="nombrePlaylist"><%=canciones[i].nombre%></a></section>
@@ -104,7 +104,7 @@
                        %>
                       <div class="imagenes">
                            <div class="contenidoCasillas">
-                               <a href="/verplaylist?id=<%=recomendaciones[i].id%>">
+                               <a href="/verplaylist?id=<%=recomendaciones[i].id%>&nombre=<%=recomendaciones[i].nombre%>"">
                                <section class="partesCasilla" ><center> <img src="<%=recomendaciones[i].imagen %>"></center></section>
                                <section class="textoInferior">
                                    <section class="partesCasilla"><a class="nombrePlaylist"><%=recomendaciones[i].nombre %></a></section>

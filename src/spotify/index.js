@@ -29,7 +29,7 @@ const scopes = [
 var spotifyApi = new SpotifyWebApi({
   clientId: clientId,
   clientSecret: clientSecret,
-  redirectUri: 'https://melodyfriend.azurewebsites.net/entrada' //"http://localhost:5000/entrada"
+  redirectUri: "http://localhost:5000/entrada"//'https://melodyfriend.azurewebsites.net/entrada' //
 });
 
 Login = spotifyApi.createAuthorizeURL(scopes);

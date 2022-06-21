@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encuentra musica ≧ ﹏ ≦</title>
     <link rel="stylesheet" href="Usuario/CSS/encuentraMusica.css">
-    <link rel="shortcut icon" href="Usuario/IMG/LogoMelodyFriend.png">
+    <link rel="shortcut icon" href="Usuario/img/LogoMelodyFriend.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
     <link rel="stylesheet" href="Usuario/CSS/bAndroid/bAndroid.css">
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
@@ -35,26 +35,26 @@
             </div>
             <ul>
                 <li><a href="/homeU"><img src="Usuario/IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
-                <li class="textoenListas"><a href="encontrarPersonas.html">Encuentra personas</a></li>
-                <li class="textoenListas" id="pagActual"><a href="encuentraMusica.html">Encuentra playlists</a></li>
+                <li class="textoenListas"><a href="/encotrarp">Encuentra personas</a></li>
+                <li class="textoenListas" id="pagActual"><a href=/musica">Encuentra playlists</a></li>
                 <li class="textoenListas sugerencias"><a href="mailto:fabbidad@gmail.com?subject=Sugerencia sobre MelodyFriend.&body=Ingresa tu sugerencia :D">Comentarios</a></li>
                 <div id="info">
                     <ul>
                         <li class="informacion"><p>Contáctanos:</p></li>
                         <li class="informacion"><a href="https://www.facebook.com/Fabiddat-104623465060255/"><p>Facebook</p></a></li>
                         <li class="informacion"><a href="mailto:fabbidad@gmail.com?subject=Sugerencia sobre MelodyFriend.&body=Ingresa tu sugerencia :D"><p>fabbidad@gmail.com</p></a></li>
-                        <li class="informacion"><a href="terminosyCondiciones(Aceptados).html"><p>Términos y condiciones</p></a></li>
+                        <li class="informacion"><a href="/terminosyCondiciones"><p>Términos y condiciones</p></a></li>
                     </ul>
                 </div>
             </ul>
         </div>
         <div id="contenidoGeneral">
             <div class="muestradeContenido">
-                <form id="fondo" method="post" action="/musica> <!--Sooooooooofoooooooooooo pon lo que tengas que poner aquíaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+                <form id="fondo"  action="/musica" method="post"> <!--Sooooooooofoooooooooooo pon lo que tengas que poner aquíaaaaaaaaaaaaaaaaaaaaaaaaaa-->
                     <div class="contenedorBuscador">
                         <section class="entrada">
                             <span class="icon"><i class="fa fas fa-search"></i></span>
-                            <input id="ingresarTexto" type="search" placeholder="Buscar playlists"/>
+                            <input id="ingresarTexto" type="search" name="busqueda" placeholder="Buscar playlists"/>
                         </section>
                     </div>
                 </form>
@@ -64,23 +64,20 @@
                     <div class="glider-contain"> 
                         <div class="glider">
                             <%if(busqueda!=null){%>
-                                <%for(var i=0;  i<busqueda.length; i++){%>
-                                <div class="imagenes">
-                                    <div class="contenidoCasillas">
-                                      
-                                        <a href="/verplaylist?id?<%=busqueda[i].id% >">
-                                        <section class="partesCasilla"><img src="<%=busqueda[i].imagen%>"></section>
-                                        <section class="textoInferior">
-                                            <section class="partesCasilla"><a class="nombrePlaylist"><%=busqueda[i].nombre%></a></section>
-                                            <section class="partesCasilla"><a class="propiedadAutor"><%=busqueda[i].artista%></a></section>
-                                        </section>
-                                        </a>
-                                    </div>
+                                <%for(i=0; i<busqueda.length; i++){%>
+                            <div class="imagenes">
+                                <div class="contenidoCasillas">
+                                    <a href="/verplaylist?id=<%=busqueda[i].id%>&nombre=<%=busqueda[i].nombre%>">
+                                    <section class="partesCasilla"><img src="<%=busqueda[i].imagen%>"></section>
+                                    <section class="textoInferior">
+                                        <section class="partesCasilla"><a class="nombrePlaylist"><%=busqueda[i].nombre%></a></section>
+                                        <section class="partesCasilla"><a class="propiedadAutor"><%=busqueda[i].artista%></a></section>
+                                    </section>
+                                    </a>
                                 </div>
-                               <%} %>
-                               <%}%>
-                            
-    
+                            </div>
+                            <%} %>
+                            <%}%>
                         </div>
                         <button aria-label="Previous" class="glider-prev"><i class="fa fas fa-caret-left"></i></button>
                         <button aria-label="Next" class="glider-next"><i class="fa fas fa-caret-right"></i></button>
@@ -91,7 +88,7 @@
         </div>
     </div>
     <script src="Usuario/JS/encuentraMusica.js"></script>
-    <script src="USuario/JS/bAndroid.js"></script>
+    <script src="Usuario/JS/bAndroid.js"></script>
 </div>
 </body>
 </html>

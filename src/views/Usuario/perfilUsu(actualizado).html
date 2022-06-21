@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil usuario (❤´艸｀❤)</title>
-    <link rel="shortcut icon" href="img/LogoMelodyFriend.png">
-    <link rel="stylesheet" href="CSS/bAndroid/bAndroid.css">
-    <link rel="stylesheet" href="CSS/perfilUsu(actualizado).css">
+    <link rel="shortcut icon" href="Usuario/img/LogoMelodyFriend.png">
+    <link rel="stylesheet" href="Usuario/CSS/bAndroid/bAndroid.css">
+    <link rel="stylesheet" href="Usuario/CSS/perfilUsu(actualizado).css">
     <script src="https://kit.fontawesome.com/b4150a26b3.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -21,7 +21,7 @@
                 </p>
                 <div id="fEquipo">
                     <p>-Equipo de <a>MelodyFriend</a>
-                        <p><img src="IMG/LogoMelodyFriend.png"></p>
+                        <p><img src="UsuarioIMG/LogoMelodyFriend.png"></p>
                     </p>
                 </div>
             </div>
@@ -29,9 +29,9 @@
         <!--Termina blm-->
         <!--Inicia cuerpo de la página-->
         <div class="contenedorPrincipal">
-            <a href="index.html">
+            <a href="/homeU">
                 <figure class="logo-app">
-                    <img src="IMG/LogoMelodyFriend.png">
+                    <img src="Usuario/IMG/LogoMelodyFriend.png">
                 <!--<figcaption>
                         <p>Logo de la aplicación</p>
                     </figcaption>-->
@@ -40,7 +40,7 @@
             <div class="contenedorDatosU">
                 <div class="primeraS">
                     <div class="trampa2"></div>
-                    <div class="imagenPerf"></div>
+                    <div class="imagenPerf"><img src="<%=usuario.foto%>"></div>
                     <div class="usuarioID">ID: <%=usuario.id%></div>
                 </div>
                 <div class="segundaS">
@@ -53,8 +53,9 @@
                         <a class="entrbasica" id="carreraOpt"> <%=usuario.carrera%></a>  
                         <p>Sexo</p>
                         <a class="entrbasica" id="sexoOpt"> <%=usuario.sexo%></a>  
-                        <p> <%=usuario.id%></p>
-                        <a class="entrbasica" id="semestreOpt"> <%=usuario.semestre%></a>  
+                        <p> Semestre</p>
+                        <a class="entrbasica" id="semestreOpt"> Semestre:<%=usuario.semestre%></a>  
+                        <p> redes</p>
                         <a class="entrbasica" id="redSocial"> <%=usuario.twitter%></a>
                         <a class="entrbasica" id="redSocial"> <%=usuario.instagram%></a>
                         <a class="entrbasica" id="redSocial"> <%=usuario.facebook%></a>
@@ -65,6 +66,6 @@
         </div>
     
     
-        <script src="JS/bAndroid.js"></script>
+        <script src="Usuario/JS/bAndroid.js"></script>
 </body>
 </html>

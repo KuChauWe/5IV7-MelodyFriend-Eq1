@@ -164,7 +164,7 @@ div.terceraS input#redSocial {
   color: rgb(14, 14, 14);
   margin-bottom: 25px;
 }
-/*Termina Tercera sección*/
+/*Termina Tercera sección*/ 
 /*Inicia Cuarta sección*/
 div.cuartaS {
   display: flex;
@@ -178,6 +178,12 @@ div.cuartaS input {
   border-radius: 100px;
   font-size: 20px;
 }
+.imagenPerf img{
+  z-index:0;
+  max-width:40px;
+  max-height:40px;
+  border-radius: 50%;
+  }
 div.cuartaS input:hover {
   background-color: rgb(33, 84, 0);
 }
@@ -273,4 +279,5 @@ div.cuartaS input:hover {
     border-radius: 50px;
     font-size: 14px;
   }
+
 }

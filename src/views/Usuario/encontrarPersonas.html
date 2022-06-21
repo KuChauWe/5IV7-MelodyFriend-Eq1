@@ -32,16 +32,16 @@
                 <i class="fa fas fa-bars"></i>
             </div>
             <ul>
-                <li><a href="index.html"><img src="Usuario/IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
-                <li class="textoenListas" id="pagActual"><a href="encontrarPersonas.html">Encuentra personas</a></li>
-                <li class="textoenListas"><a href="encuentraMusica.html">Encuentra playlists</a></li>
+                <li><a href="/homeU"><img src="Usuario/IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
+                <li class="textoenListas" id="pagActual"><a href="/encotrarp">Encuentra personas</a></li>
+                <li class="textoenListas"><a href="/musica">Encuentra playlists</a></li>
                 <li class="textoenListas sugerencias"><a href="mailto:fabbidad@gmail.com?subject=Sugerencia sobre MelodyFriend.&body=Ingresa tu sugerencia :D">Comentarios</a></li>
                 <div id="info">
                     <ul>
                         <li class="informacion"><p>Contáctanos:</p></li>
                         <li class="informacion"><a href="https://www.facebook.com/Fabiddat-104623465060255/"><p>Facebook</p></a></li>
                         <li class="informacion"><a href="mailto:fabbidad@gmail.com?subject=Sugerencia sobre MelodyFriend.&body=Ingresa tu sugerencia :D"><p>fabbidad@gmail.com</p></a></li>
-                        <li class="informacion"><a href="terminosyCondiciones(Aceptados).html"><p>Términos y condiciones</p></a></li>
+                        <li class="informacion"><a href="/terminosyCondiciones"><p>Términos y condiciones</p></a></li>
                     </ul>
                 </div>
             </ul>
@@ -60,8 +60,8 @@
                         <div class="filtrosBuscador">
                             <section><i class="bi bi-filter-circle" id="btnFiltro"></i></section>
                             <div class="contenedorOpt" id="contenedorOpt">
-                                <section class="filtrosOpts" id="primerF"><p>Carrera técnica</p><input type="checkbox" class="filtroCkx"></section> <!--Aquí se establecen los filtros 😘-->
-                                <section class="filtrosOpts" id="segundoF"><p>Semestre</p><input type="checkbox" class="filtroCkx"></section> <!--Aquí se establecen los filtros 😘-->
+                                <section class="filtrosOpts" id="primerF"><p>Carrera técnica</p><input type="checkbox" name="carrera" class="filtroCkx"></section> <!--Aquí se establecen los filtros 😘-->
+                                <section class="filtrosOpts" id="segundoF"><p>Semestre</p><input type="checkbox"  name="semestre" class="filtroCkx"></section> <!--Aquí se establecen los filtros 😘-->
                             </div>
                         </div>
                     </form>
@@ -81,14 +81,14 @@
                             <% if(busqueda!=null){%>
                                 <%for(i=0; i<busqueda.length; i++){%>
                                  <section class="protectorFlex">
-                                    <a href="/verperfil?id?<%=busqueda[i].id%>">
+                                    <a href="/verperfil?id=<%=busqueda[i].id_usu_spoty%>">
                                     <figure>
                                         <img src="<%=img[i]%>"><!--Nalgona, aquí va la fotopolla de perfil-->
                                     </figure>
                                     <p class="nombreUsuario"><%=busqueda[i].name_usu%></p>
                                     <p class="descripcionUsuario"><%=busqueda[i].desc_usu%></busqueda></p>
                                     </a>
-                                    <p class="porcentajeCoincidencia">Coincide contigo:<%=por[i]%></p>
+                                    <p class="porcentajeCoincidencia">Coincide contigo:<%=por[i]%>%</p>
                                     </section>
                                <%
                                 }    

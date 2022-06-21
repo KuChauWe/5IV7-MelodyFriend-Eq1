@@ -4,21 +4,28 @@ const router = express.Router();
 const spotifyApi = require('../spotify/')
 const { format } = require('morgan');
 const SpotifyWebApi = require('spotify-web-api-node');
-const { json } = require('express/lib/response');
+const { json, append } = require('express/lib/response');
 const res = require('express/lib/response');
 const { on } = require('nodemon');
 const { token } = require('morgan');
 const pagina = "https://api-rest-melodyfriend.herokuapp.com"
 
+router.get('/', (req, res) => {
+    res.render('iniciarSesion.html');
+});
 
-router.get('/edit', (req, res) => {
+router.get('/terminosyCondiciones', (req, res) => {
+    res.render("Usuario/terminosyCondiciones(Aceptados).html")
+})
+router.get('/editPerfil', (req, res) => {
     id = req.flash('id_spotify')
-    fetch(pagina + "/usuario" + id).then(res => res.json()).then(
+    fetch(pagina + "/usuario/" + id).then(res => res.json()).then(
         data => {
             info = data
+            console.log(info);
             spotifyApi.getUser(id).then(data => {
 
-                img = data.body.images[0].url
+                img = (data.body.images[0] == undefined) ? "https://scontent.fcvj4-1.fna.fbcdn.net/v/t1.15752-9/287976094_328312559496970_4537234010685697075_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHcpYvcZoD9xYxJik7reXQxAm8DAnMF5QcCbwMCcwXlB5N872OG1OvW_FAVS1J3v-QKGbA3KDvi5kFNANLc2YzN&_nc_ohc=BSuG87dQrxYAX_3MlWS&_nc_ht=scontent.fcvj4-1.fna&oh=03_AVL31l6Lm4io00k4Pel2CQPxTzSYreCQ_0t4OszUIw3j6A&oe=62D8AF5C" : data.body.images[0].url
                 usu = {
                     id: id,
                     sexo: info.id_sex,
@@ -37,93 +44,78 @@ router.get('/edit', (req, res) => {
         }
     )
 })
-router.post('/edit', (req, res) => {
-    id = req.flash('id_spotify')
-    fetch(pagina + "/usuario/" + id).then(res => res.json()).then(
-        data => {
-            nombre = data.name_usu
-            fecha = data.fcNac_usu
-            rol = info.rol
-            if (info.id_carr = 1) {
-                carr = "Tronco Comun"
-            }
-            if (info.id_carr = 2) {
-                carr = "Maquinas con sistemas automatizados "
-            }
-            if (info.id_carr = 3) {
-                carr = "Mecatronica"
-            }
-            if (info.id_carr = 4) {
-                carr = "programacion"
-            }
-            if (info.id_carr = 5) {
-                carr = "sistema digitales"
-            }
-            fetch(pagina + "/usuario", {
-                method: "put",
+
+router.get('/verplaylist', (req, res) => {
+    id = req.query.id
+    id_usu = req.flash('id_spotify')[0]
+    nombre = req.query.nombre
+    fetch(pagina + "/filtros_porcentajes/filtrar_track/" + id).then(res => res.json()).then(data => {
+        let id = []
+        let img = []
+        let por = []
+        usu = data
+        usu.forEach((Element, index) => {
+            id.push(Element.id_usu_spoty)
+            fetch(pagina + "/filtros_porcentajes/porComp", {
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(
                     {
-                        "id_usu_spoty": id,
-                        "rol": rol,
-                        "name_usu": nombre,
-                        "fcNac_usu": fecha,
-                        "desc_usu": req.query.decripcion,
-                        "facebook": req.query.facebook,
-                        "twitter": req.query.twitter,
-                        "instagram": req.query.instagram,
-                        "id_sex": req.query.sexo,
-                        "id_carr": req.query.carrera,
-                        "semestre": req.query,
-                        "sexo": (req.id_sex == 1) ? "Hombre" : "Mujer",
-                        "carrera": carr
-                    })
-
+                        "id_usu1": id_usu,
+                        "id_usu2": Element.id_usu_spoty
+                    }
+                )
             }).then(res => res.json()).then(
-                data => console.log(data)
+                data => {
+                    por.push(data)
+                    if (index == (usu.length - 1)) {
+                        id.forEach((Element, index) => {
+                            c = Element.trim()
+                            spotifyApi.getUser(c).then(data => {
+                                foto = (data.body.images[0] == undefined) ? "https://scontent.fcvj4-1.fna.fbcdn.net/v/t1.15752-9/287976094_328312559496970_4537234010685697075_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHcpYvcZoD9xYxJik7reXQxAm8DAnMF5QcCbwMCcwXlB5N872OG1OvW_FAVS1J3v-QKGbA3KDvi5kFNANLc2YzN&_nc_ohc=BSuG87dQrxYAX_3MlWS&_nc_ht=scontent.fcvj4-1.fna&oh=03_AVL31l6Lm4io00k4Pel2CQPxTzSYreCQ_0t4OszUIw3j6A&oe=62D8AF5C" : data.body.images[0].url
+                                img.push(foto)
+                                if (index == (id.length - 1)) {
+
+                                    res.render('Usuario/vistaPlaylist.html', { busqueda: usu, img: img, por: por, name: nombre });
+                                }
+                            })
+
+                        })
+                    }
+                }
             )
-        }
-    )
-
-
-
+        })
+    })
 })
-router.get('/', (req, res) => {
-
-    res.render('iniciarSesion.html');
-
-
-});
 router.get('/verperfil', (req, res) => {
     id = req.query.id
-    fetch(pagina + "/usuario" + id).then(res => res.json()).then(
+    fetch(pagina + "/usuario/" + id).then(res => res.json()).then(
         data => {
             info = data
-            if (info.id_carr = 1) {
+            if (info.id_carr == 1) {
                 carr = "Tronco Comun"
             }
-            if (info.id_carr = 2) {
+            if (info.id_carr == 2) {
                 carr = "Maquinas con sistemas automatizados "
             }
-            if (info.id_carr = 3) {
+            if (info.id_carr == 3) {
                 carr = "Mecatronica"
             }
-            if (info.id_carr = 4) {
+            if (info.id_carr == 4) {
                 carr = "programacion"
             }
-            if (info.id_carr = 5) {
+            if (info.id_carr == 5) {
                 carr = "sistema digitales"
             }
-
             spotifyApi.getUser(id).then(data => {
-                img = data.body.images[0].url
+                img = (data.body.images[0] == undefined) ? "https://scontent.fcvj4-1.fna.fbcdn.net/v/t1.15752-9/287976094_328312559496970_4537234010685697075_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHcpYvcZoD9xYxJik7reXQxAm8DAnMF5QcCbwMCcwXlB5N872OG1OvW_FAVS1J3v-QKGbA3KDvi5kFNANLc2YzN&_nc_ohc=BSuG87dQrxYAX_3MlWS&_nc_ht=scontent.fcvj4-1.fna&oh=03_AVL31l6Lm4io00k4Pel2CQPxTzSYreCQ_0t4OszUIw3j6A&oe=62D8AF5C" : data.body.images[0].url
                 usu = {
                     id: id,
                     sexo: (info.id_sex == 1) ? "Hombre" : "mujer",
                     carrera: carr,
-                    semestre: info.semestre_usu,
+                    semestre: info.semestre,
                     twitter: (info.twitter == null) ? "no hay twitter" : usuario.twitter,
                     instagram: (info.instagram == null) ? "no hay instagram" : usuario.twitter,
                     facebook: (info.instagram == null) ? "no hay instagram" : usuario.twitter,
@@ -134,12 +126,10 @@ router.get('/verperfil', (req, res) => {
                 }
                 res.render('Usuario/perfilUsu(actualizado).html', { usuario: usu })
             })
-        }
-    )
+
+        })
 })
-
 router.get('/entrada', (req, res) => {
-
     const error = req.query.error;
     const code = req.query.code;
     const state = req.query.state;
@@ -190,6 +180,7 @@ router.get('/entrada', (req, res) => {
             })
         })
 });
+
 router.get('/login', (req, res) => {
     res.redirect(spotifyApi.Login);
 
@@ -201,6 +192,7 @@ router.get('/datos', (req, res) => {
         res.render('Usuario/entradaDatos.html', { name: me.display_name });
     })
 });
+
 router.post('/datos', (req, res) => {
     spotifyApi.refreshAccessToken()
     spotifyApi.getMe().then(data => {
@@ -225,8 +217,9 @@ router.post('/datos', (req, res) => {
             res.redirect('/HomeU')
         })
     })
-})
-router.get('/HomeU', (req, res) => {
+});
+
+router.get('/homeU', (req, res) => {
     spotifyApi.refreshAccessToken()
     spotifyApi.getRecommendations({
         min_energy: 0.4,
@@ -252,39 +245,29 @@ router.get('/HomeU', (req, res) => {
             recomendaciones.push(song)
 
         }
-
+        console.log(JSON.stringify(ids_tracK));
         spotifyApi.getMe().then(data => {
 
             me = data.body
-            let ids = JSON.stringify(ids_tracK)
             fetch(pagina + "/track/" + me.id, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: ids
+                body: JSON.stringify(
+                    {
+                        "ids_trac_spoty": ids_tracK
+                    })
             })
             fetch(pagina + "/filtros_porcentajes/tracks_top_batiz", {
             }).then(res => res.json()).then(data => {
+                lista = data
+                lista.forEach((element, index) => {
 
-                lista = []
-                for (i = 0; i < data.length; i++) {
-                    lista.push(data[i][0])
-                }
-                lista = [
-                    '0X5jHsNHshuHNfAWs1sxQ5',
-                    '1KbpLSwQ8vBc0mRvCkKEPt',
-                    '25uN86jLVXNnusQDA3il8S',
-                    '2DwTME1HMySsnglHE1T0zZ',
-                    '2wQBzAZdsaqDBbtwBk5MhA',
-                    '3a2aBKuvgP1qHo3BqU3lGh',
-                    '3qwB1GLNMogyktLqN5ANBE',
-                    '3QwBODjSEzelZyVjxPOHdq',
-                    '4aAfLSx9IthpC3Pw5pNk3E',
-                    '4B6ko7lt1sUtyFzBDF4yfK'
-                ]
+                    lista[index] = element[0].trim()
+                });
 
-                console.log(lista);
+
                 spotifyApi.getTracks(lista).then(data => {
                     songs = []
                     canciones = data.body.tracks
@@ -299,19 +282,24 @@ router.get('/HomeU', (req, res) => {
                         }
                         songs.push(music)
                     })
-                    res.render('Usuario/index.html', { recomendaciones: recomendaciones, name: me.display_name, foto: me.images[0].url, canciones: songs });
+                    foto = (me.images[0] == undefined) ? "https://scontent.fcvj4-1.fna.fbcdn.net/v/t1.15752-9/287976094_328312559496970_4537234010685697075_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHcpYvcZoD9xYxJik7reXQxAm8DAnMF5QcCbwMCcwXlB5N872OG1OvW_FAVS1J3v-QKGbA3KDvi5kFNANLc2YzN&_nc_ohc=BSuG87dQrxYAX_3MlWS&_nc_ht=scontent.fcvj4-1.fna&oh=03_AVL31l6Lm4io00k4Pel2CQPxTzSYreCQ_0t4OszUIw3j6A&oe=62D8AF5C" : me.images[0].url
+                    res.render('Usuario/index.html', { recomendaciones: recomendaciones, name: me.display_name, foto: foto, canciones: songs });
                 })
 
             })
         })
     })
 
-})
+});
+
 router.get('/musica', (req, res) => {
     res.render('Usuario/encuentraMusica.html', { busqueda: null });
 });
+
 router.post('/musica', (req, res) => {
     buscar = req.body.busqueda
+    console.log(buscar);
+
     spotifyApi.searchTracks(buscar)
         .then(function (data) {
             songs = data.body.tracks.items
@@ -333,68 +321,24 @@ router.post('/musica', (req, res) => {
         }, function (err) {
             console.error(err);
         });
-})
+});
+
 router.get('/teriminos', (req, res) => {
     res.render('terminosyCondiciones.html');
 });
+
 router.get('/encotrarp', (req, res) => {
     res.render('Usuario/encontrarPersonas.html', { busqueda: null });
 });
 
-router.get('/gustosSimilares', (res, req) => {
-    id_usu = req.flash('id_spotify')
-    fetch(pagina + "/users_top_trac/" + id_usu).then(res => res.json()).then(
-        data => {
-            ids = data
-            por = []
-            usus = []
-            ids.forEach(element => {
-                fetch(pagina + "/usuario/" + element[0]).then(res => res.json()).then(data => {
-                    id = data.id_usu_spoty
-                    usu = {
-                        id: data.id_usu_spoty,
-                        name: data.name_usu,
-                        desc: data.desc_usu
-                    }
-                    usus.push(usu)
-                    fetch(pagina + "/filtros_porcentajes/porComp", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(
-                            {
-                                "id_usu1": id_usu,
-                                "id_usu2": lista[i].id_usu_spoty
-                            }
-                        )
-                    }).then(res => res.json()).then(
-                        data => {
-                            por.push(data)
-                            spotifyApi.getUser(Element[0]).then(data => {
-                                img.push(data.body.images[0].url)
-                                if (element[0] == ids[ids.length - 1][0]) {
-                                    res.render('Usuario/encontrarPersonas.html', { busqueda: usus, img: img, por: por });
-                                }
-                            })
-                        }
-                    )
-
-                })
-            })
-        }
-    )
-
-})
 router.post('/encotrarp', (req, res) => {
-    console.log(req.body.id);
     data = req.body
     id = req.body.id
     semestre = data.semestre
-    id_usu = req.flash('id_spotify')
+    id_usu = req.flash('id_spotify')[0]
     carrera = data.carrera
 
-    if (id != null) {
+    if (id != "") {
         fetch(pagina + "/usuario/" + id).then(res => res.json()).then(data => {
             lista = []
             lista.push(data)
@@ -413,22 +357,21 @@ router.post('/encotrarp', (req, res) => {
                 )
             }).then(res => res.json()).then(
                 data => {
-                    console.log(data);
                     por.push(data)
+
+                    spotifyApi.getUser(id).then(data => {
+                        foto = (data.body.images[0] == undefined) ? "https://scontent.fcvj4-1.fna.fbcdn.net/v/t1.15752-9/287976094_328312559496970_4537234010685697075_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHcpYvcZoD9xYxJik7reXQxAm8DAnMF5QcCbwMCcwXlB5N872OG1OvW_FAVS1J3v-QKGbA3KDvi5kFNANLc2YzN&_nc_ohc=BSuG87dQrxYAX_3MlWS&_nc_ht=scontent.fcvj4-1.fna&oh=03_AVL31l6Lm4io00k4Pel2CQPxTzSYreCQ_0t4OszUIw3j6A&oe=62D8AF5C" : data.body.images[0].url
+                        img.push(foto)
+
+                        res.render('Usuario/encontrarPersonas.html', { busqueda: lista, img: img, por: por });
+                    })
                 }
             )
-
-            spotifyApi.getUser(id).then(data => {
-                img.push(data.body.images[0].url)
-                res.render('Usuario/encontrarPersonas.html', { busqueda: lista, img: img, por: por });
-            })
-
-
 
         }
         )
     } else {
-        if (semestre == null && carrera == "on") {
+        if (carrera == "on" && semestre == null) {
             fetch(pagina + "/usuario/" + id_usu).then(res => res.json()).then(data => {
                 carr = data.id_carr
                 fetch(pagina + "/filtros_porcentajes/filtrar_carrera/" + carr).then(res => res.json()).then(data => {
@@ -436,8 +379,8 @@ router.post('/encotrarp', (req, res) => {
                     let img = []
                     let por = []
                     usu = data
-                    for (i = 0; i < data.length; i++) {
-                        id.push(data[i].id_usu_spoty)
+                    usu.forEach((Element, index) => {
+                        id.push(Element.id_usu_spoty)
                         fetch(pagina + "/filtros_porcentajes/porComp", {
                             method: "POST",
                             headers: {
@@ -446,41 +389,42 @@ router.post('/encotrarp', (req, res) => {
                             body: JSON.stringify(
                                 {
                                     "id_usu1": id_usu,
-                                    "id_usu2": data[i].id_usu_spoty
+                                    "id_usu2": Element.id_usu_spoty
                                 }
                             )
                         }).then(res => res.json()).then(
                             data => {
                                 por.push(data)
+                                if (index == (usu.length - 1)) {
+                                    id.forEach((Element, index) => {
+                                        c = Element.trim()
+                                        spotifyApi.getUser(c).then(data => {
+                                            foto = (data.body.images[0] == undefined) ? "https://scontent.fcvj4-1.fna.fbcdn.net/v/t1.15752-9/287976094_328312559496970_4537234010685697075_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHcpYvcZoD9xYxJik7reXQxAm8DAnMF5QcCbwMCcwXlB5N872OG1OvW_FAVS1J3v-QKGbA3KDvi5kFNANLc2YzN&_nc_ohc=BSuG87dQrxYAX_3MlWS&_nc_ht=scontent.fcvj4-1.fna&oh=03_AVL31l6Lm4io00k4Pel2CQPxTzSYreCQ_0t4OszUIw3j6A&oe=62D8AF5C" : data.body.images[0].url
+                                            img.push(foto)
+                                            if (index == (id.length - 1)) {
+                                                res.render('Usuario/encontrarPersonas.html', { busqueda: usu, img: img, por: por });
+                                            }
+                                        })
+
+                                    })
+                                }
                             }
                         )
-
-                    }
-                    id.forEach(Element => {
-                        spotifyApi.getUser(Element).then(data => {
-                            img.push(data.body.images[0].url)
-                            if (element == id[id.length - 1]) {
-                                res.render('Usuario/encontrarPersonas.html', { busqueda: usu, img: img, por: por });
-                            }
-                        })
-
                     })
-
                 })
             }
             )
         }
         if (semestre == "on" && carrera == null) {
             fetch(pagina + "/usuario/" + id_usu).then(res => res.json()).then(data => {
-
-                semestre = (data.semestre == "mayor de 6° Semestre") ? "7" : data.semestre
+                semestre = (data.semestre == "mayor de 6° Semestre") ? "7" : data.semestre.slice(0, 1)
                 fetch(pagina + "/filtros_porcentajes/filtrar_semestre/" + semestre).then(res => res.json()).then(data => {
                     let id = []
                     let img = []
                     let por = []
                     usu = data
-                    for (i = 0; i < data.length; i++) {
-                        id.push(data[i].id_usu_spoty)
+                    usu.forEach((Element, index) => {
+                        id.push(Element.id_usu_spoty)
                         fetch(pagina + "/filtros_porcentajes/porComp", {
                             method: "POST",
                             headers: {
@@ -489,24 +433,29 @@ router.post('/encotrarp', (req, res) => {
                             body: JSON.stringify(
                                 {
                                     "id_usu1": id_usu,
-                                    "id_usu2": data[i].id_usu_spoty
+                                    "id_usu2": Element.id_usu_spoty
                                 }
                             )
                         }).then(res => res.json()).then(
                             data => {
                                 por.push(data)
+                                if (index == (usu.length - 1)) {
+                                    id.forEach((Element, index) => {
+                                        c = Element.trim()
+
+                                        spotifyApi.getUser(c).then(data => {
+                                            foto = (data.body.images[0] == undefined) ? "https://scontent.fcvj4-1.fna.fbcdn.net/v/t1.15752-9/287976094_328312559496970_4537234010685697075_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHcpYvcZoD9xYxJik7reXQxAm8DAnMF5QcCbwMCcwXlB5N872OG1OvW_FAVS1J3v-QKGbA3KDvi5kFNANLc2YzN&_nc_ohc=BSuG87dQrxYAX_3MlWS&_nc_ht=scontent.fcvj4-1.fna&oh=03_AVL31l6Lm4io00k4Pel2CQPxTzSYreCQ_0t4OszUIw3j6A&oe=62D8AF5C" : data.body.images[0].url
+                                            img.push(foto)
+                                            if (index == (id.length - 1)) {
+
+                                                res.render('Usuario/encontrarPersonas.html', { busqueda: usu, img: img, por: por });
+                                            }
+                                        })
+
+                                    })
+                                }
                             }
                         )
-
-                    }
-                    id.forEach(Element => {
-                        spotifyApi.getUser(Element).then(data => {
-                            img.push(data.body.images[0].url)
-                            if (element == id[id.length - 1]) {
-                                res.render('Usuario/encontrarPersonas.html', { busqueda: usu, img: img, por: por });
-                            }
-                        })
-
                     })
                 })
             }
@@ -517,6 +466,5 @@ router.post('/encotrarp', (req, res) => {
         }
     }
 });
-
 
 module.exports = router;
