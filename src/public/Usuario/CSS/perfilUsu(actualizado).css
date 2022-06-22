@@ -70,7 +70,7 @@ div.primeraS {
   margin-left: 10px;
 }
 
-div.primeraS div.imagenPerf {
+div.primeraS div.imagenPerf img {
   min-width: 250px;
   min-height: 250px;
   border-radius: 50%;
@@ -186,7 +186,7 @@ div.cuartaS {
     font-size: 14px;
     margin-left: 5px;
   }
-  div.primeraS div.imagenPerf {
+  div.primeraS div.imagenPerf img {
     min-width: 166px;
     min-height: 166px;
     max-width: 166px;

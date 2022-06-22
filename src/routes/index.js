@@ -11,41 +11,100 @@ const { token } = require('morgan');
 const pagina = "https://api-rest-melodyfriend.herokuapp.com"
 
 router.get('/', (req, res) => {
+    spotifyApi.refreshAccessToken()
     res.render('iniciarSesion.html');
 });
 
 router.get('/terminosyCondiciones', (req, res) => {
+    spotifyApi.refreshAccessToken()
     res.render("Usuario/terminosyCondiciones(Aceptados).html")
 })
+
 router.get('/editPerfil', (req, res) => {
+    spotifyApi.refreshAccessToken()
     id = req.flash('id_spotify')
+    console.log(id);
     fetch(pagina + "/usuario/" + id).then(res => res.json()).then(
         data => {
             info = data
-            console.log(info);
             spotifyApi.getUser(id).then(data => {
 
                 img = (data.body.images[0] == undefined) ? "https://scontent.fcvj4-1.fna.fbcdn.net/v/t1.15752-9/287976094_328312559496970_4537234010685697075_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHcpYvcZoD9xYxJik7reXQxAm8DAnMF5QcCbwMCcwXlB5N872OG1OvW_FAVS1J3v-QKGbA3KDvi5kFNANLc2YzN&_nc_ohc=BSuG87dQrxYAX_3MlWS&_nc_ht=scontent.fcvj4-1.fna&oh=03_AVL31l6Lm4io00k4Pel2CQPxTzSYreCQ_0t4OszUIw3j6A&oe=62D8AF5C" : data.body.images[0].url
                 usu = {
                     id: id,
                     sexo: info.id_sex,
-                    carrera: info.id_carr,
-                    semestre: (info.semestre == "mayor de 6° Semestre") ? "7" : data.semestre,
-                    twitter: (info.twitter == null) ? "no hay twitter" : usuario.twitter,
-                    instagram: (info.instagram == null) ? "no hay instagram" : usuario.twitter,
-                    facebook: (info.instagram == null) ? "no hay instagram" : usuario.twitter,
+                    id_carr: info.id_carr,
+                    semestre: (info.semestre == "mayor de 6° Semestre") ? "7" : info.semestre.slice(0, 1),
+                    twitter: (info.twitter == null) ? "no hay twitter" : info.twitter,
+                    instagram: (info.instagram == null) ? "no hay instagram" : info.twitter,
+                    facebook: (info.instagram == null) ? "no hay instagram" : info.twitter,
                     nombre: info.name_usu,
-                    descripcion: info.desc_usu,
+                    descripcion: info.desc_usu.trimEnd(),
                     foto: img
-
                 }
-                res.render('Usuario/perfilUsu(actualizado).html', { usuario: usu })
+                res.render('Usuario/editPerfilUsu(actualizado).html', { usuario: usu })
             })
         }
     )
 })
 
+router.post('/editPerfil', (req, res) => {
+    spotifyApi.refreshAccessToken()
+    fetch(pagina + "/usuario/" + id).then(res => res.json()).then(
+        data => {
+            info = data
+            nombre = data.name_usu
+            fecha = data.fcNac_usu
+            rol = info.rol
+
+            if (req.body.carrera == 1) {
+                carr = "Tronco Comun"
+            }
+            if (req.body.carrera == 2) {
+                carr = "Maquinas con sistemas automatizados "
+            }
+            if (req.body.carrera == 3) {
+                carr = "Mecatronica"
+            }
+            if (req.body.carrera == 4) {
+                carr = "programacion"
+            }
+            if (req.body.carrera == 5) {
+                carr = "sistema digitales"
+            }
+            console.log(pagina + "/usuario/" + id);
+            usu = {
+                "id_usu_spoty": id,
+                "rol": rol,
+                "name_usu": nombre,
+                "fcNac_usu": fecha,
+                "desc_usu": req.body.decripcion,
+                "facebook": req.body.facebook,
+                "twitter": req.body.twitter,
+                "instagram": req.body.instagram,
+                "id_sex": req.body.sexo,
+                "id_carr": req.body.carrera,
+                "semestre": req.body.semestre,
+                "sexo": (req.id_sex == 1) ? "Mujer" : "Hombre",
+                "carrera": carr
+            }
+            console.log(usu);
+            fetch(pagina + "/usuario/" + id, {
+                method: "put",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(usu)
+
+            }).then(res => res.json()).then(
+                data => res.redirect('/homeU')
+            )
+        }
+    )
+})
+
 router.get('/verplaylist', (req, res) => {
+    spotifyApi.refreshAccessToken()
     id = req.query.id
     id_usu = req.flash('id_spotify')[0]
     nombre = req.query.nombre
@@ -89,7 +148,9 @@ router.get('/verplaylist', (req, res) => {
         })
     })
 })
+
 router.get('/verperfil', (req, res) => {
+    spotifyApi.refreshAccessToken()
     id = req.query.id
     fetch(pagina + "/usuario/" + id).then(res => res.json()).then(
         data => {
@@ -129,7 +190,9 @@ router.get('/verperfil', (req, res) => {
 
         })
 })
+
 router.get('/entrada', (req, res) => {
+    spotifyApi.refreshAccessToken()
     const error = req.query.error;
     const code = req.query.code;
     const state = req.query.state;
@@ -182,11 +245,13 @@ router.get('/entrada', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
+    spotifyApi.refreshAccessToken()
     res.redirect(spotifyApi.Login);
 
 });
 
 router.get('/datos', (req, res) => {
+    spotifyApi.refreshAccessToken()
     spotifyApi.getMe().then(Data => {
         me = Data.body
         res.render('Usuario/entradaDatos.html', { name: me.display_name });
@@ -293,10 +358,12 @@ router.get('/homeU', (req, res) => {
 });
 
 router.get('/musica', (req, res) => {
+    spotifyApi.refreshAccessToken()
     res.render('Usuario/encuentraMusica.html', { busqueda: null });
 });
 
 router.post('/musica', (req, res) => {
+    spotifyApi.refreshAccessToken()
     buscar = req.body.busqueda
     console.log(buscar);
 
@@ -324,14 +391,17 @@ router.post('/musica', (req, res) => {
 });
 
 router.get('/teriminos', (req, res) => {
+    spotifyApi.refreshAccessToken()
     res.render('terminosyCondiciones.html');
 });
 
 router.get('/encotrarp', (req, res) => {
+    spotifyApi.refreshAccessToken()
     res.render('Usuario/encontrarPersonas.html', { busqueda: null });
 });
 
 router.post('/encotrarp', (req, res) => {
+    spotifyApi.refreshAccessToken()
     data = req.body
     id = req.body.id
     semestre = data.semestre

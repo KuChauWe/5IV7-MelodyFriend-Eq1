@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar perfil ✍(◔◡◔)</title>
-    <link rel="shortcut icon" href="img/LogoMelodyFriend.png">
-    <link rel="stylesheet" href="CSS/bAndroid/bAndroid.css">
-    <link rel="stylesheet" href="CSS/editPerfilUsu(actualizado).css">
+    <link rel="shortcut icon" href="Usuario/img/LogoMelodyFriend.png">
+    <link rel="stylesheet" href="Usuario/CSS/bAndroid/bAndroid.css">
+    <link rel="stylesheet" href="Usuario/CSS/editPerfilUsu(actualizado).css">
     <script src="https://kit.fontawesome.com/b4150a26b3.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -21,7 +21,7 @@
             </p>
             <div id="fEquipo">
                 <p>-Equipo de <a>MelodyFriend</a>
-                    <p><img src="IMG/LogoMelodyFriend.png"></p>
+                    <p><img src="Usuario/IMG/LogoMelodyFriend.png"></p>
                 </p>
             </div>
         </div>
@@ -29,9 +29,9 @@
     <!--Termina blm-->
     <!--Inicia cuerpo de la página-->
     <div class="contenedorPrincipal">
-        <a href="index.html">
+        <a href="/home">
         <figure class="logo-app">
-            <img src="IMG/LogoMelodyFriend.png">
+            <img src="Usuario/IMG/LogoMelodyFriend.png">
         <!--<figcaption>
                 <p>Logo de la aplicación</p>
             </figcaption>-->
@@ -48,16 +48,16 @@
             </div>
             <div class="terceraS">
                 <div class="datosGnral">
-                    <form action="/edit" method="post" >
+                    <form action="/editPerfil" method="post" >
                     <textarea id="usuDesc"  name= "decripcion" placeholder="Ingresa tu descripción" maxlength="100"><%=usuario.descripcion%></textarea>
                     <p>Carrera técnica</p>
                     <select class="entrbasica" id="carreraOpt" name="carrera" required>  
                         <option value="0" selected disabled>Seleccione carrera</option>
-                        <option value="1" <% if( usuario.semestre==1){%>selected <%}%>>Tronco Común</option>  
-                        <option value="4" <% if( usuario.semestre==4){%>selected <%}%>>Programación</option>  
-                        <option value="5" <% if( usuario.semestre==5){%>selected <%}%>>Sistemas Digitales</option>  
-                        <option value="2" <% if( usuario.semestre==2){%>selected <%}%>>Máquinas con sistemas automatizados</option>  
-                        <option value="3" <% if( usuario.semestre==3){%>selected <%}%>>Mecatrónica</option>  
+                        <option value="1" <% if( usuario.id_carr==1){%>selected <%}%>>Tronco Común</option>  
+                        <option value="4" <% if( usuario.id_carr==4){%>selected <%}%>>Programación</option>  
+                        <option value="5" <% if( usuario.id_carr==5){%>selected <%}%>>Sistemas Digitales</option>  
+                        <option value="2" <% if( usuario.id_carr==2){%>selected <%}%>>Máquinas con sistemas automatizados</option>  
+                        <option value="3" <% if( usuario.id_carr==3){%>selected <%}%>>Mecatrónica</option>  
                     </select>  
                     <p>Sexo</p>
                     <select class="entrbasica" id="sexoOpt" name="sexo" required>  
@@ -89,7 +89,7 @@
     </div>
 
 
-    <script src="JS/bAndroid.js"></script>
+    <script src="Usuario/JS/bAndroid.js"></script>
 </body>
 </html>
 <!--Nota rápida:
