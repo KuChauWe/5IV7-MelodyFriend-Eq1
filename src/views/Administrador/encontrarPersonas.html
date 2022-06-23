@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encuentra personas (´▽`ʃ♡ƪ)</title>
-    <link rel="stylesheet" href="CSS/encontrarPersonas.css">
-    <link rel="shortcut icon" href="img/LogoMelodyFriend.png">
-    <link rel="stylesheet" href="CSS/bAndroid/bAndroid.css">
+    <link rel="stylesheet" href="Administrador/CSS/encontrarPersonas.css">
+    <link rel="shortcut icon" href="Administrador/img/LogoMelodyFriend.png">
+    <link rel="stylesheet" href="Administrador/CSS/bAndroid/bAndroid.css">
     <script src="https://kit.fontawesome.com/1f6d8d7d59.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
@@ -21,7 +21,7 @@
             </p>
             <div id="fEquipo">
                 <p>-Equipo de <a>MelodyFriend</a>
-                    <p><img src="IMG/LogoMelodyFriend.png"></p>
+                    <p><img src="Administrador/IMG/LogoMelodyFriend.png"></p>
                 </p>
             </div>
         </div>
@@ -32,17 +32,17 @@
                 <i class="fa fas fa-bars"></i>
             </div>
             <ul>
-                <li><a href="index.html"><img src="IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
-                <li class="textoenListas" id="pagActual"><a href="encontrarPersonas.html">Encuentra personas</a></li>
-                <li class="textoenListas"><a href="administraRoles.html">Administra roles</a></li>
-                <li class="textoenListas"><a href="verEstadisticas.html">Ver estadísticas</a></li>
+                <li><a href="/homeA"><img src="Administrador/IMG/LogoMelodyFriend.png" alt="Logo MelodyFriend" width="184px"></a></li>
+                <li class="textoenListas" id="pagActual"><a href="/encotrarpA">Encuentra personas</a></li>
+                <li class="textoenListas"><a href="/rolesA">Administra roles</a></li>
+                <li class="textoenListas"><a href="/stasA">Ver estadísticas</a></li>
                 <li class="textoenListas sugerencias"><a href="mailto:fabbidad@gmail.com?subject=Sugerencia sobre MelodyFriend.&body=Ingresa tu sugerencia :D">Comentarios</a></li>
                 <div id="info">
                     <ul>
                         <li class="informacion"><p>Contáctanos:</p></li>
                         <li class="informacion"><a href="https://www.facebook.com/Fabiddat-104623465060255/"><p>Facebook</p></a></li>
                         <li class="informacion"><a href="mailto:fabbidad@gmail.com?subject=Sugerencia sobre MelodyFriend.&body=Ingresa tu sugerencia :D"><p>fabbidad@gmail.com</p></a></li>
-                        <li class="informacion"><a href="terminosyCondiciones(Aceptados).html"><p>Términos y condiciones</p></a></li>
+                        <li class="informacion"><a href="/terminosyCondiciones"><p>Términos y condiciones</p></a></li>
                     </ul>
                 </div>
             </ul>
@@ -51,7 +51,7 @@
             <div class="muestradeContenido">
                 <div class="encabezado">
                             <!--When haces el Buscador-->
-                    <form id="fondo"> <!--Sooooooooofoooooooooooo pon lo que tengas que poner aquíaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+                    <form id="fondo" action="/encotrarp" method="post" > <!--Sooooooooofoooooooooooo pon lo que tengas que poner aquíaaaaaaaaaaaaaaaaaaaaaaaaaa-->
                         <div class="contenedorBuscador">
                             <section class="entrada">
                                 <span class="icon"><i class="fa fas fa-search"></i></span>
@@ -79,30 +79,25 @@
                 <div class="resultados">
                     <div class="contenedorResultados">
                         <div class="contenedorUsuario">
-                            <section class="protectorFlex">
-                                <a href="perfilUsu(actualizado).html">
+                            <% if(busqueda!=null){%>
+                                <%for(i=0; i<busqueda.length; i++){%>
+                                 <section class="protectorFlex">
+                                    <a href="/verperfilA?id=<%=busqueda[i].id_usu_spoty%>">
                                     <figure>
-                                        <img src="IMG/LogoMelodyFriend.png"><!--Nalgona, aquí va la fotopolla de perfil-->
+                                        <img src="<%=img[i]%>"><!--Nalgona, aquí va la fotopolla de perfil-->
                                     </figure>
-                                    <p class="nombreUsuario">Pepe el Toro</p>
-                                    <p class="descripcionUsuario">¡Hola! Esta es mi descripción.</p>
-                                </a>
-                                <p class="porcentajeCoincidencia">Coincide contigo: 100%</p>
-                            </section>
-
-                            <section class="protectorFlex">
-                                <a href="perfilUsu(actualizado).html">
-                                    <figure>
-                                        <img src="IMG/buraimdecuin.jpg">
-                                    </figure>
-                                    <p class="nombreUsuario">Pepe el Toro</p>
-                                    <p class="descripcionUsuario">¡Hola! Esta es mi descripción.</p>
-                                </a>
-                                <p class="porcentajeCoincidencia">Coincide contigo: 100%</p>
-                            </section>
-                            
+                                    <p class="nombreUsuario"><%=busqueda[i].name_usu%></p>
+                                    <p class="descripcionUsuario"><%=busqueda[i].desc_usu%></busqueda></p>
+                                    </a>
+                                    <p class="porcentajeCoincidencia">Coincide contigo:<%=por[i]%>%</p>
+                                 </section>
+                               <%
+                                }    
+                            }
+                               %>
                             
                             <!-- Todo esto se copia
+
                             <section class="protectorFlex">
                                 <a href="perfilUsu(actualizado).html">
                                     <figure>
@@ -120,7 +115,7 @@
             </div>
         </div>
     </div>
-    <script src="JS/encuentraPersonas.js"></script>
-    <script src="JS/bAndroid.js"></script>
+    <script src="Administrador/JS/encuentraPersonas.js"></script>
+    <script src="Administrador/JS/bAndroid.js"></script>
 </body>
 </html>
