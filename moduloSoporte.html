@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soporte y Ayuda 🙏</title>
+    <link rel="stylesheet" href="CSSgral/moduloSoporte.css">
+    <link rel="shortcut icon" href="Usuario/img/LogoMelodyFriend.png" />
+    <link rel="stylesheet" href="Usuario/CSS/bAndroid/bAndroid.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+    <script src="https://kit.fontawesome.com/ed97d71d07.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="primera-linea">
+        <div>
+            <p>
+                ¿Quieres usar nuestra aplicación desde tu movil?
+                <br>
+                ¡<a href="https://github.com/KuChauWe/5IV7-MelodyFriend-Eq1/tree/master">Descarga</a> nuestra app!
+            </p>
+            <div id="fEquipo">
+                <p>-Equipo de <a>MelodyFriend</a>
+                    <p><img src="Usuario/IMG/LogoMelodyFriend.png"></p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="contenedorPrincipal">
+      <div class="flex-aux exterior">
+        <!--Para regresar a la página anterior-->
+        <a href="javascript:history.go(-1)">
+          <i class="fa-solid fa-angle-left"></i>
+        </a>
+      </div>
+      <div class="flex-aux central">
+        <div class="form-contenedor">
+          <section class="form-partes superior">
+            <p>
+              Presiona sobre un botón para
+              <a class="txt_verde">consultar información</a> del tema.
+            </p>
+          </section>
+          <section class="form-partes medio">
+            <p class="solucion active1"  id="solucion1">Solución al problema 1</p>
+            <p class="solucion active2" id="solucion2">Solución al problema 2</p>
+            <p class="solucion active3" id="solucion3">Solución al problema 3</p>
+            <p class="solucion active4" id="solucion4">Solución al problema 4</p>
+            <p class="solucion active5" id="solucion5">Solución al problema 5</p>
+            <p class="solucion active6" id="solucion6">Solución al problema 6</p>
+            <p class="solucion active7" id="solucion7">Solución al problema 7</p>
+            <p class="solucion active8" id="solucion8">Solución al problema 8</p>
+          </section>
+          <section class="form-partes inferior"> 
+            <div class="glider">
+              <p class="problema" onclick="cerdo('solucion1')" id="1">Problema 1</p>
+              <p class="problema" onclick="cerdo('solucion2')" id="problema2">Problema 2</p>
+              <p class="problema" onclick="cerdo('solucion3')" id="problema3">Problema 3</p>
+              <p class="problema" onclick="cerdo('solucion4')" id="problema4">Problema 4</p>
+              <p class="problema" onclick="cerdo('solucion5')" id="problema5">Problema 5</p>
+              <p class="problema" onclick="cerdo('solucion6')" id="problema6">Problema 6</p>
+              <p class="problema" onclick="cerdo('solucion7')" id="problema7">Problema 7</p>
+              <p class="problema" onclick="cerdo('solucion8')" id="problema8">Problema 8</p>
+            </div>
+            <button aria-label="Previous" class="glider-prev"><i class="fa fas fa-caret-left"></i></button>
+            <button aria-label="Next" class="glider-next"><i class="fa fas fa-caret-right"></i></button>
+            <div role="tablist" class="dots"></div>
+          </section>
+        </div>
+      </div>
+      <div class="flex-aux exterior"></div>
+    </div>
+    <script src="Usuario/JS/bAndroid.js"></script>
+    <script src="JSgral/moduloSoporte.js"></script>
+  </body>
+</html>
